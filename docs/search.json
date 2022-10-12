@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
+    "section": "",
+    "text": "Hola a todos bienvenidos al curso pre-congreso de FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa. En esta página encontrarán todas las instrucciones para llevar a cabo el curso."
+  },
+  {
+    "objectID": "index.html#instalar-r-y-rstudio",
+    "href": "index.html#instalar-r-y-rstudio",
+    "title": "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
+    "section": "Instalar R y Rstudio",
+    "text": "Instalar R y Rstudio\nTodos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio"
+  },
+  {
+    "objectID": "index.html#instalar-paqueterías",
+    "href": "index.html#instalar-paqueterías",
+    "title": "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
+    "section": "Instalar paqueterías",
+    "text": "Instalar paqueterías\nSe espera que previo al curso instales las siguientes paqueterías\n\ninstall.packages(c(\"tidyverse\", # Easily Install and Load the 'Tidyverse'\n\"vegan\", # Community Ecology Package\n\"ggrepel\", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'\n\"SpadeR\", # Species-Richness Prediction and Diversity Estimation with R\n\"BiodiversityR\", # Package for Community Ecology and Suitability Analysis\n\"iNEXT\", # Interpolation and Extrapolation for Species Diversity\n\"hillR\", # Diversity Through Hill Numbers\n\"MuMIn\", # Multi-Model Inference\n\"DHARMa\", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed\", Regression Models\n\"camtrapR\", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses\n\"leaflet\", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library\n\"sp\", # Classes and Methods for Spatial Data\n\"ggtext\", # Improved Text Rendering Support for 'ggplot2'\n\"AICcmodavg\", # Model Selection and Multimodel Inference Based on (Q\",AIC(c\",\n\"broom\", # Convert Statistical Objects into Tidy Tibbles\n\"ggeffects\", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs\n\"performance\" # Assessment of Regression Models Performance\n))"
+  },
+  {
+    "objectID": "index.html#día-1",
+    "href": "index.html#día-1",
+    "title": "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
+    "section": "Día 1",
+    "text": "Día 1\n\nIntroducción al diseño de muestreo en estudios de cámaras trampa\nIntroducción a R\nDigiKam para el etiquetado de fotos\nCamtrapR: organización y manejo de datos de cámaras trampa"
+  },
+  {
+    "objectID": "index.html#día-2",
+    "href": "index.html#día-2",
+    "title": "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
+    "section": "Día 2",
+    "text": "Día 2\n\nIntroducción al índice de abundancia relativa\nIntroducción al análisis de diversidad\nGráfica de radar para datos de actividad\nAnálisis de actividad diaria"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
