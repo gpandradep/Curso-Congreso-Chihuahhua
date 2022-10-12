@@ -25,7 +25,9 @@ Hola a todos bienvenidos al curso pre-congreso de **FototrampeoR: Organización 
 # Instrucciones
 
 ## Instalar R y Rstudio
-Todos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio
+Todos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio. También es importante tener Rtools instalado. 
+
+Para todos los detalles por favor seguir la siguiente guía
 
 ## Instalar paqueterías
 
@@ -34,23 +36,24 @@ Se espera que previo al curso instales las siguientes paqueterías
 ```{r}
 #| eval: false
 
-install.packages(c("tidyverse", # Easily Install and Load the 'Tidyverse'
-"vegan", # Community Ecology Package
-"ggrepel", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'
-"SpadeR", # Species-Richness Prediction and Diversity Estimation with R
-"BiodiversityR", # Package for Community Ecology and Suitability Analysis
-"iNEXT", # Interpolation and Extrapolation for Species Diversity
-"hillR", # Diversity Through Hill Numbers
-"MuMIn", # Multi-Model Inference
-"DHARMa", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed", Regression Models
-"camtrapR", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses
-"leaflet", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library
-"sp", # Classes and Methods for Spatial Data
-"ggtext", # Improved Text Rendering Support for 'ggplot2'
-"AICcmodavg", # Model Selection and Multimodel Inference Based on (Q",AIC(c",
-"broom", # Convert Statistical Objects into Tidy Tibbles
-"ggeffects", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs
-"performance" # Assessment of Regression Models Performance
+install.packages(c("overlap",
+                   "tidyverse", # Easily Install and Load the 'Tidyverse'
+                   "vegan", # Community Ecology Package
+                   "ggrepel", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'
+                   "SpadeR", # Species-Richness Prediction and Diversity Estimation with R
+                   "BiodiversityR", # Package for Community Ecology and Suitability Analysis
+                   "iNEXT", # Interpolation and Extrapolation for Species Diversity
+                   "hillR", # Diversity Through Hill Numbers
+                   "MuMIn", # Multi-Model Inference
+                   "DHARMa", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed", Regression Models
+                   "camtrapR", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses
+                   "leaflet", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library
+                   "sp", # Classes and Methods for Spatial Data
+                   "ggtext", # Improved Text Rendering Support for 'ggplot2'
+                   "AICcmodavg", # Model Selection and Multimodel Inference Based on (Q",AIC(c",
+                   "broom", # Convert Statistical Objects into Tidy Tibbles
+                   "ggeffects", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs
+                   "performance" # Assessment of Regression Models Performance
 ))
 
 ```
