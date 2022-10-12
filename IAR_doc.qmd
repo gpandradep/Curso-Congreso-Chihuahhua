@@ -1,0 +1,442 @@
+---
+title: "Indice de ¿abundancia? relativa (RAI)"
+description: | 
+  Introducción al uso y limitaciones del índice de abundancia relativa en estudios de fototrampeo.
+date: last-modified
+author:
+  - name: Gabriel Andrade-Ponce 
+    url: https://gpandradep.github.io/gpandradep/
+    affiliation: Instituto de Ecología A.C.
+    
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: Contenido
+    theme: journal 
+editor: visual
+bibliography: references.bib
+---
+
+# La abundancia y las cámaras trampa
+
+La estimación de la abundancia de poblaciones es de vital importancia para la conservación de la vida silvestre. En el caso de los mamíferos, las cámaras trampa son una de las métodos de muestreo más usados [@burton2015].
+
+![](img/burton.png)
+
+## Especies marcadas y no marcadas
+
+En especies marcadas o con marcas naturales es posible usar modelos de captura recaptura para estimar la abundancia [@wearn2017].
+
+![](img/scr.png)
+
+Pero en especies que no tienen marcas es difícil o imposible reconocer individuos a partir de fotografías, lo que no permite usar modelos de captura recaptura.
+
+![](img/noind.png)
+
+En estos casos muchas veces se usan ***índices*** para realizar inferencias sobre la **abundancia** de especies [@oconnell2010; @obrien2003].
+
+# Índice de ¿abundancia? relativa
+
+El índice más usado en fototrampeo es el número de fotos de especies por día de cámara trampa (*la verdad no conozco otro*), también conocido como índice de abundancia relativo (*Relative abundance index* ; RAI), es nombrado como RAI2 por @obrien2003 .
+
+$$
+RAI= \frac{Número-de-registros}{días-cámara}* 100
+$$
+
+la multiplicación por 100 es simplemente para estandarizar el cálculo y hacer más sencilla cualquier comparación que se desee.
+
+## Del RAI a la abundancia
+
+Cómo cualquier otro índice, la utilidad del RAI para realizar inferencias sobre la abundancia de especies depende de que cumpla con ciertos supuestos generales.
+
+1.  Los registros fotográficos deben ser independientes en el tiempo
+
+2.  Población cerrada, el RAI no cambia durante el muestreo
+
+3.  Todos los animales/individuos son detectados si están presentes
+
+Sí todo esto es cierto para el RAI, entonces se espera que teóricamente tenga una correlación con la abundancia poblacional "real" [@oconnell2010; @obrien2003].
+
+### Registros independientes ⏲️
+
+Seguramente en tus proyectos o tesis te han dicho que debes considerar solamente los registros independientes para calcular el RAI. Pero, ¿qué es un registro independiente?
+
+![](img/pecas.JPG)
+
+Muchas personas intuyen que un registro independiente es aquel donde se tiene cierta certeza de que el mismo individuo no es fotografiado de manera consecutiva. Entonces, muy inocentemente definen en su tesis o artículo 30/60/1440 minutos como el umbral mágico, en el cual dos registros no pertenecen al mismo individuo. Citando seguramente a otra persona que también ha hecho lo mismo [@sollmann2018].
+
+Estamos olvidando algo crucial y es que usamos el RAI porque no podemos reconocer individuos y por lo tanto no tenemos la certeza de que un individuo diferente pasa en la cámara después de xx cantidad de tiempo.
+
+Realmente definimos los registros "independientes" para evitar las pseudo-replicas temporales. Es decir, registros que nos dan la misma información debido a que están muy cercanos entre sí. Pero, elegir un intervalo no es una tarea trivial, ya que: un intervalo muy pequeño puede hacer que tengamos registros dependientes, lo que resulta en que sobre-estimemos el índice o que se invaliden muchas pruebas estadísticas [@carroll2000]. Pero escoger un intervalo muy grande puede hacer que perdamos información, lo cual no es algo deseable para especies poco comunes.
+
+![](img/independet.png)
+
+¿ Cómo escoger un intervalo adecuado? sigue siendo una pregunta difícil. Lo mejor que podemos hacer es definir ese intervalo con base en el conocimiento ecológico y del movimiento de la especie objetivo [@sollmann2018]. Existe también la posibilidad de definir el umbral de independencia de manera más formal explorando la autocorrelación temporal de los registros [@kays2014; @iannarilli2019] o la inspección de los intervalos de registros subsecuentes [@yasuda2004].
+
+![](img/IAR%20deltas.png)
+
+Por lo general las técnicas estadísticas formales para definir independencia temporal son poco usadas por la falta de información y herramientas que sean relativamente difíciles de aplicar. Aunque en este campo el paquete `lorelogram` [@iannarilli2019] parece ser muy promisorio. En todo caso las primeras aplicaciones del paquete muestran que para la mayoría de los casos la dependencia espacial se pierde con tan solo 3 minutos y en casos extremos 15 min (con atrayentes) [@iannarilli2021].
+
+### Población cerrada
+
+Seguramente la mayoría también ha escuchado hablar del supuesto de población cerrada. De manera general una población cerrada se da idealmente en determinado periodo de tiempo donde no sucedan muertes, nacimientos, migración o emigración de individuos [@schoen1991]. Esto es particularmente importante cuando intentamos hacer inferencias sobre el parámetros poblacionales de una especie, en este caso abundancia.
+
+Vamos a verlo con un ejemplo exagerado, pero espero que ilustre lo importante que puede ser el supuesto. Imaginemos que tenemos tres años de conteos de una población de un cánido en un área determinada. Por algún motivo esta población esta disminuyendo cada año. Sin embargo, sí yo defino mi temporada de muestreo como los 3 años, no será posible evidenciar la disminución de la población. Al realizar cada conteo por año si sera posible. Esto mismo puede suceder a escala de meses o de temporadas climáticas, pero claro todo va a depender del sistema de estudio y el conocimiento que tengamos del mismo.
+
+![](img/pob_close.png)
+
+### ¿ Detectamos todo los que existe ?
+
+El RAI supone que todos los individuos que se encuentren en el área serán fotografiados, es decir que la probabilidad de detección es perfecta. En otras palabras, si tenemos la total seguridad de registrar todos los individuos que pasen en frente de la cámara trampa, tendremos la certeza de que los cambios en la tasa fotográfica se deban a los cambios en la abundancia de la especie. Básicamente que la relación de la abundancia real y el RAI sea monotónica [@obrien2011].
+
+![Palmer et al 2018 Relación del RAI con estimaciones de densidad con vuelos](img/Rai_abun.png)
+
+Autores cómo @palmer2018 han demostrado que bajo ciertas circunstancias el RAI puede ser un buen reflejo de la abundancia. No obstante, en la mayoría de los casos la probabilidad de detección de las especies no es perfecta [@kéry2009; @burton2015]. Esto quiere decir que es bastante probable que pese a que no detectemos a una especie en una unidad y día determinado, es difícil llegar a concluir que en efecto esta ausente. Lo cual termina por generar que subestimemos el parámetro de interés [@martin-garcia2022].
+
+[![Modificado de Gálvez, N., González, M. J., Vuskovic, T., Bañales- Seguel, C., Opazo, A., Martínez, D., Zurita, R., Ortega, F., & Schuttler, S. (2020). Monitoreo escolar de fauna silvestre: Guía docente para realizar un proyecto centífico escolar mediante foto trampeo (First ed.) Proyecto EXPLORA de Divulgación y Valoración de la Cienciay Tecnología 2018-2019 de CONICYT ED220040.](img/cams.png){fig-align="left"}](https://www.researchgate.net/publication/344655192_Guia_Monitoreo_Escolar_Fauna_Silvestre_Fototrampeo_2019)
+
+En cámaras trampa la detección imperfecta es un fenómeno muy común. Recordemos que como herramientas de monitoreo pasivo las cámaras tienen un área efectiva de muestreo bastante pequeña [@andrade-ponce2021; @moeller2022]. En otras palabras, la probabilidad de que una especie pase frente al área donde el sensor de la cámara se active y sea registrada, realmente es baja [@moeller2022].
+
+![](img/anglecams.png)
+
+Existen diversos factores que pueden llegar a afectar la detección de las especies, desde su abundancia natural, el tamaño del ámbito hogareño, el tipo de hábitat, el lugar en que ubiquemos la cámara, entre otras [@burton2015; @andrade-ponce2021; @guillera-arroita2016]. Lo cierto es que se ha demostrado que llegar a ignorar la detección imperfecta de las especies puede hacernos llegar a conclusiones totalmente contrarias sobre la abundancia de las mismas [@sollmann2013].
+
+### El uso del espacio afecta la interpretación
+
+Si en algún mundo idílico cumplimos con los supuestos que ya mencionamos, podríamos llegar a pensar que los cambios en el RAI son un buen reflejo de los cambios en la abundancia de poblacional. No obstante, el uso del hábitat o del espacio también puede afectar la tasa de registro [@stewart2018]. Por ejemplo, especies que se mueven rápido a lo largo de su territorio pueden ser detectadas mayor número de veces, mientras que una especie de movimiento "lento" no. De manera, similar especies con ámbitos hogareños más amplios, pueden ser detectadas en distintas estaciones, aumentando el número de detecciones totales [@broadley2019].
+
+![](img/boradley%202019.png){width="640"}
+
+Creo que una manera sensata de usar el RAI es como una medida de actividad o intensidad de uso [@obrien2011]. Por supuesto seguimos teniendo el problema de la detección imperfecta, pero al menos no hacemos inferencia sobre una abundancia, sino sobre la relación entre la tasa de detección y alguna covariable como el hábitat o un disturbio. Precisamente, en este ejemplo vamos a usar el RAI para explicar la relación de la especie con algunas covariables y para ello usaremos modelos lineales. Manos a la obra:
+
+# Script
+
+## Librerías
+
+Usaremos las siguientes librerías en R
+
+```{r}
+#| message: false
+#| warning: false
+library(camtrapR) # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses
+library(tidyverse) # Easily Install and Load the 'Tidyverse'
+library(leaflet) # Create Interactive Web Maps with the JavaScript 'Leaflet' Library
+library(sp) # Classes and Methods for Spatial Data
+library(ggtext) # Improved Text Rendering Support for 'ggplot2'
+library(AICcmodavg) # Model Selection and Multimodel Inference Based on (Q)AIC(c)
+library(broom) # Convert Statistical Objects into Tidy Tibbles
+library(ggeffects) # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs
+library(performance) # Assessment of Regression Models Performance
+```
+
+## Datos
+
+Vamos a cargar unos datos de cámaras trampa del año 2020. Seguiremos el flujo de trabajo que emplea camtrapR, por lo cual cargaremos las tablas que generamos a partir del paquete: la tabla de funcionamiento de cámaras y la de registros.
+
+Vamos a cargar la tabla de operación de cámaras
+
+```{r}
+# Usaré la función read.delim debido a que mi tabla esta en formato txt, pero generalmente camtrapR genera csv. En ese caso se usa read.csv
+CT_table <- read.delim("Data/CT_cams.txt")
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(CT_table))
+```
+
+Un paso muy importante es verificar que las coordenadas sean las correctas, y la manera más sencilla de saberlo es mediante gráficos. Nosotros haremos un mapa interactivo para verificar que todo esté en orden
+
+```{r}
+# Generar objeto espacial para el mapa
+CT_points <- SpatialPoints(cbind(CT_table$utm_x, 
+                                 CT_table$utm_y),
+                           proj4string = CRS('+proj=utm +datum=WGS84 +zone=14 +towgs84=0,0,0')) 
+# Proyectar a WGS solo para este paso
+CT_points <- spTransform(CT_points, "+proj=longlat +datum=WGS84")
+
+# Generar el mapa
+m <- leaflet() %>%
+  addProviderTiles(providers$Esri.WorldImagery, group="Satellite") %>%  # Imagen satelital
+  addProviderTiles(providers$Esri.WorldTopoMap, group="Base") %>% 
+  addCircleMarkers(lng=sp::coordinates(CT_points)[,1], lat=sp::coordinates(CT_points)[,2], 
+                   popup= paste(CT_table$Station)) %>%
+  # Layers control
+  addLayersControl(
+    baseGroups = c("Satellite", "Base"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+m
+```
+
+Ahora vamos a cargar los registros de las especies. Usaremos la base de datos que genera la función `surveReport` de CamtrapR, específicamente la del conteo de detección de las especies y la del esfuerzo de muestreo de las cámaras
+
+```{r}
+# Registros sin delta de independencia
+registrosD0 <- read.csv("Data/events_by_station_d0.csv")
+
+# Registros con independencia de 15 min
+registrosD15 <- read.csv("Data/events_by_station_d15.csv")
+
+# Registros con independencia de 30 min
+registrosD30 <- read.csv("Data/events_by_station_d30.csv")
+
+# Registros con independencia de 60 min
+registrosD60 <- read.csv("Data/events_by_station_d60.csv")
+
+
+```
+
+Cada tabla de registros se ve así:
+
+```{r}
+#| echo: false
+knitr::kable(head(registrosD0))
+```
+
+Para calcular el RAI ahora necesitamos el dato de funcionamiento de cámaras, el cual también podemos obtener de las salidas del `surveReport`
+
+```{r}
+
+Cam_esf <- read.csv2("Data/survey_dates.csv") %>% 
+  select(Station, n_nights_active) # Selecciono las columnas que voy a usar
+# NOTA: uso read.csv2 porque mi compu guarda los csv usando el ; como separador
+
+```
+
+```{r}
+#| echo: false
+
+knitr::kable(head(Cam_esf))
+```
+
+## Cálculo del RAI
+
+Ya cargué toda la información que necesito para calcular el RAI, ahora solo tengo que unirla en una base y hacer las operaciones.
+
+Para ello vamos a aprovecharnos de la capacidad de dplyr para el manejo de bases de datos.
+
+```{r}
+IAR_D0 <- registrosD0 %>%  #Base de datos de registros
+  left_join(Cam_esf) %>%  #Unimos con la base de esfuerzo 
+  group_by(Station, Species) %>%  # Agrupamos por cada estación y especie
+  summarise(IAR= (n_events*n_events*n_nights_active)/100) # Aplicamos la formula para cálcular el RAI y listo
+```
+
+De esta manera relativamente sencilla podemos obtener el valor de RAI, para cada especie y cada estación de muestreo. Tenemos que repetir este procedimiento para cada base de datos de distinto umbral de "independencia". Para hacer todo más eficiente voy a crear una pequeña función que me ahorre algo de código
+
+```{r}
+#| message: false
+#| warning: false
+
+#Función para RAI rápido
+Rai_fun <- function(registros, esfuerzo, delta){
+  
+ df_RAI <- registros %>% # registros
+    left_join(esfuerzo) %>% # unir con esfuerzo
+    group_by(Station, Species) %>% #agrupar por estacion y sp
+    summarise(IAR = (n_events*n_nights_active)/100) %>%  #Calcular IAR
+    rename_at(., vars(contains("IAR")),list(~paste("IAR_D", delta, sep = "") )) # renombrar la columna con el delta adecuado
+   
+  return(df_RAI)
+}
+
+
+# Usemos la pequeña función
+
+IAR_D15 <- Rai_fun(registros = registrosD15,
+                   esfuerzo = Cam_esf,
+                   delta = "15")
+
+IAR_D30 <- Rai_fun(registros = registrosD30,
+                   esfuerzo = Cam_esf,
+                   delta = "30")
+
+IAR_D60 <- Rai_fun(registros = registrosD60,
+                   esfuerzo = Cam_esf,
+                   delta = "60")
+```
+
+Ahora juntemos todo en una sola base de datos
+
+```{r}
+# Como todos comparten la columna de especies y de Estacion podemos usar un left_join
+IAR_delta <- IAR_D0 %>% 
+  left_join(IAR_D15) %>% 
+  left_join(IAR_D30) %>% 
+  left_join(IAR_D60) %>% 
+  filter(Species %in% c("Bassariscus astutus", #filtro de especies
+                        "Canis latrans",
+                        "Conepatus leuconotus",
+                        "Dicotyles angulatus",
+                        "Herpailurus yagouaroundi",
+                        "Lynx rufus",
+                        "Mephitis macroura",
+                        "Nasua narica",
+                        "Odocoileus virginianus",
+                        "Procyon lotor",
+                        "Puma concolor",
+                        "Spilogale angustifrons",
+                        "Sylvilagus floridanus",
+                        "Urocyon cinereoargenteus"
+  ))
+  
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(IAR_delta))
+```
+
+Tenemos el RAI por estación, pero para evaluarlo gráficamente quiero tener un RAI promedio de especie para todas las cámaras en cada delta. De nuevo usaremos el poder de dplyr
+
+```{r}
+IAR_mean <- IAR_delta %>% 
+  pivot_longer(cols = IAR:IAR_D60, #Pasaran a una columna
+              names_to = "Delta", # Esa columna se llamara Delta
+              values_to = "IAR") %>% # los valores pasaran a columna llamada IAR
+  group_by(Species, Delta) %>% 
+  summarise(mean_IAR= mean(IAR), sd_IAR= sd(IAR)) %>% 
+  mutate(Delta= str_remove(Delta, "IAR_")) # Solo para quitar ese pedazo de la columna
+```
+
+```{r}
+knitr::kable(IAR_mean)
+```
+
+Ahora vamos a verlo de manera gráfica
+
+```{r}
+(IARmean_plot <- IAR_mean %>% # base de datos
+  filter(Delta != "IAR") %>% # Quitar delta 0 para gráfica
+  ggplot(aes(x= reorder(Delta, -mean_IAR) , y= mean_IAR,  group=1))+ # Datos de los ejes
+  geom_line()+ # Linea
+  geom_point(aes(col= Delta), 
+             size= 3)+ # Puntos
+  facet_wrap(.~Species, scales = "free")+ # Hacerlo por especie
+  labs(y= "Media de IAR", 
+       x= "Delta de de tiempo de registros",
+       caps= "Sin D0")+
+  theme_bw()) # Tema
+```
+
+Como ven no a todas las especies las afecta igual el umbral de independencia. Hay algunas especies cuyos registros son tan dispersos en el muestreo, que el RAI no cambia con ningún umbral de independencia.
+
+Claro, esta gráfica te ayudará a guiarte, pero debe ir acompañada de una observación de los registros o el cálculo de la autocorrelación temporal para definir el "delta" de tiempo que usaras. Ya estamos trabajando en este último punto y espero en algún futuro cercano poner en linea un tutorial para estimar el umbral de independencia temporal. Por ahora me quedaré con los registros con un delta de 15 minutos.
+
+Ahora veamos los valores de RAI por especie
+
+```{r}
+plot_IAR <- IAR_mean %>%
+  filter(Delta == "D15") %>% 
+  mutate(Sp_n= paste("*",Species,"*", " (IAR= ",round(mean_IAR, 3) , " ) ", sep = "") ) %>% # Truco para italica de especies
+  ggplot(aes(x= reorder(Sp_n,mean_IAR), #Ordenar sp 
+                              y= mean_IAR))+ # No. eventos
+   geom_bar(stat= "identity")+  # Geometria
+      coord_flip()+ # Girar ejes
+   labs(title = "IAR de especies", # Título
+        y= "IAR calculado", 
+        x= NULL,
+        caption = "Registros  independencia temporal de 15 minutos año 2020")+ # Sin eje x
+   theme_minimal()+ # Tema
+   theme(axis.text.y= element_markdown()) # Itálica nombre de especies
+ plot_IAR 
+```
+
+Recordemos que este gráfico es informativo y que no es recomendable comparar el RAI de diferentes especies. Por ejemplo, no sabemos si hay más venados que zorras grises (probablemente no), solo sabemos que los venados son más frecuentemente fotografiados. Hablando de venados, aprovechemos que es una especie con bastantes datos y evaluemos por medio de modelos la relación de su RAI con algunas variables.
+
+## Modelando el RAI 🦌
+
+En este caso lo que nos interesa conocer es cómo la variación del RAI es explicada por distintas condiciones del sitio, vamos a usar nuestra base cruda de delta 15, no la del promedio.
+
+```{r}
+venado <- IAR_D15 %>% # Llamamos la base de datos
+  filter(Species == "Odocoileus virginianus") # Filtramos la especie que nos interesa 
+```
+
+Ahora vamos a cargar las variables, escalarlas y finalmente unirlas a la base de IAR
+
+```{r}
+covs.data <- read_csv2("Data/selectedcov_nostd190821.csv")
+# UPS hay dos variables numericas que R las lee como caracteres
+covs.data$MSAVI <- as.numeric(covs.data$MSAVI)
+covs.data$Slope <- as.numeric(covs.data$Slope)
+
+### Separar las variables numéricas y categóricas
+cov.num <- covs.data %>% 
+  dplyr::select(where(is.numeric)) %>% # Seleccionar columnas numéricas
+  scale() %>%  # estandarizar
+  as.data.frame()
+cov.fac <- covs.data %>% 
+  dplyr::select(where(is.character)) # Seleccionar variables de caracter
+sp_lmdata <- data.frame(cov.fac, cov.num) %>% # Unir covariables
+  right_join(venado, by= "Station")# Unir con la base de registros
+
+```
+
+Al tomar el IAR valores continuos suponemos que seguirá un error tipo *gaussiano*, por lo cual usaremos modelos lineales simples para modelarlo. NOTA: Al no tomar valores negativos quizás pueda ser error tipo gamma pero depende de cada quien probarlo.
+
+```{r}
+# Modelos lineales 
+# sin variables
+m0 <- lm(IAR_D15~ 1, data = sp_lmdata)
+# la IAR afectada por la distancia a cultivo
+m1 <- lm(IAR_D15~ Dcrops, data = sp_lmdata)
+# la IAR afectada por el verdor de la vegetación
+m2 <- lm(IAR_D15~ MSAVI, data = sp_lmdata)
+# la IAR afectada por la pendiente
+m3 <- lm(IAR_D15~ Slope, data = sp_lmdata) 
+# la IAR afectada por la distancia a poblados
+m4 <- lm(IAR_D15~ Dpop_G, data = sp_lmdata)
+# la IAR afectada por el tipo de habitat
+m5 <- lm(IAR_D15~ Habitat, data = sp_lmdata)
+```
+
+Usaremos el criterio de información de Akaike (AIC) para seleccionar el "mejor" modelo. Consiedaremos modelos con un delta AIC menor a dos como igualmente plausibles [@burnham2002].
+
+```{r}
+lista_mods <- list(m0, m1, m2, m3, m4, m5)
+mod_names <- c("IAR~ 1",
+               "IAR~ D_cultivos",
+               "IAR~ MSAVI",
+               "IAR~ Slope",
+               "IAR~ D_poblado",
+               "IAR~ Habitat"
+               )
+AIC <- aictab(lista_mods, 
+              modnames = mod_names, 
+              second.ord = F, sort = T)
+knitr::kable(AIC, 'html', digits = 3)
+```
+
+Según el AIC la pendiente es la variable que mejor explica los cambios en RAI del venado en nuestra área de estudio. Veamos los coeficientes del modelo.
+
+```{r}
+modelo <- m3 %>% 
+  tidy()
+
+knitr::kable(modelo, digits = 3)
+
+```
+
+```{r}
+pred <- ggeffect(m3, terms= "Slope")
+plot(pred)
+```
+
+Alto ahí vaquero. El AIC no te indica que tu modelo se adecuado, así que es deber de nosotros verificar que cumple con todos los supuestos.
+
+```{r}
+check_model(m3)
+```
+
+Parece que nuestro modelito no cumple del todo con el supuesto de normalidad en los residuales, tiene heterogeneidad en su varianza y también una posible outlier. Por ahora no nos preocuparemos mucho por esto; primero porque es un ejemplo y segundo porque para serles sincero yo inventé las covariables 😝🤪. Lo que quiero que vean es que a pesar de todo el RAI te puede dar una idea de la relación del hábitat con las especies. Claro, estamos subestimando la relación por el hecho de no considerar la detección imperfecta, pero mientras seamos conscientes de ello y lo discutamos, personalmente creo que sigue siendo valioso.
+
+# Conclusiones
+
+El RAI es uno de los indices más usados y probablemente se siga usando mucho en estudios de cámaras trampa. Principalmente porque es sencillo de entender y fácil de calcular. El problema, como vimos, es que para realizar inferencias sobre la abundancia poblacional de las especies es una métrica muy susceptible al sesgo [@gilbert2020]. Esto quiere decir que, la mayoría de las veces el RAI no será un buen reflejo de la abundancia "real" de las especies, por lo cual es peligroso basarnos en él para tomar decisiones sobre el manejo poblacional de las especies, o al menos hay que ser muy muy cuidadosos con lo que podemos concluir. En ese mismo sentido, el RAI tampoco es muy útil para hacer comparaciones entre localidades, temporadas o entre especies, porque como ya vimos, la tasa fotográfica de cada especie puede variar conforme su detección [@anile2015; @iannarilli2021; @sollmann2013].
+
+Yo sé, justo ahora parece que estimar la abundancia de especies sin marcas naturales con cámaras trampa es una tarea Quijotesca. Pero no desfallezcan, en éste momento ustedes acaban de salir de la matrix y van a empezar a ser mucho más críticos con sus conclusiones. Además, la estimación de la abundancia de especies es un campo en constante evolución y probablemente sean ustedes quienes empiecen a hacer uso de otras herramientas analíticas mas fuertes que permitan generar estimaciones confiables para responder preguntas ecológicas o determinar la pertinencia de una acción de conservación. Como primer consejo yo les recomiendo tomarse un buen tiempo leyendo a @gilbert2020 para una introducción general a éste tipo de aproximaciones.
+
+![](img/road.png)

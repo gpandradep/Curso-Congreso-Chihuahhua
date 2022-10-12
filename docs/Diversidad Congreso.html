@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.515">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gabriel Andrade-Ponce">
+<meta name="dcterms.date" content="2022-10-12">
+<meta name="description" content="Introducción a conceptos y análisis de la diversidad taxonómica con cámaras trampa.">
+
+<title>Curso Precongreso - Introdución al análisis de diversidad taxonómica</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Curso Precongreso</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Inicio</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./IAR_doc.html">Script IAR</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./Diversidad Congreso.html" aria-current="page">Script Diversidad</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#la-diversidad-de-especies" id="toc-la-diversidad-de-especies" class="nav-link active" data-scroll-target="#la-diversidad-de-especies">La diversidad de especies</a></li>
+  <li><a href="#paqueterias" id="toc-paqueterias" class="nav-link" data-scroll-target="#paqueterias">Paqueterias</a>
+  <ul class="collapse">
+  <li><a href="#la-riqueza-de-especies" id="toc-la-riqueza-de-especies" class="nav-link" data-scroll-target="#la-riqueza-de-especies">La riqueza de especies</a>
+  <ul class="collapse">
+  <li><a href="#estimar-la-riqueza" id="toc-estimar-la-riqueza" class="nav-link" data-scroll-target="#estimar-la-riqueza">Estimar la riqueza</a></li>
+  </ul></li>
+  <li><a href="#curvas-de-rarefacción" id="toc-curvas-de-rarefacción" class="nav-link" data-scroll-target="#curvas-de-rarefacción">Curvas de rarefacción</a>
+  <ul class="collapse">
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos">Cargar datos</a></li>
+  <li><a href="#supuestos-de-las-curvas-para-comparar-comunidades" id="toc-supuestos-de-las-curvas-para-comparar-comunidades" class="nav-link" data-scroll-target="#supuestos-de-las-curvas-para-comparar-comunidades">Supuestos de las curvas para comparar comunidades</a></li>
+  </ul></li>
+  <li><a href="#estimadores-no-paramétricos" id="toc-estimadores-no-paramétricos" class="nav-link" data-scroll-target="#estimadores-no-paramétricos">Estimadores no paramétricos</a>
+  <ul class="collapse">
+  <li><a href="#vegan" id="toc-vegan" class="nav-link" data-scroll-target="#vegan">Vegan</a></li>
+  <li><a href="#spader" id="toc-spader" class="nav-link" data-scroll-target="#spader">SpadeR</a></li>
+  <li><a href="#completitud-de-la-muestra" id="toc-completitud-de-la-muestra" class="nav-link" data-scroll-target="#completitud-de-la-muestra">Completitud de la muestra</a></li>
+  </ul></li>
+  <li><a href="#curvas-rango-abundancia" id="toc-curvas-rango-abundancia" class="nav-link" data-scroll-target="#curvas-rango-abundancia">Curvas rango abundancia</a></li>
+  <li><a href="#estimadores-de-diversidad" id="toc-estimadores-de-diversidad" class="nav-link" data-scroll-target="#estimadores-de-diversidad">Estimadores de diversidad</a>
+  <ul class="collapse">
+  <li><a href="#perfiles-de-diversidad-y-la-cobertura-de-la-muestra" id="toc-perfiles-de-diversidad-y-la-cobertura-de-la-muestra" class="nav-link" data-scroll-target="#perfiles-de-diversidad-y-la-cobertura-de-la-muestra">Perfiles de diversidad y la cobertura de la muestra</a></li>
+  <li><a href="#modelando-la-variación-de-la-diversidad" id="toc-modelando-la-variación-de-la-diversidad" class="nav-link" data-scroll-target="#modelando-la-variación-de-la-diversidad">Modelando la variación de la diversidad</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#final" id="toc-final" class="nav-link" data-scroll-target="#final">Final</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introdución al análisis de diversidad taxonómica</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Introducción a conceptos y análisis de la diversidad taxonómica con cámaras trampa.</p>
+  </div>
+</div>
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <a href="https://gpandradep.github.io/gpandradep/">Gabriel Andrade-Ponce</a> 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Instituto de Ecología A.C.
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 12, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="la-diversidad-de-especies" class="level1">
+<h1>La diversidad de especies</h1>
+<p>La diversidad de especies es una de las medidas más comunes e importantes en la ecología, pero así mismo difícil de cuantificar. La importancia en la cuantificación de la diversidad taxonómica ha resultado en que en la última década se hayan generado grandes avances <span class="citation" data-cites="jost2006 chao2012 chao2014">(<a href="#ref-jost2006" role="doc-biblioref">Jost 2006a</a>; <a href="#ref-chao2012" role="doc-biblioref">Chao and Jost 2012</a>; <a href="#ref-chao2014" role="doc-biblioref">Chao et al. 2014</a>)</span>. Tanto que a veces parece abrumador la cantidad de indices, estimadores y maneras en la que se evalúa la diversidad. Tranquilo, hoy vamos a intentar aprender el cómo y porqué de algunas de las aproximaciones más comunes para cauntificar la diversidad taxonómica de especies.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.instagram.com/pine.bones/"><img src="img/Pinebone.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">The Wash Walker by pine.bones</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="paqueterias" class="level1">
+<h1>Paqueterias</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Easily Install and Load the 'Tidyverse'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan) <span class="co"># Community Ecology Package</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel) <span class="co"># Automatically Position Non-Overlapping Text Labels with 'ggplot2'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpadeR) <span class="co"># Species-Richness Prediction and Diversity Estimation with R</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BiodiversityR) <span class="co"># Package for Community Ecology and Suitability Analysis</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT) <span class="co"># Interpolation and Extrapolation for Species Diversity</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hillR) <span class="co"># Diversity Through Hill Numbers</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn) <span class="co"># Multi-Model Inference</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects) <span class="co"># Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa) <span class="co"># Residual Diagnostics for Hierarchical (Multi-Level / Mixed) Regression Models</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance) <span class="co"># Assessment of Regression Models Performance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="la-riqueza-de-especies" class="level2">
+<h2 class="anchored" data-anchor-id="la-riqueza-de-especies">La riqueza de especies</h2>
+<p>La riqueza o el número de especies es la medida más sencilla de diversidad. Cualquiera que haya visto algún curso de ecología de comunidades se habrá embarcado en la aventura de medir y comparar la riqueza de especies. Es muy sencillo: cuantas especies hay en determinado espacio y tiempo, ¿Qué podría salir mal?</p>
+<p>A pesar de ser una métrica muy intuitiva de la comunidad, la riqueza de especies también es difícil de medir. ¿Porque?. Resulta que cuando salimos a campo, ponemos nuestras cámaras y obtenemos nuestros datos, lo que realmente tenemos es una muestra de las especies detectadas. Pero no necesariamente todas las especies de la comunidad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/M-N.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Imagina que M son todas las especies que existen en la comunidad y N son las que detectamos en nuestro muestreo</figcaption><p></p>
+</figure>
+</div>
+<section id="estimar-la-riqueza" class="level3">
+<h3 class="anchored" data-anchor-id="estimar-la-riqueza">Estimar la riqueza</h3>
+<p>Para conocer la riqueza real necesitamos saber cuantas especies aun no han sido detectadas</p>
+<p><span class="math display">\[
+Riqueza-real= riqueza-registrada+riqueza-no-detectada
+\]</span></p>
+</section>
+</section>
+<section id="curvas-de-rarefacción" class="level2">
+<h2 class="anchored" data-anchor-id="curvas-de-rarefacción">Curvas de rarefacción</h2>
+<p>Las curvas de rarefacción se basan en las curvas de acumulación de especies. La lógica de las curva de acumulación es tomar un individuo al azar de la muestra y registrar la especie. Repetimos el proceso varias veces, y en cada ocasión vamos agregando nuevas especies o no. Lo que esperaríamos es que a medida de que tomamos mas unidades de muestreo o individuos tendremos más especies hasta el punto en donde a pesar de agregar más individuos o sitios de muestreo no tendremos más especies. En ese punto alcanzaremos la asintota de la riqueza. Estas curvas nos pueden dar información muy interesante sobre la comunidad. Por ejemplo, una curva que que tenga una pendiente muy pronunciada nos habla de una comunidad con especies con distribución de la abundancia similar. Mientras que una curva con una pendiente que cae rápidamente sugiere que la comunidad esta dominada por ciertas especies <span class="citation" data-cites="gotelli2011">(<a href="#ref-gotelli2011" role="doc-biblioref">Gotelli and Colwell 2011</a>)</span>.</p>
+<p><img src="img/acumcurve.png" class="img-fluid"></p>
+<p>En teoría podemos agregar individuos o muestras hasta que ya no se detecten nuevas especies, es decir que, se llega a la riqueza asintótica. Sin embargo, en la realidad no siempre tenemos la capacidad logística para llegar hasta la asíntota (especialmente en los trópicos y dependerá del grupo de organismos).</p>
+<p>Un limitante de las curva de acumulación es que su pendiente puede variar dependiendo del orden en que se agregan los individuos, así que una solución es la rarefacción. Básicamente la rarefacción es un re-muestreo sin remplazo, donde se van tomando individuos al azar y se registra cada especie. Esta técnica permite también obtener intervalos de confianza al 95% lo que permite hacer comparaciones de la riqueza de especies de dos comunidades con distintas abundancias de individuos (siempre y cuando sean los mismos organismos y los mismos métodos).</p>
+<p>Vamos a generar nuestras curvas de rarefacción usando las funciones de vegan <span class="citation" data-cites="vegan">(<a href="#ref-vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span>.</p>
+<section id="cargar-datos" class="level3">
+<h3 class="anchored" data-anchor-id="cargar-datos">Cargar datos</h3>
+<p>Vamos a cargar datos de cámaras trampa que obtenemos a partir de camtrapR. Debido a que los datos consideran humanos y otros grupos como aves o reptiles, vamos a filtrar las especies que nos interesan.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Registros con independencia de 15 min</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>registrosD15 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/events_by_station_d15.csv"</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Bassariscus astutus"</span>, <span class="co">#filtro de especies</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Canis latrans"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Conepatus leuconotus"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Dicotyles angulatus"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Herpailurus yagouaroundi"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Lynx rufus"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Mephitis macroura"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Nasua narica"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Odocoileus virginianus"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Procyon lotor"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Puma concolor"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Spilogale angustifrons"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Sylvilagus floridanus"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Urocyon cinereoargenteus"</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>CT_table <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"Data/CT_cams.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vamos a realizar una pequeña gráfica para darnos una idea de como se distribuye la riqueza de especies en nuestra área de estudio. Hay que hacer un poco de carpintería de datos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N_spec <span class="ot">&lt;-</span> registrosD15 <span class="sc">%&gt;%</span> <span class="co">#los datos</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_events <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="co"># filtro solo sitios con detecciones</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Station) <span class="sc">%&gt;%</span> <span class="co">#agrupamos por cámara</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span> <span class="co"># Contamos las especies por cámara</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(CT_table) <span class="sc">%&gt;%</span> <span class="co">#agregamos las coordenadas</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Station, utm_x, utm_y, n) <span class="co">#seleccionamos columnas</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(N_spec, <span class="fu">aes</span>(<span class="at">x=</span> utm_x, <span class="at">y=</span>utm_y))<span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size=</span>n, <span class="at">col=</span>n),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha=</span> <span class="fl">0.8</span>)<span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">15</span>))<span class="sc">+</span> <span class="co"># Escala del radio para los puntos</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span> <span class="st">"Mapa de número especies"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Lat"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Lon"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">size=</span> <span class="st">"Número de </span><span class="sc">\n</span><span class="st">especies"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Ahora vamos por las curvas. Primero tenemos que hacer más carpinteria de datos para ajustar el formato que requiere la función <code>specaccum</code>. Básicamente necesitamos una matriz donde las especies sean las columnas y las filas, cada una de las unidades de muestreo.</p>
+<div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ac_data <span class="ot">&lt;-</span> registrosD15 <span class="sc">%&gt;%</span> <span class="co"># datos</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Species, <span class="co"># nuevas columnas</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> n_events) <span class="sc">%&gt;%</span> <span class="co"># valores</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var=</span> <span class="st">"Station"</span>)<span class="co"># columna a nombre de filas</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Función de vegan specaccum para las curvas de acumulación</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sample <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(ac_data, <span class="co"># datos</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"random"</span>, <span class="co"># basado en muestreo</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">permutations =</span> <span class="dv">100</span>)[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)] <span class="sc">%&gt;%</span> <span class="co">#seleccionar objetos de la lista</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce</span>(bind_cols) <span class="sc">%&gt;%</span> <span class="co"># Unirlos en un data.frame</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Sitios=</span> <span class="st">"...1"</span>, <span class="co"># Renombrar columnas</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">Riqueza=</span> <span class="st">"...2"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">SD=</span> <span class="st">"...3"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>indi <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(ac_data, </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">method =</span> <span class="st">"rarefaction"</span>, <span class="co"># basado en individuos</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">permutations =</span> <span class="dv">100</span>)[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce</span>(bind_cols) <span class="sc">%&gt;%</span> <span class="co"># Unirlos en un data.frame</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Riqueza=</span> <span class="st">"...1"</span>, <span class="co"># Renombrar columnas</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">SD=</span> <span class="st">"...2"</span>,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">Individuos=</span> <span class="st">"...3"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafica de las curvas</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sample, <span class="fu">aes</span>(<span class="at">x=</span>Sitios, <span class="at">y=</span>Riqueza, </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymin=</span> Riqueza<span class="sc">-</span>SD,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymax=</span> Riqueza<span class="sc">+</span>SD))<span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva de rarefaccion basada en muestreo"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Riqueza acumulada"</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Unidades de muestreo"</span>)<span class="sc">+</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(indi, <span class="fu">aes</span>(<span class="at">x=</span>Individuos, <span class="at">y=</span>Riqueza, </span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymin=</span> Riqueza<span class="sc">-</span>SD,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymax=</span> Riqueza<span class="sc">+</span>SD))<span class="sc">+</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva de rarefaccion basada en individuos"</span>,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Riqueza acumulada"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Individuos"</span>)<span class="sc">+</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="supuestos-de-las-curvas-para-comparar-comunidades" class="level3">
+<h3 class="anchored" data-anchor-id="supuestos-de-las-curvas-para-comparar-comunidades">Supuestos de las curvas para comparar comunidades</h3>
+<ol type="1">
+<li><p>El poder para detectar diferencias estadísticas requiere suficiente información. En el caso del fototrampeo al menos se ha detectado que con 30 a 60 días de muestreo con 25 a 60 cámaras es suficiente para recuperar la riqueza de especies <span class="citation" data-cites="kays2020">(<a href="#ref-kays2020" role="doc-biblioref">Kays et al. 2020</a>)</span>.</p></li>
+<li><p>Diferentes métodos pueden tener capacidades disintitas para detectar ciertas especies, por lo cual es peligroso comparar comunidades diferentes mediante métodos de muestreo diferentes. Pese a ello, autores han usado esta técnica para compara la eficacia de métodos sobre la misma área. También se han conjugado diferentes métodos para maximizar la detección de especies, pero si se comparan otro sitio se deben usar las mismas especificaciones <span class="citation" data-cites="gotelli2011">(<a href="#ref-gotelli2011" role="doc-biblioref">Gotelli and Colwell 2011</a>)</span>.</p></li>
+<li><p>Las comunidades que se comparan deber ser de especies taxonómicamente similares.</p></li>
+<li><p>La comunidad debe ser “estable” al menos durante el muestreo. Además, las especies deben ser organismos plenamente identificados y cuantificables.</p></li>
+<li><p>Muestreo aleatorio con unidades independientes.</p></li>
+</ol>
+</section>
+</section>
+<section id="estimadores-no-paramétricos" class="level2">
+<h2 class="anchored" data-anchor-id="estimadores-no-paramétricos">Estimadores no paramétricos</h2>
+<p>Los estimadores no paramétricos son quizás los más usados para estimar la riqueza de especies. El termino no parmétrico se refiere a que estos estimadores no requieren ajustarse ningún modelo teórico .<span class="citation" data-cites="pineda-lópez2019">(<a href="#ref-pineda-lópez2019" role="doc-biblioref">Pineda-López 2019</a>)</span>. Dado que los estimadores paramétricos han demostrado tener complicaciones al estimar la riqueza, los no estimadores no paramétricos se han vuelto los consentidos<span class="citation" data-cites="gotelli2011">(<a href="#ref-gotelli2011" role="doc-biblioref">Gotelli and Colwell 2011</a>)</span>.</p>
+<p>Podemos usar diferentes estimadores dependiendo si nuestros datos son de incidencia (frecuencia) o de abundancia. Si tienes de abundancia, siempre se puede convertir en incidencia, pero no viceversa <span class="citation" data-cites="gotelli2011">(<a href="#ref-gotelli2011" role="doc-biblioref">Gotelli and Colwell 2011</a>)</span> .</p>
+<ul>
+<li><p>Incidencia: Chao2, ICE, Jacknifes de incidencia y bootstrap</p></li>
+<li><p>Abundancia: Chao1, ACE, Jacknifes de abundancia</p></li>
+</ul>
+<p>Por espacio no pondré las formulas de cada estimador, pero es bueno que cada quien las consulte <span class="citation" data-cites="gotelli2011 Moreno2001">(<a href="#ref-gotelli2011" role="doc-biblioref">Gotelli and Colwell 2011</a>; <a href="#ref-Moreno2001" role="doc-biblioref">C. Moreno 2001</a>)</span>.</p>
+<p>Básicamente estos estimadores corrigen la riqueza observada (<strong>S<sub>obs)</sub></strong> mediante las especies que solo son representadas por un individuo (<strong>singletons</strong>) o dos (<strong>doubletons</strong>) en el caso de datos de abundancia. Para incidencia especies con frecuencia uno (<strong>uniques</strong>) y (<strong>duplicates</strong>). ¿Cómo lo hacen? estos estimadores se basan el principio de la ecuación de Turing y Good <span class="citation" data-cites="good1953">(<a href="#ref-good1953" role="doc-biblioref">Good 1953</a>)</span>, es decir que, las información de las especies más raras puede ser usada para estimar cuantas especies faltan.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://tecreview.tec.mx/wp-content/uploads/2018/10/alan-t.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Alan Turing: https://tecreview.tec.mx/wp-content/uploads/2018/10/alan-t.jpg</figcaption><p></p>
+</figure>
+</div>
+<section id="vegan" class="level3">
+<h3 class="anchored" data-anchor-id="vegan">Vegan</h3>
+<p>Vamos a calcular estos estimadores usando las funciones de vegan <span class="citation" data-cites="vegan">(<a href="#ref-vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span>. El mismo vegan tiene funciones de <code>plot</code> y <code>summary</code> utiles para resumir la información. Sin embargo, como tengo más habilidades con ggplo2, lo que haremos será carpintería de datos para poder gratificarlo como queremos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>columnas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"N"</span>, <span class="st">"S"</span>, <span class="st">"2.5%"</span>, <span class="st">"97.5%"</span>, <span class="st">"Std.Dev"</span>) <span class="co"># Cambiiar los nombres de las columnas en incidencia</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>incidence <span class="ot">&lt;-</span>  <span class="fu">poolaccum</span>(ac_data, <span class="at">permutations =</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">%&gt;%</span> <span class="co">#Generar el resumen</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(as.data.frame) <span class="sc">%&gt;%</span> <span class="co"># Hacer cada objeto un data.frame</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(., setNames, <span class="at">nm =</span> columnas) <span class="sc">%&gt;%</span> <span class="co"># Cambiar nombres</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce</span>(bind_rows) <span class="sc">%&gt;%</span> <span class="co"># Unir todo en un data.frame</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimador=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"S"</span>, <span class="st">"Chao"</span>, <span class="st">"Jack1"</span>, <span class="st">"Jack2"</span>, <span class="st">"boot"</span>), </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">each=</span> <span class="dv">29</span>)) <span class="sc">%&gt;%</span> <span class="co"># Agregar una columna con </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.numeric, round, <span class="dv">2</span>) <span class="co">#Redondear a dos cifras</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Con los de abundancia es más sencillo</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>abundance <span class="ot">&lt;-</span> <span class="fu">estaccumR</span>(ac_data, <span class="at">permutations =</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">map</span>(as.data.frame) <span class="sc">%&gt;%</span> <span class="co"># Hacer cada objeto un dataframe</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  .[[<span class="st">"means"</span>]] <span class="sc">%&gt;%</span> <span class="co"># Seleccionar solo las medias</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> S<span class="sc">:</span>ACE, <span class="co"># Cambiar a formato largo</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Estimador"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"S"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.numeric, round, <span class="dv">2</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(incidence, <span class="fu">aes</span>(<span class="at">x=</span>N, <span class="at">y=</span>S, <span class="at">col=</span> Estimador))<span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">sec.axis =</span> </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">sec_axis</span>(<span class="sc">~</span> ., <span class="at">breaks =</span> incidence <span class="sc">%&gt;%</span> <span class="fu">filter</span>(N<span class="sc">==</span><span class="dv">31</span>) <span class="sc">%&gt;%</span>  <span class="fu">pull</span>(S)))<span class="sc">+</span> <span class="co"># Crear un segundo eje con los últimos valores</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Estimadores basados en incidencia"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Riqueza acumulada"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Unidades de muestreo"</span>)<span class="sc">+</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(abundance, <span class="fu">aes</span>(<span class="at">x=</span>N, <span class="at">y=</span>S, <span class="at">col=</span> Estimador))<span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">sec.axis =</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">sec_axis</span>(<span class="sc">~</span> ., </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">breaks =</span> abundance <span class="sc">%&gt;%</span> <span class="fu">filter</span>(N<span class="sc">==</span><span class="dv">31</span>) <span class="sc">%&gt;%</span>  <span class="fu">pull</span>(S)))<span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Estimadores basados en abundancia"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Riqueza acumulada"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Unidades de muestreo"</span>)<span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="spader" class="level3">
+<h3 class="anchored" data-anchor-id="spader">SpadeR</h3>
+<p>Ahora vamos a usar el paquete SpadeR creado por Anne Chao <span class="citation" data-cites="SpadeR">(<a href="#ref-SpadeR" role="doc-biblioref">Chao et al. 2016</a>)</span>. Este paquete tiene una serie de funciones para estimar varios indices de diversidad y de riqueza, incluyendo algunos más recientes como iChao <span class="citation" data-cites="chiu2014a">(<a href="#ref-chiu2014a" role="doc-biblioref">Chiu et al. 2014</a>)</span>. iChao básicamente incluye los <strong>tripletons</strong> y <strong>quadrupletons</strong> para mejorar la estimación de la riqueza.</p>
+<p>Primero vamos a tener que ajustar nuestra base de datos al formato que requiere SpadeR: cada fila es una especie y una sola columna (por comunidad) donde van nuestras abundancias.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Spader_df <span class="ot">&lt;-</span> ac_data <span class="sc">%&gt;%</span> <span class="co"># Datos</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="co"># Transponer los datos</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="co"># De nuevo a data.frame</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>() <span class="sc">%&gt;%</span> <span class="co">#Sumar las abundancias</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="co"># De nuevo a data frame</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">abun=</span> <span class="st">"."</span>) <span class="sc">%&gt;%</span> <span class="co"># Nombre de la columna</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(abun)) <span class="sc">%&gt;%</span> <span class="co"># ordenar los valores</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() <span class="co"># Requiere formato de matriz</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Spader_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">abun</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sylvilagus floridanus</td>
+<td style="text-align: right;">486</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odocoileus virginianus</td>
+<td style="text-align: right;">471</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urocyon cinereoargenteus</td>
+<td style="text-align: right;">444</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: right;">155</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: right;">77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: right;">68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mephitis macroura</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Procyon lotor</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spilogale angustifrons</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nasua narica</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Puma concolor</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ahora si usamos la función de <code>ChaoSpecies</code> . <em>NOTA: uso SpadeR:: para especificarle a R que llamo la función de dicho paquete. Ésto debido a que cuando cargas iNEXT en el mismo script la función puede generar conflictos</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Spad_est <span class="ot">&lt;-</span> SpadeR<span class="sc">::</span><span class="fu">ChaoSpecies</span>(Spader_df,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warning: In this case, it can't estimate the variance of Homogeneous estimation </code></pre>
+</div>
+</div>
+<p>Vamos a inspeccionar que hay dentro de el objeto que generamos.</p>
+<p>Primero tenemos la tabla de información básica con el tamaño de la muestra, número de especies, cobertura de la muestra ( lo veremos en detalle en la sección de diversidad), el coeficiente de variación (CV). El CV te da una medida de la heterogeneidad de la abundancia de especies, donde 0 quiere decir que todas las especies tienen la mismas abundancias o la misma probabilidad de ser descubiertas. Toda la información detallada se puede encontrar en la guía del paquete en la <a href="http://chao.stat.nthu.edu.tw/wordpress/software_download/softwarespader_online/">página web de Anne Chao</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Spad_est[[<span class="st">"Basic_data_information"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sample size</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">1846</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of observed species</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Coverage estimate for entire dataset</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">0.999</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CV for entire dataset</td>
+<td style="text-align: left;">CV</td>
+<td style="text-align: left;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cut-off point</td>
+<td style="text-align: left;">k</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of observed individuals for rare group</td>
+<td style="text-align: left;">n_rare</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of observed species for rare group</td>
+<td style="text-align: left;">D_rare</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimate of the sample coverage for rare group</td>
+<td style="text-align: left;">C_rare</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estimate of CV for rare group in ACE</td>
+<td style="text-align: left;">CV_rare</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimate of CV1 for rare group in ACE-1</td>
+<td style="text-align: left;">CV1_rare</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of observed individuals for abundant group</td>
+<td style="text-align: left;">n_abun</td>
+<td style="text-align: left;">1844</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of observed species for abundant group</td>
+<td style="text-align: left;">D_abun</td>
+<td style="text-align: left;">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ahora veremos el otro objeto que contiene las estimaciones de varios índices y sus correspondientes intervalos de confianza.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Spd_rest <span class="ot">&lt;-</span> Spad_est[[<span class="st">"Species_table"</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="co"># transformar a dataframe</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var=</span> <span class="st">"Indice"</span>) <span class="sc">%&gt;%</span> <span class="co"># hacer columna</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="co"># Quitar NAS del modelo heterogeneo</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Spd_rest, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Indice</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">s.e.</th>
+<th style="text-align: right;">95%Lower</th>
+<th style="text-align: right;">95%Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Homogeneous (MLE)</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">14.00</td>
+<td style="text-align: right;">16.19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chao1 (Chao, 1984)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">14.07</td>
+<td style="text-align: right;">28.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chao1-bc</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">14.07</td>
+<td style="text-align: right;">28.17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">iChao1 (Chiu et al.&nbsp;2014)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">14.07</td>
+<td style="text-align: right;">28.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACE (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">14.07</td>
+<td style="text-align: right;">28.17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACE-1 (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">14.07</td>
+<td style="text-align: right;">28.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1st order jackknife</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">14.39</td>
+<td style="text-align: right;">24.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2nd order jackknife</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">3.46</td>
+<td style="text-align: right;">14.92</td>
+<td style="text-align: right;">31.32</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ahora veamoslo de manera gráfica</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Spd_rest, <span class="fu">aes</span>(<span class="at">x=</span>Indice, <span class="at">y=</span> Estimate,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ymin=</span> <span class="st">`</span><span class="at">95%Lower</span><span class="st">`</span>, <span class="at">ymax=</span><span class="st">`</span><span class="at">95%Upper</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">col=</span>Indice), <span class="at">size=</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="cn">NULL</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">"Riqueza de especies"</span>)<span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>¿Con cuál indice deberíamos quedarnos? A través de simulaciones y pruebas se han dado cuenta que no hay un indice que funcione mejor que otros constantemente, pues su desempeño depende de los datos <span class="citation" data-cites="gwinn2015">(<a href="#ref-gwinn2015" role="doc-biblioref">Gwinn et al. 2015</a>)</span>. Por ejemplo, los Jacknifes tienden a sobrestimar con tamaños de muestra grandes, pero a subestimar en datos con bajos esfuerzos de muestreo. Lo que parece pasar en nuestro data set <span class="citation" data-cites="chiu2014a">(<a href="#ref-chiu2014a" role="doc-biblioref">Chiu et al. 2014</a>)</span>. <span class="citation" data-cites="chao2016">Chao and Chiu (<a href="#ref-chao2016" role="doc-biblioref">2016</a>)</span> también menciona que los estimadores Chao tienden a representar el intervalo menor de la riqueza “verdadera”, salvo cuando hay muy pocas especies raras. Cuando hay demasiadas especies raras los iChao tienden a tener mejores resultados dado que incluyen tripletons y quadrupletons<span class="citation" data-cites="chao2017 pineda-lópez2019">(<a href="#ref-chao2017" role="doc-biblioref">Chao and Colwell 2017</a>; <a href="#ref-pineda-lópez2019" role="doc-biblioref">Pineda-López 2019</a>)</span>.</p>
+</section>
+<section id="completitud-de-la-muestra" class="level3">
+<h3 class="anchored" data-anchor-id="completitud-de-la-muestra">Completitud de la muestra</h3>
+<p>Otra medida derivada de los estimadores no paramétricos es la de la completitud de la muestra. La completitud de la muestra nos da una medida de que tan completo es tu muestreo, basado en que a mayor esfuerzo menor número de singletons o doubletos. Al menos cuando yo aprendí de los estimadores de riqueza era una medida obligatoría de reportar y se calculaba así:</p>
+<p><span class="math display">\[
+Completitud= \frac{Sobs}{R_estimada} *100
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>comple <span class="ot">&lt;-</span> Spd_rest <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Completitud=</span> (<span class="dv">14</span><span class="sc">/</span>Estimate)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Indice, Estimate,Completitud)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(comple, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Indice</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Completitud</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Homogeneous (MLE)</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chao1 (Chao, 1984)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">93.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chao1-bc</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">93.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">iChao1 (Chiu et al.&nbsp;2014)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">93.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACE (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">93.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACE-1 (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">93.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1st order jackknife</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">87.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2nd order jackknife</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">77.79</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Algunos autores sugieren que un porcentaje de completitud mayor al 80% indica un muestreo representativo <span class="citation" data-cites="lobo2008a">(<a href="#ref-lobo2008a" role="doc-biblioref">Lobo 2008</a>)</span>. Es importante no confundir la completitud del muestreo con la cobertura de la muestra. Esta última representa la proporción de la abundancia, mientras que como vimos la completitud se basa solo en el número de especies estimado vs el observado.</p>
+</section>
+</section>
+<section id="curvas-rango-abundancia" class="level2">
+<h2 class="anchored" data-anchor-id="curvas-rango-abundancia">Curvas rango abundancia</h2>
+<p>En un principio hablamos que la diversidad tenia que ver con tres elementos: la riqueza, la abundancia y la composición (esta última no la veremos en detalle). Hasta ahora nos enfocamos en la riqueza y aunque evaluamos la influencia del número de individuos sobre ella, no hemos entrado en detalle sobre la estructura de la abundancia de cada entidad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/biodiv.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">fuente: https://www.unpri.org/biodiversity/investor-action-on-biodiversity-discussion-paper/6335.article</figcaption><p></p>
+</figure>
+</div>
+<p>En una comunidad no todas las especies tienen el mismo “aporte”, es decir hay algunas que son muy “abundantes” y otras bastante “raras”. La estructura de la abundancia de las especies y su determinada pueden sugerir procesos ecológicos como disturbios, interacciones o capacidad de carga. Una de las maneras más sencillas de explorar el comportamiento de la estructura de la abundancia es mediante curvas rango-rango abundancia. En esta gráfica lo que hacemos es reankear las especies por su abundancia (o log de abundancia). Esto es relativamente sencillo de construir con la función rankabundance de BiodiversityR <span class="citation" data-cites="BiodiversityR">(<a href="#ref-BiodiversityR" role="doc-biblioref">Kindt and Coe 2005</a>)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>RA<span class="ot">&lt;-</span><span class="fu">rankabundance</span>(ac_data) <span class="sc">%&gt;%</span> <span class="co"># Función de rango abundancia</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var=</span> <span class="st">"Especies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(RA, <span class="fu">aes</span>(<span class="at">x=</span>rank, <span class="at">y=</span>logabun))<span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size=</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span> Especies),<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>Especies),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">box.padding =</span> <span class="dv">1</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">colour=</span> <span class="st">"black"</span>, <span class="at">angle=</span><span class="dv">25</span>,<span class="at">size=</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"rank"</span>, <span class="at">y =</span> <span class="st">"log abundance"</span>, <span class="at">size=</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>La pendiente de la curva nos dará una idea de que tan equitativa puede ser una comunidad: Una curva más aplanada nos dice que las especies tienden a tener abundancias similares (mayor equitatividad), mientras que una curva pronunciada probablemente se deba a unas cuantas especies muy dominantes.</p>
+</section>
+<section id="estimadores-de-diversidad" class="level2">
+<h2 class="anchored" data-anchor-id="estimadores-de-diversidad">Estimadores de diversidad</h2>
+<p>El índice de Shannon o Simpson <span class="citation" data-cites="simpson1949a sherwin2017">(<a href="#ref-simpson1949a" role="doc-biblioref">SIMPSON 1949</a>; <a href="#ref-sherwin2017" role="doc-biblioref">Sherwin et al. 2017</a>)</span>, seguramente te suenen. Son quizás los indices más usados de diversidad (o entropía), incluso hasta una medida obligatoria en estudios de impacto ambiental de algunos países. A pesar de ser tan famosos y tan ampliamente usados estos indices tienen ciertos problemas (para los ecólogos) al momento de medir la diversidad.</p>
+<ol type="1">
+<li>Las unidades de medida, ¿en qué unidades se presentan los indices? Cuando Shannon es igual a 1.3, es 1.3 diversidades? especies?. Pues resulta que los indices de entropía están dados en bits o nats (según el algoritmo <span class="citation" data-cites="cultid-medina2019">(<a href="#ref-cultid-medina2019" role="doc-biblioref">Cultid-Medina and Escobar 2019</a>)</span>)</li>
+<li>El otro problema es el comportamiento de los índices de entropía no es conveniente para una medida de diversidad. Resulta que no responden proporcionalmente al aumento en la diversidad de una comunidad. Es decir: que una comunidad doblemente diversa, no tendrá el doble del valor del índice de Shannon o Simpson. Este punto es complejo porque invalida las comparaciones de comunidades por medio de éstos indices <span class="citation" data-cites="roswell2021">(<a href="#ref-roswell2021" role="doc-biblioref">Roswell, Dushoff, and Winfree 2021</a>)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Shannons(1).png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Tomado de Roswell 2021</figcaption><p></p>
+</figure>
+</div>
+<p>Éstas características fueron identificadas por <span class="citation" data-cites="macarthur1965">MACARTHUR (<a href="#ref-macarthur1965" role="doc-biblioref">1965</a>)</span> quien sugirió el exponencial de los índices como una medida del número efectivo de especies. Sugerencia que históricamente hemos olvidado y que fue señalado posteriormente por <span class="citation" data-cites="jost2006a">Jost (<a href="#ref-jost2006a" role="doc-biblioref">2006b</a>)</span> , quien propuso como tal el cálculo de la diversidad por medio del número efectivo de especies según la serie de Hill. Para detalles de las formulas y conceptos de la serie de Hill remítanse a la biografía citada.</p>
+<section id="perfiles-de-diversidad-y-la-cobertura-de-la-muestra" class="level3">
+<h3 class="anchored" data-anchor-id="perfiles-de-diversidad-y-la-cobertura-de-la-muestra">Perfiles de diversidad y la cobertura de la muestra</h3>
+<p>Como ya lo vimos, la riqueza de especies es sensible a la abundancia e incluso el esfuerzo de muestreo. Pues tenemos la misma dificultad con los indices de diversidad. ¿De qué forma podemos comparar la diversidad de dos comunidades con diferente proporción de individuos muestreados? Para ello necesitamos del concepto de cobertura de la muestra (<em>Sample coverage</em> en inglés). La cobertura de la muestra nos da una medida de la proporción de abundancia de individuos que está representada en nuestro muestreo. Así, somos capaces de igualar el esfuerzo de muestreo lo valida las estimaciones y comparaciones con sentido ecológico <span class="citation" data-cites="cultid-medina2019">(<a href="#ref-cultid-medina2019" role="doc-biblioref">Cultid-Medina and Escobar 2019</a>)</span>.</p>
+<p>Para ver un ejemplo (mal ejemplo) de como usar la cobertura de la muestra vamos a usar el paquete iNEXT <span class="citation" data-cites="iNEXT">(<a href="#ref-iNEXT" role="doc-biblioref">Hsieh, Ma, and Chao 2022</a>)</span> desarrollado por Anne Chao. Para tener una comunidad con la que pueda comparar voy a generar una que sea simplemente una “sub-comunidad” de la que tenemos.</p>
+<p>Vamos a calcular tres perfiles de diversidad siguiendo la notación de <span class="citation" data-cites="jost2006">Jost (<a href="#ref-jost2006" role="doc-biblioref">2006a</a>)</span></p>
+<p><span class="math display">\[
+^qD =(\sum_{i=1}^S p_i^q)^{1/(1-q)}
+\]</span></p>
+<p>Donde <span class="math inline">\(p_i\)</span> es la abundancia proporcional de la i-ésima especie, <span class="math inline">\(S\)</span> el número de especies y <span class="math inline">\(q\)</span> el orden de diversidad <span class="citation" data-cites="cultid-medina2019">(<a href="#ref-cultid-medina2019" role="doc-biblioref">Cultid-Medina and Escobar 2019</a>)</span>.</p>
+<ul>
+<li><p>q0= da peso a las especies raras o simplemente es la riqueza</p></li>
+<li><p>q1= es el inverso de Shannon y corresponde a las especies igualmente abundantes. Es decir no hay mayor peso por raras o dominantes</p></li>
+<li><p>q2= Equivale al inverso de Simpson y corresponde al número efectivo de especies más abundantes. Es decir que, pondera más por especies dominantes</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores aleatorios del uno a 31 para luego quitarlos de la base de datos</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>, <span class="dv">16</span>, <span class="at">replace=</span> <span class="cn">FALSE</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>community2 <span class="ot">&lt;-</span> ac_data <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(numbers) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="co"># Transponer los datos</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="co"># De nuevo a data.frame</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>() <span class="sc">%&gt;%</span> <span class="co">#Sumar las abundancias</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="co"># De nuevo a data frame</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">abun=</span> <span class="st">"."</span>) <span class="sc">%&gt;%</span> <span class="co"># Nombre de la columna</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(abun)) <span class="sc">%&gt;%</span> <span class="co"># ordenar los valores</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() <span class="co"># Requiere formato de matriz</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora jutamos en un mismo dataframe</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>inext_DF <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Spader_df, community2) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">real=</span> abun,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">mitad=</span> abun<span class="fl">.1</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora corremos la función de iNEXT</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>inext_ob <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(inext_DF,</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">q=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="co"># perfiles de diversidad</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="cn">NULL</span>, <span class="co"># Esfuerzo o unidades de estimación</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>                  <span class="at">endpoint =</span> <span class="dv">1846</span>,<span class="co"># espefificar el size final</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>                  <span class="at">knots =</span> <span class="dv">100</span>, <span class="co">#saltos donde estimará diversidad</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">se=</span><span class="cn">TRUE</span>, <span class="co"># Error estandar del boot</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">conf =</span> <span class="fl">0.95</span>, <span class="co"># Intervalos de confianza a</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nboot =</span> <span class="dv">50</span>) <span class="co"># número de remuestreos.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Tenemos un objeto lista con distinta información:</p>
+<ol type="1">
+<li>La primera data base contiene información general con el número de individuos (n), las especies observadas (S.obs), la cobertura de la muestra (SC) y las frecuencias de especies (f1-f10). Nota en caso de usar datos de incidencia, este objeto tendrá la frecuencia de incidencia (Q1-Q10).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(inext_ob<span class="sc">$</span>DataInfo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Assemblage</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">S.obs</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">f1</th>
+<th style="text-align: right;">f2</th>
+<th style="text-align: right;">f3</th>
+<th style="text-align: right;">f4</th>
+<th style="text-align: right;">f5</th>
+<th style="text-align: right;">f6</th>
+<th style="text-align: right;">f7</th>
+<th style="text-align: right;">f8</th>
+<th style="text-align: right;">f9</th>
+<th style="text-align: right;">f10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">1846</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9989</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mitad</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="2" type="1">
+<li>El segundo objeto tiene dos data bases: Uno basado en los individuos y otro en la cobertura de la muestra. El primero contiene el nombre de los ensamblajes, el corte donde se estima la diversidad con m número de individuos (m; el número de ms depende de los knots), método de rarefacción (inferior al observado), observado, extrapolación (mayor al observado): el perfil de diversidad 0,1,2 (order.q); el valor estimado de diversidad (qD); los intervalos de confianza de la estimación de diversidad (qD.LCL, qD.UCL ); la cobertura de la muestra estimada y sus intervalos de confianza (SC, SC.LCL, SC.UCL).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(inext_ob<span class="sc">$</span>iNextEst<span class="sc">$</span>size_based), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Assemblage</th>
+<th style="text-align: right;">m</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">Order.q</th>
+<th style="text-align: right;">qD</th>
+<th style="text-align: right;">qD.LCL</th>
+<th style="text-align: right;">qD.UCL</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">SC.LCL</th>
+<th style="text-align: right;">SC.UCL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6.17</td>
+<td style="text-align: right;">5.97</td>
+<td style="text-align: right;">6.38</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">0.88</td>
+<td style="text-align: right;">0.89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7.83</td>
+<td style="text-align: right;">7.53</td>
+<td style="text-align: right;">8.12</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.94</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8.80</td>
+<td style="text-align: right;">8.44</td>
+<td style="text-align: right;">9.16</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9.51</td>
+<td style="text-align: right;">9.11</td>
+<td style="text-align: right;">9.91</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10.04</td>
+<td style="text-align: right;">9.61</td>
+<td style="text-align: right;">10.47</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>La segunda base es muy similar pero es usada para graficar la curva de cobertura de la muestra</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(inext_ob<span class="sc">$</span>iNextEst<span class="sc">$</span>coverage_based), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Assemblage</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">m</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">Order.q</th>
+<th style="text-align: right;">qD</th>
+<th style="text-align: right;">qD.LCL</th>
+<th style="text-align: right;">qD.UCL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">1.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6.17</td>
+<td style="text-align: right;">5.79</td>
+<td style="text-align: right;">6.56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7.83</td>
+<td style="text-align: right;">7.34</td>
+<td style="text-align: right;">8.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8.80</td>
+<td style="text-align: right;">8.28</td>
+<td style="text-align: right;">9.32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9.51</td>
+<td style="text-align: right;">8.98</td>
+<td style="text-align: right;">10.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: left;">Rarefaction</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10.04</td>
+<td style="text-align: right;">9.50</td>
+<td style="text-align: right;">10.58</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>El último objeto muestra la diversidad observada y estimada mediante estimadores asintóticos. Recordemos que q=0 es la riqueza, q=1 es Inverso de Shanon y q=2 el inverso de Simpson <span class="citation" data-cites="chao2014">(<a href="#ref-chao2014" role="doc-biblioref">Chao et al. 2014</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(inext_ob<span class="sc">$</span>AsyEst, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 27%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Assemblage</th>
+<th style="text-align: left;">Diversity</th>
+<th style="text-align: right;">Observed</th>
+<th style="text-align: right;">Estimator</th>
+<th style="text-align: right;">s.e.</th>
+<th style="text-align: right;">LCL</th>
+<th style="text-align: right;">UCL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">mitad</td>
+<td style="text-align: left;">Species richness</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">12.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mitad</td>
+<td style="text-align: left;">Shannon diversity</td>
+<td style="text-align: right;">5.98</td>
+<td style="text-align: right;">6.01</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">5.68</td>
+<td style="text-align: right;">6.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mitad</td>
+<td style="text-align: left;">Simpson diversity</td>
+<td style="text-align: right;">4.67</td>
+<td style="text-align: right;">4.69</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">4.44</td>
+<td style="text-align: right;">4.93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: left;">Species richness</td>
+<td style="text-align: right;">14.00</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">14.42</td>
+<td style="text-align: right;">15.57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">real</td>
+<td style="text-align: left;">Shannon diversity</td>
+<td style="text-align: right;">6.30</td>
+<td style="text-align: right;">6.33</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">6.04</td>
+<td style="text-align: right;">6.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">real</td>
+<td style="text-align: left;">Simpson diversity</td>
+<td style="text-align: right;">4.91</td>
+<td style="text-align: right;">4.92</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">5.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></li>
+</ol>
+<p>iNext tiene funciones para graficar los perfiles muy poderosas y que usan ggplot como base. Esto último permite usar funciones de ggplot para modificar las imágenes.</p>
+<p>El gráfico de tipo 1 corresponde a la curva basada en individuos. Muy similar a lo que ya vimos con la curva de rarefacción basada en individuos. Como ven, la linea punteada corresponde a los valores extrapolados de la comunidad que inventamos. A pesar que parece una gráfica sencilla, tiene mucho por decir: Por ejemplo, la mágnitud en que difiere cada uno de los indices nos habla de la equitatividad de la comunidad. Así, un q0 muy cercano a q1 nos habla de una comunidad poco equitativa.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(inext_ob, <span class="co"># objeto iNEXT</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="dv">1</span>, <span class="co"># tipo de gráfica</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">se=</span> T, <span class="co"># incluir intervalos</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">facet.var =</span> <span class="st">"Assemblage"</span>, <span class="co"># Cuadros por comunidad</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">color.var =</span> <span class="st">"None"</span>, <span class="co"># definir color</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">grey =</span> <span class="cn">FALSE</span>)<span class="sc">+</span> <span class="co"># En grises</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="co"># Tema de ggplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Dependiendo de lo que nos interese mostrar podemos variar la especificación de la curva. Por ejemplo, queremos comparar los perfiles de diversidad de las dos comunidades</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(inext_ob, <span class="co"># objeto iNEXT</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="dv">1</span>, <span class="co"># tipo de gráfica</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">se=</span> T, <span class="co"># incluir intervalos</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">facet.var =</span> <span class="st">"Order.q"</span>, <span class="co"># Cuadros por perfil</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">color.var =</span> <span class="st">"Assemblage"</span>, <span class="co"># definir color</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">grey =</span> <span class="cn">FALSE</span>)<span class="sc">+</span> <span class="co"># En grises</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="co"># Tema de ggplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Podemos observar el comportamiento de cobertura de la muestra con el gráfico tipo dos. Este punto es importante, porque la comparación de las comunidades solo tiene sentido cuando ambas tienen una cobertura de la muestra equivalente. En este caso ambas comunidades tienen coberturas muy similares por lo que se valida su comparación. En caso de tener una comunidad con menor cobertura es necesario extrapolar o interpolar con base en la cobertura. Un protocolo detallado para la comparación válida puede encontrarse en <span class="citation" data-cites="cultid-medina2019">Cultid-Medina and Escobar (<a href="#ref-cultid-medina2019" role="doc-biblioref">2019</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(inext_ob, </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">type=</span><span class="dv">2</span>, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">facet.var=</span><span class="st">"None"</span>, </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">color.var=</span><span class="st">"Assemblage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(inext_ob, </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">type=</span><span class="dv">3</span>, </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">facet.var=</span><span class="st">"Assemblage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(inext_ob, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">type=</span><span class="dv">3</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">facet.var=</span><span class="st">"Order.q"</span>, </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">color.var=</span><span class="st">"Assemblage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="modelando-la-variación-de-la-diversidad" class="level3">
+<h3 class="anchored" data-anchor-id="modelando-la-variación-de-la-diversidad">Modelando la variación de la diversidad</h3>
+<p>En ocasiones nos interesa más conocer que factores influyen sobre la diversidad. En este caso lo que importa la variación observada en cada unidad de muestreo. En nuestro caso, la unidad de muestreo son las cámaras trampa.</p>
+<p>En este caso vamos a usar el paquete HillR <span class="citation" data-cites="hillR">(<a href="#ref-hillR" role="doc-biblioref">Li 2018</a>)</span>, la cual tiene funciones mucho más sencillas para estimar los perfiles de diversidad. También cabe resaltar que tiene muchas otras funciones para calcular diversidad funcional y filogenética, pero en este caso solo nos interesa la diversidad taxonómica.</p>
+<p>Para usar la función de <code>hill_taxa</code> requerimos la base de datos donde las filas son los sitios y las columnas las especies. Afortunadamente, ya tenemos una base así guardada en el objeto <code>ac_data</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de cada perfil de diversidad</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>q0 <span class="ot">&lt;-</span> <span class="fu">hill_taxa</span>(ac_data,<span class="at">q=</span> <span class="dv">0</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">hill_taxa</span>(ac_data, <span class="at">q=</span><span class="dv">1</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="fu">hill_taxa</span>(ac_data, <span class="at">q=</span><span class="dv">2</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Unimos todo en una sola data.frame</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>div <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">q0=</span>q0, <span class="at">q1=</span>q1, <span class="at">q2=</span>q2)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(div), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">q0</th>
+<th style="text-align: right;">q1</th>
+<th style="text-align: right;">q2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG02</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.57</td>
+<td style="text-align: right;">1.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG03</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.89</td>
+<td style="text-align: right;">1.80</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG04</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.52</td>
+<td style="text-align: right;">1.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG05</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.36</td>
+<td style="text-align: right;">2.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG06</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">3.53</td>
+<td style="text-align: right;">2.73</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ahora cargamos unas covariables y las unimos a nuestra base para modelar</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>scale_this <span class="ot">&lt;-</span> <span class="cf">function</span>(x){result <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">scale</span>(x))}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>covs <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"Data/selectedcov_nostd190821.csv"</span>, </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">delim =</span> <span class="st">";"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">mutate_if</span>(is.numeric, scale_this) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 31 Columns: 12
+-- Column specification --------------------------------------------------------
+Delimiter: ";"
+chr (3): Station, Cam, Habitat
+dbl (9): utm_y, utm_x, Vertcover_50, Dcrops, MSAVI, Slope, Cluster, Effort, ...
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>div_covs <span class="ot">&lt;-</span> <span class="fu">cbind</span>(div, covs)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(div_covs), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 2%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">q0</th>
+<th style="text-align: right;">q1</th>
+<th style="text-align: right;">q2</th>
+<th style="text-align: left;">Station</th>
+<th style="text-align: right;">utm_y</th>
+<th style="text-align: right;">utm_x</th>
+<th style="text-align: right;">Vertcover_50</th>
+<th style="text-align: left;">Cam</th>
+<th style="text-align: right;">Dcrops</th>
+<th style="text-align: right;">MSAVI</th>
+<th style="text-align: right;">Slope</th>
+<th style="text-align: right;">Cluster</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">Dpop_G</th>
+<th style="text-align: left;">Habitat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: right;">-0.32</td>
+<td style="text-align: right;">1.86</td>
+<td style="text-align: right;">-0.52</td>
+<td style="text-align: left;">MoultrieA30</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">-1.01</td>
+<td style="text-align: left;">Scrub</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG02</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.57</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: left;">CBG02</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">1.54</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: left;">Moultrie</td>
+<td style="text-align: right;">1.24</td>
+<td style="text-align: right;">-0.59</td>
+<td style="text-align: right;">-1.08</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">-1.40</td>
+<td style="text-align: right;">-0.83</td>
+<td style="text-align: left;">Scrub</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG03</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.89</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: left;">CBG03</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">1.35</td>
+<td style="text-align: right;">-0.98</td>
+<td style="text-align: left;">MoultrieA30</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">-0.31</td>
+<td style="text-align: right;">-1.13</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">-0.60</td>
+<td style="text-align: left;">Scrub</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG04</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.52</td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: left;">CBG04</td>
+<td style="text-align: right;">1.49</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: right;">-0.98</td>
+<td style="text-align: left;">Primos</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">2.55</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">-0.61</td>
+<td style="text-align: right;">-0.62</td>
+<td style="text-align: left;">Columnar</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG05</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.36</td>
+<td style="text-align: right;">2.05</td>
+<td style="text-align: left;">CBG05</td>
+<td style="text-align: right;">1.83</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">-1.21</td>
+<td style="text-align: left;">MoultrieA30</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">-0.45</td>
+<td style="text-align: left;">Scrub</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG06</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">3.53</td>
+<td style="text-align: right;">2.73</td>
+<td style="text-align: left;">CBG06</td>
+<td style="text-align: right;">-0.61</td>
+<td style="text-align: right;">1.45</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: left;">Primos</td>
+<td style="text-align: right;">1.75</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">-1.13</td>
+<td style="text-align: right;">-0.84</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">-0.24</td>
+<td style="text-align: left;">Scrub</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Vamos a realizar una selección de modelos de manera rápida usando la función dredge del paquete MuMIn <span class="citation" data-cites="MuMIn">(<a href="#ref-MuMIn" role="doc-biblioref">Barton 2020</a>)</span>.</p>
+<p>Primero para q0</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>global_q0 <span class="ot">&lt;-</span> <span class="fu">glm</span>(q0<span class="sc">~</span> Dcrops<span class="sc">+</span> MSAVI<span class="sc">+</span> Slope<span class="sc">+</span> Dpop_G<span class="sc">+</span> Habitat,</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="st">"poisson"</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> div_covs,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">na.action =</span> <span class="st">"na.fail"</span>) </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>AIC_q0 <span class="ot">&lt;-</span> <span class="fu">dredge</span>(global_q0,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">m.lim =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span>),</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rank =</span> <span class="st">"AIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fixed term is "(Intercept)"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(AIC_q0, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">(Intercept)</th>
+<th style="text-align: right;">Dcrops</th>
+<th style="text-align: right;">Dpop_G</th>
+<th style="text-align: left;">Habitat</th>
+<th style="text-align: right;">MSAVI</th>
+<th style="text-align: right;">Slope</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">logLik</th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">delta</th>
+<th style="text-align: right;">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-71.47</td>
+<td style="text-align: right;">146.93</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.29190233</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-72.73</td>
+<td style="text-align: right;">147.45</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">0.22506372</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">1.92</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-71.94</td>
+<td style="text-align: right;">147.88</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">0.18153140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.30</td>
+<td style="text-align: right;">148.61</td>
+<td style="text-align: right;">1.67</td>
+<td style="text-align: right;">0.12642361</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.62</td>
+<td style="text-align: right;">149.25</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: right;">0.09179617</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.72</td>
+<td style="text-align: right;">149.44</td>
+<td style="text-align: right;">2.51</td>
+<td style="text-align: right;">0.08328277</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>El AIC nos muestra que el mejor modelo es aquel donde la distancia a cultivos es la variable que mejor explica la riqueza de especies, con un coeficiente negativo. Es decir que a mayor distancia a cultivos, menor cantidad de especies. Es importante darse cuenta que según los valores del AIC el modelo sin ninguna covariable es igualmente plausible. Esto nos empieza a dar señales de que posiblemente las covariables no sea muy importantes para explicar la riqueza de especies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>q0_pred <span class="ot">&lt;-</span> <span class="fu">ggeffect</span>(<span class="fu">get.models</span>(AIC_q0, </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">subset =</span> <span class="dv">1</span>)[[<span class="dv">1</span>]],</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">terms =</span> <span class="st">"Dcrops"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(q0_pred, <span class="at">add.data =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">testDispersion</span>(<span class="fu">get.models</span>(AIC_q0, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">subset =</span> <span class="dv">1</span>)[[<span class="dv">1</span>]],</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"greater"</span>) <span class="co"># para sobredispersión</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+    simulated
+
+data:  simulationOutput
+dispersion = 0.98029, p-value = 0.484
+alternative hypothesis: greater</code></pre>
+</div>
+</div>
+<p>Parece un buen modelo, pero como recordaran me inventé las covariables así que es una coincidencia o un ejemplo de porque hay que tener cuidado incluso con las pruebas de bondad de ajuste.</p>
+<p>Ahora para q1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>global_q1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(q1<span class="sc">~</span> Dcrops<span class="sc">+</span> MSAVI<span class="sc">+</span> Slope<span class="sc">+</span> Dpop_G<span class="sc">+</span> Habitat,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> div_covs,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">na.action =</span> <span class="st">"na.fail"</span>) </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>AIC_q1 <span class="ot">&lt;-</span> <span class="fu">dredge</span>(global_q1,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">m.lim =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span>),</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rank =</span> <span class="st">"AIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fixed term is "(Intercept)"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(AIC_q0, <span class="at">digits =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">(Intercept)</th>
+<th style="text-align: right;">Dcrops</th>
+<th style="text-align: right;">Dpop_G</th>
+<th style="text-align: left;">Habitat</th>
+<th style="text-align: right;">MSAVI</th>
+<th style="text-align: right;">Slope</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">logLik</th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">delta</th>
+<th style="text-align: right;">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">-0.1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-71.5</td>
+<td style="text-align: right;">146.9</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.29190233</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-72.7</td>
+<td style="text-align: right;">147.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.22506372</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-71.9</td>
+<td style="text-align: right;">147.9</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.18153140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.3</td>
+<td style="text-align: right;">148.6</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.12642361</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.6</td>
+<td style="text-align: right;">149.2</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">0.09179617</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-72.7</td>
+<td style="text-align: right;">149.4</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">0.08328277</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>En este caso el modelo sin covariables es el mejor</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_model</span>(<span class="fu">get.models</span>(AIC_q1, </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">subset =</span> <span class="dv">1</span>)[[<span class="dv">1</span>]],</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">check =</span> <span class="fu">c</span>(<span class="st">"qq"</span>, <span class="st">"normality"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Diversidad-Congreso_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Parece ser un buen modelo.</p>
+<p>Ya tienen las habilidades necesarias para intentar modelar q2</p>
+</section>
+</section>
+</section>
+<section id="final" class="level1">
+<h1>Final</h1>
+<p>Lo lograste, llegaste hasta el final. Hoy vimos muchos conceptos de diversidad y funciones de R de manera muy rápida, así que es normal que te sientas abrumado. El objetivo de este tutorial es solo el de darte las herramientas para que cuando te enfrentes a R y a tus datos, tengas una idea de como sobrevivir. Recuerda que esta es una introducción rápida, por lo que hay aspectos conceptuales de la diversidad vimos de manera muy somera. Depende de ti el seguir investigando y afilar tus conocimientos. Hoy en día tenemos la fortuna de tener libros muy buenos escritos en español sobre diferentes aspectos de la diversidad <span class="citation" data-cites="moreno2019">(<a href="#ref-moreno2019" role="doc-biblioref">C. E. Moreno 2019</a>)</span>. Por supuesto, los clásicos también son muy importantes para seguir iluminándote <span class="citation" data-cites="magurran2013">(<a href="#ref-magurran2013" role="doc-biblioref">Magurran 2013</a>)</span>. Finalmente, artículos cómo el de <span class="citation" data-cites="roswell2021">Roswell, Dushoff, and Winfree (<a href="#ref-roswell2021" role="doc-biblioref">2021</a>)</span> sintetizan en forma de guía los conceptos clave para estimar diversidad son de mucha ayuda.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.instagram.com/p/CfCKRZlAz4i/"><img src="img/bwyneed.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Be who you need by Pine.Bones</figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-MuMIn" class="csl-entry" role="doc-biblioentry">
+Barton, Kamil. 2020. <span>“MuMIn: Multi-Model Inference.”</span> <a href="https://CRAN.R-project.org/package=MuMIn">https://CRAN.R-project.org/package=MuMIn</a>.
+</div>
+<div id="ref-chao2016" class="csl-entry" role="doc-biblioentry">
+Chao, Anne, and Chun-Huo Chiu. 2016. <span>“Nonparametric Estimation and Comparison of Species Richness.”</span> <em>eLS</em>, May, 1–11. <a href="https://doi.org/10.1002/9780470015902.a0026329">https://doi.org/10.1002/9780470015902.a0026329</a>.
+</div>
+<div id="ref-chao2017" class="csl-entry" role="doc-biblioentry">
+Chao, Anne, and Robert K. Colwell. 2017. <span>“Thirty years of progeny from Chao<span>’</span>s inequality: Estimating and comparing richness with incidence data and incomplete sampling.”</span> <em>SORT-Statistics and Operations Research Transactions</em> 41 (1): 3–54. <a href="https://raco.cat/index.php/SORT/article/view/326047">https://raco.cat/index.php/SORT/article/view/326047</a>.
+</div>
+<div id="ref-chao2014" class="csl-entry" role="doc-biblioentry">
+Chao, Anne, Nicholas J Gotelli, TC Hsieh, Elizabeth L Sander, KH Ma, Robert K Colwell, and Aaron M Ellison. 2014. <span>“Rarefaction and Extrapolation with Hill Numbers: A Framework for Sampling and Estimation in Species Diversity Studies.”</span> <em>Ecological Monographs</em> 84 (1): 45–67.
+</div>
+<div id="ref-chao2012" class="csl-entry" role="doc-biblioentry">
+Chao, Anne, and Lou Jost. 2012. <span>“Coverage<span>-</span>Based Rarefaction and Extrapolation: Standardizing Samples by Completeness Rather Than Size.”</span> <em>Ecology</em> 93 (12): 2533–47.
+</div>
+<div id="ref-SpadeR" class="csl-entry" role="doc-biblioentry">
+Chao, Anne, K. H. Ma, T. C. Hsieh, and Chun-Huo Chiu. 2016. <span>“SpadeR: Species-Richness Prediction and Diversity Estimation with r.”</span> <a href="https://CRAN.R-project.org/package=SpadeR">https://CRAN.R-project.org/package=SpadeR</a>.
+</div>
+<div id="ref-chiu2014a" class="csl-entry" role="doc-biblioentry">
+Chiu, Chun-Huo, Yi-Ting Wang, Bruno A. Walther, and Anne Chao. 2014. <span>“An Improved Nonparametric Lower Bound of Species Richness via a Modified Good-Turing Frequency Formula.”</span> <em>Biometrics</em> 70 (3): 671–82. <a href="https://doi.org/10.1111/biom.12200">https://doi.org/10.1111/biom.12200</a>.
+</div>
+<div id="ref-cultid-medina2019" class="csl-entry" role="doc-biblioentry">
+Cultid-Medina, CA, and F Escobar. 2019. <span>“Pautas Para La Estimación y Comparación Estadística de La Diversidad Biológica (qD).”</span> In. Ciudad de México: Universidad Autónoma del Estado de Hidalgo/ Libermex.
+</div>
+<div id="ref-good1953" class="csl-entry" role="doc-biblioentry">
+Good, I. J. 1953. <span>“The Population Frequencies of Species and the Estimation of Population Parameters.”</span> <em>Biometrika</em> 40 (3/4): 237. <a href="https://doi.org/10.2307/2333344">https://doi.org/10.2307/2333344</a>.
+</div>
+<div id="ref-gotelli2011" class="csl-entry" role="doc-biblioentry">
+Gotelli, Nicholas J, and Robert K Colwell. 2011. <span>“Estimating Species Richness.”</span> In, edited by Anne E Magurran and Brian J. McGill, 39–54. NewYork: Oxford University Press.
+</div>
+<div id="ref-gwinn2015" class="csl-entry" role="doc-biblioentry">
+Gwinn, Daniel C., Michael S. Allen, Kimberly I. Bonvechio, Mark V. Hoyer, and Leah S. Beesley. 2015. <span>“Evaluating Estimators of Species Richness: The Importance of Considering Statistical Error Rates.”</span> Edited by Robert B. O’Hara. <em>Methods in Ecology and Evolution</em> 7 (3): 294–302. <a href="https://doi.org/10.1111/2041-210x.12462">https://doi.org/10.1111/2041-210x.12462</a>.
+</div>
+<div id="ref-iNEXT" class="csl-entry" role="doc-biblioentry">
+Hsieh, T. C., K. H. Ma, and Anne Chao. 2022. <span>“iNEXT: Interpolation and Extrapolation for Species Diversity.”</span> <a href="http://chao.stat.nthu.edu.tw/wordpress/software_download/">http://chao.stat.nthu.edu.tw/wordpress/software_download/</a>.
+</div>
+<div id="ref-jost2006" class="csl-entry" role="doc-biblioentry">
+Jost, Lou. 2006a. <span>“Entropy and Diversity.”</span> <em>Oikos</em> 113 (2): 363–75.
+</div>
+<div id="ref-jost2006a" class="csl-entry" role="doc-biblioentry">
+———. 2006b. <span>“Entropy and Diversity.”</span> <em>Oikos</em> 113 (2): 363–75.
+</div>
+<div id="ref-kays2020" class="csl-entry" role="doc-biblioentry">
+Kays, Roland, Brian S Arbogast, Megan Baker-Whatton, Chris Beirne, Hailey M Boone, Mark Bowler, Santiago F Burneo, Michael V Cove, Ping Ding, and Santiago Espinosa. 2020. <span>“An Empirical Evaluation of Camera Trap Study Design: How Many, How Long, and When?”</span> <em>Methods in Ecology and Evolution</em> 11: 700–713. <a href="https://doi.org/10.1111/2041-210X.13370">https://doi.org/10.1111/2041-210X.13370</a>.
+</div>
+<div id="ref-BiodiversityR" class="csl-entry" role="doc-biblioentry">
+Kindt, R., and R. Coe. 2005. <span>“Tree Diversity Analysis. A Manual and Software for Common Statistical Methods for Ecological and Biodiversity Studies.”</span> <a href="http://www.worldagroforestry.org/output/tree-diversity-analysis">http://www.worldagroforestry.org/output/tree-diversity-analysis</a>.
+</div>
+<div id="ref-hillR" class="csl-entry" role="doc-biblioentry">
+Li, Daijiang. 2018. <span>“hillR: Taxonomic, Functional, and Phylogenetic Diversity and Similarity Through Hill Numbers”</span> 3: 1041. <a href="https://doi.org/10.21105/joss.01041">https://doi.org/10.21105/joss.01041</a>.
+</div>
+<div id="ref-lobo2008a" class="csl-entry" role="doc-biblioentry">
+Lobo, Jorge M. 2008. <span>“Database Records as a Surrogate for Sampling Effort Provide Higher Species Richness Estimations.”</span> <em>Biodiversity and Conservation</em> 17 (4): 873–81. <a href="https://doi.org/10.1007/s10531-008-9333-4">https://doi.org/10.1007/s10531-008-9333-4</a>.
+</div>
+<div id="ref-macarthur1965" class="csl-entry" role="doc-biblioentry">
+MACARTHUR, ROBERT H. 1965. <span>“PATTERNS OF SPECIES DIVERSITY.”</span> <em>Biological Reviews</em> 40 (4): 510–33. <a href="https://doi.org/10.1111/j.1469-185x.1965.tb00815.x">https://doi.org/10.1111/j.1469-185x.1965.tb00815.x</a>.
+</div>
+<div id="ref-magurran2013" class="csl-entry" role="doc-biblioentry">
+Magurran, Anne E. 2013. <em>Measuring Biological Diversity</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Moreno2001" class="csl-entry" role="doc-biblioentry">
+Moreno, Claudia. 2001. <em>Métodos Para Medir La Biodiversidad</em>. Vol. 1. M&amp;T <span></span> Manuales y Tesis SEA.
+</div>
+<div id="ref-moreno2019" class="csl-entry" role="doc-biblioentry">
+Moreno, Claudia E. 2019. <em>La biodiversidad en un mundo cambiante: fundamentos teóricos y metodológicos para su estudio</em>. Universidad Autónoma del Estado de Hidalgo.
+</div>
+<div id="ref-vegan" class="csl-entry" role="doc-biblioentry">
+Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, et al. 2020. <span>“Vegan: Community Ecology Package.”</span> <a href="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</a>.
+</div>
+<div id="ref-pineda-lópez2019" class="csl-entry" role="doc-biblioentry">
+Pineda-López, R. 2019. <span>“Estimadores de La Riqueza de Especies.”</span> In, edited by CE Moreno, 159–74. Ciudad de México: Universidad Autónoma del Estado de Hidalgo/Libermex.
+</div>
+<div id="ref-roswell2021" class="csl-entry" role="doc-biblioentry">
+Roswell, Michael, Jonathan Dushoff, and Rachael Winfree. 2021. <span>“A Conceptual Guide to Measuring Species Diversity.”</span> <em>Oikos</em> 130 (3): 321–38. <a href="https://doi.org/10.1111/oik.07202">https://doi.org/10.1111/oik.07202</a>.
+</div>
+<div id="ref-sherwin2017" class="csl-entry" role="doc-biblioentry">
+Sherwin, W. B., A. Chao, L. Jost, and P. E. Smouse. 2017. <span>“Information Theory Broadens the Spectrum of Molecular Ecology and Evolution.”</span> <em>Trends in Ecology &amp; Evolution</em> 32 (12): 948–63. <a href="https://doi.org/10.1016/j.tree.2017.09.012">https://doi.org/10.1016/j.tree.2017.09.012</a>.
+</div>
+<div id="ref-simpson1949a" class="csl-entry" role="doc-biblioentry">
+SIMPSON, E. H. 1949. <span>“Measurement of Diversity.”</span> <em>Nature</em> 163 (4148): 688–88. <a href="https://doi.org/10.1038/163688a0">https://doi.org/10.1038/163688a0</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

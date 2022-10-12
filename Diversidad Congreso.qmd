@@ -1,0 +1,603 @@
+---
+title: "Introdución al análisis de diversidad taxonómica"
+description: | 
+  Introducción a conceptos y análisis de la diversidad taxonómica con cámaras trampa.
+date: last-modified
+author:
+  - name: Gabriel Andrade-Ponce 
+    url: https://gpandradep.github.io/gpandradep/
+    affiliation: Instituto de Ecología A.C.
+    
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: Contenido
+    theme: journal 
+editor: visual
+bibliography: references_div.bib
+---
+
+# La diversidad de especies
+
+La diversidad de especies es una de las medidas más comunes e importantes en la ecología, pero así mismo difícil de cuantificar. La importancia en la cuantificación de la diversidad taxonómica ha resultado en que en la última década se hayan generado grandes avances [@jost2006; @chao2012; @chao2014]. Tanto que a veces parece abrumador la cantidad de indices, estimadores y maneras en la que se evalúa la diversidad. Tranquilo, hoy vamos a intentar aprender el cómo y porqué de algunas de las aproximaciones más comunes para cauntificar la diversidad taxonómica de especies.
+
+[![The Wash Walker by pine.bones](img/Pinebone.png)](https://www.instagram.com/pine.bones/)
+
+# Paqueterias
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse) # Easily Install and Load the 'Tidyverse'
+library(vegan) # Community Ecology Package
+library(ggrepel) # Automatically Position Non-Overlapping Text Labels with 'ggplot2'
+library(SpadeR) # Species-Richness Prediction and Diversity Estimation with R
+library(BiodiversityR) # Package for Community Ecology and Suitability Analysis
+library(iNEXT) # Interpolation and Extrapolation for Species Diversity
+library(hillR) # Diversity Through Hill Numbers
+library(MuMIn) # Multi-Model Inference
+library(ggeffects) # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs
+library(DHARMa) # Residual Diagnostics for Hierarchical (Multi-Level / Mixed) Regression Models
+library(performance) # Assessment of Regression Models Performance
+
+```
+
+## La riqueza de especies
+
+La riqueza o el número de especies es la medida más sencilla de diversidad. Cualquiera que haya visto algún curso de ecología de comunidades se habrá embarcado en la aventura de medir y comparar la riqueza de especies. Es muy sencillo: cuantas especies hay en determinado espacio y tiempo, ¿Qué podría salir mal?
+
+A pesar de ser una métrica muy intuitiva de la comunidad, la riqueza de especies también es difícil de medir. ¿Porque?. Resulta que cuando salimos a campo, ponemos nuestras cámaras y obtenemos nuestros datos, lo que realmente tenemos es una muestra de las especies detectadas. Pero no necesariamente todas las especies de la comunidad.
+
+![Imagina que M son todas las especies que existen en la comunidad y N son las que detectamos en nuestro muestreo](img/M-N.png)
+
+### Estimar la riqueza
+
+Para conocer la riqueza real necesitamos saber cuantas especies aun no han sido detectadas
+
+$$
+Riqueza-real= riqueza-registrada+riqueza-no-detectada
+$$
+
+## Curvas de rarefacción
+
+Las curvas de rarefacción se basan en las curvas de acumulación de especies. La lógica de las curva de acumulación es tomar un individuo al azar de la muestra y registrar la especie. Repetimos el proceso varias veces, y en cada ocasión vamos agregando nuevas especies o no. Lo que esperaríamos es que a medida de que tomamos mas unidades de muestreo o individuos tendremos más especies hasta el punto en donde a pesar de agregar más individuos o sitios de muestreo no tendremos más especies. En ese punto alcanzaremos la asintota de la riqueza. Estas curvas nos pueden dar información muy interesante sobre la comunidad. Por ejemplo, una curva que que tenga una pendiente muy pronunciada nos habla de una comunidad con especies con distribución de la abundancia similar. Mientras que una curva con una pendiente que cae rápidamente sugiere que la comunidad esta dominada por ciertas especies [@gotelli2011].
+
+![](img/acumcurve.png)
+
+En teoría podemos agregar individuos o muestras hasta que ya no se detecten nuevas especies, es decir que, se llega a la riqueza asintótica. Sin embargo, en la realidad no siempre tenemos la capacidad logística para llegar hasta la asíntota (especialmente en los trópicos y dependerá del grupo de organismos).
+
+Un limitante de las curva de acumulación es que su pendiente puede variar dependiendo del orden en que se agregan los individuos, así que una solución es la rarefacción. Básicamente la rarefacción es un re-muestreo sin remplazo, donde se van tomando individuos al azar y se registra cada especie. Esta técnica permite también obtener intervalos de confianza al 95% lo que permite hacer comparaciones de la riqueza de especies de dos comunidades con distintas abundancias de individuos (siempre y cuando sean los mismos organismos y los mismos métodos).
+
+Vamos a generar nuestras curvas de rarefacción usando las funciones de vegan [@vegan].
+
+### Cargar datos
+
+Vamos a cargar datos de cámaras trampa que obtenemos a partir de camtrapR. Debido a que los datos consideran humanos y otros grupos como aves o reptiles, vamos a filtrar las especies que nos interesan.
+
+```{r}
+# Registros con independencia de 15 min
+registrosD15 <- read.csv("Data/events_by_station_d15.csv") %>% filter(Species %in% c("Bassariscus astutus", #filtro de especies
+                        "Canis latrans",
+                        "Conepatus leuconotus",
+                        "Dicotyles angulatus",
+                        "Herpailurus yagouaroundi",
+                        "Lynx rufus",
+                        "Mephitis macroura",
+                        "Nasua narica",
+                        "Odocoileus virginianus",
+                        "Procyon lotor",
+                        "Puma concolor",
+                        "Spilogale angustifrons",
+                        "Sylvilagus floridanus",
+                        "Urocyon cinereoargenteus"
+  ))
+CT_table <- read.delim("Data/CT_cams.txt")
+```
+
+Vamos a realizar una pequeña gráfica para darnos una idea de como se distribuye la riqueza de especies en nuestra área de estudio. Hay que hacer un poco de carpintería de datos:
+
+```{r}
+#| message: false
+#| warning: false
+
+N_spec <- registrosD15 %>% #los datos
+  filter(n_events > 0) %>% # filtro solo sitios con detecciones
+  group_by(Station) %>% #agrupamos por cámara
+  tally() %>% # Contamos las especies por cámara
+  left_join(CT_table) %>% #agregamos las coordenadas
+  select(Station, utm_x, utm_y, n) #seleccionamos columnas
+
+
+ggplot(N_spec, aes(x= utm_x, y=utm_y))+
+  geom_point(aes(size=n, col=n),
+             alpha= 0.8)+
+  scale_size(range = c(1,15))+ # Escala del radio para los puntos
+  labs(title= "Mapa de número especies",
+       y= "Lat",
+       x= "Lon",
+       size= "Número de \nespecies",
+       col=NULL)+
+  theme_bw()
+  
+  
+```
+
+Ahora vamos por las curvas. Primero tenemos que hacer más carpinteria de datos para ajustar el formato que requiere la función `specaccum`. Básicamente necesitamos una matriz donde las especies sean las columnas y las filas, cada una de las unidades de muestreo.
+
+```{r}
+#| layout-ncol: 2
+#| message: false
+#| warning: false
+ac_data <- registrosD15 %>% # datos
+  pivot_wider(names_from = Species, # nuevas columnas
+              values_from = n_events) %>% # valores
+  column_to_rownames(var= "Station")# columna a nombre de filas
+
+# Función de vegan specaccum para las curvas de acumulación
+sample <- specaccum(ac_data, # datos
+                   method = "random", # basado en muestreo
+                   permutations = 100)[c(3,4,5)] %>% #seleccionar objetos de la lista
+  reduce(bind_cols) %>% # Unirlos en un data.frame
+  rename(Sitios= "...1", # Renombrar columnas
+         Riqueza= "...2",
+         SD= "...3")
+
+indi <- specaccum(ac_data, 
+                  method = "rarefaction", # basado en individuos
+                  permutations = 100)[c(4,5,7)] %>% 
+  reduce(bind_cols) %>% # Unirlos en un data.frame
+  rename(Riqueza= "...1", # Renombrar columnas
+         SD= "...2",
+         Individuos= "...3")
+
+# Grafica de las curvas
+ggplot(sample, aes(x=Sitios, y=Riqueza, 
+                  ymin= Riqueza-SD,
+                  ymax= Riqueza+SD))+
+  geom_ribbon(alpha=0.5)+
+  geom_line(size=1)+
+  labs(title = "Curva de rarefaccion basada en muestreo",
+       y= "Riqueza acumulada",
+       x= "Unidades de muestreo")+
+  theme_bw()
+
+ggplot(indi, aes(x=Individuos, y=Riqueza, 
+                  ymin= Riqueza-SD,
+                  ymax= Riqueza+SD))+
+  geom_ribbon(alpha=0.5)+
+  geom_line(size=1)+
+  labs(title = "Curva de rarefaccion basada en individuos",
+       y= "Riqueza acumulada",
+       x= "Individuos")+
+  theme_bw()
+```
+
+### Supuestos de las curvas para comparar comunidades
+
+1.  El poder para detectar diferencias estadísticas requiere suficiente información. En el caso del fototrampeo al menos se ha detectado que con 30 a 60 días de muestreo con 25 a 60 cámaras es suficiente para recuperar la riqueza de especies [@kays2020].
+
+2.  Diferentes métodos pueden tener capacidades disintitas para detectar ciertas especies, por lo cual es peligroso comparar comunidades diferentes mediante métodos de muestreo diferentes. Pese a ello, autores han usado esta técnica para compara la eficacia de métodos sobre la misma área. También se han conjugado diferentes métodos para maximizar la detección de especies, pero si se comparan otro sitio se deben usar las mismas especificaciones [@gotelli2011].
+
+3.  Las comunidades que se comparan deber ser de especies taxonómicamente similares.
+
+4.  La comunidad debe ser "estable" al menos durante el muestreo. Además, las especies deben ser organismos plenamente identificados y cuantificables.
+
+5.  Muestreo aleatorio con unidades independientes.
+
+## Estimadores no paramétricos
+
+Los estimadores no paramétricos son quizás los más usados para estimar la riqueza de especies. El termino no parmétrico se refiere a que estos estimadores no requieren ajustarse ningún modelo teórico .[@pineda-lópez2019]. Dado que los estimadores paramétricos han demostrado tener complicaciones al estimar la riqueza, los no estimadores no paramétricos se han vuelto los consentidos[@gotelli2011].
+
+Podemos usar diferentes estimadores dependiendo si nuestros datos son de incidencia (frecuencia) o de abundancia. Si tienes de abundancia, siempre se puede convertir en incidencia, pero no viceversa [@gotelli2011] .
+
+-   Incidencia: Chao2, ICE, Jacknifes de incidencia y bootstrap
+
+-   Abundancia: Chao1, ACE, Jacknifes de abundancia
+
+Por espacio no pondré las formulas de cada estimador, pero es bueno que cada quien las consulte [@gotelli2011; @Moreno2001].
+
+Básicamente estos estimadores corrigen la riqueza observada (**S~obs)~** mediante las especies que solo son representadas por un individuo (**singletons**) o dos (**doubletons**) en el caso de datos de abundancia. Para incidencia especies con frecuencia uno (**uniques**) y (**duplicates**). ¿Cómo lo hacen? estos estimadores se basan el principio de la ecuación de Turing y Good [@good1953], es decir que, las información de las especies más raras puede ser usada para estimar cuantas especies faltan.
+
+![Alan Turing: https://tecreview.tec.mx/wp-content/uploads/2018/10/alan-t.jpg](https://tecreview.tec.mx/wp-content/uploads/2018/10/alan-t.jpg)
+
+### Vegan
+
+Vamos a calcular estos estimadores usando las funciones de vegan [@vegan]. El mismo vegan tiene funciones de `plot` y `summary` utiles para resumir la información. Sin embargo, como tengo más habilidades con ggplo2, lo que haremos será carpintería de datos para poder gratificarlo como queremos
+
+```{r}
+#| message: false
+#| warning: false
+
+columnas <- c("N", "S", "2.5%", "97.5%", "Std.Dev") # Cambiiar los nombres de las columnas en incidencia
+
+incidence <-  poolaccum(ac_data, permutations = 100) %>% 
+  summary() %>% #Generar el resumen
+  map(as.data.frame) %>% # Hacer cada objeto un data.frame
+  map(., setNames, nm = columnas) %>% # Cambiar nombres
+  reduce(bind_rows) %>% # Unir todo en un data.frame
+  mutate(Estimador= rep(c("S", "Chao", "Jack1", "Jack2", "boot"), 
+                        each= 29)) %>% # Agregar una columna con 
+  mutate_if(is.numeric, round, 2) #Redondear a dos cifras
+
+# Con los de abundancia es más sencillo
+abundance <- estaccumR(ac_data, permutations = 100) %>%
+   map(as.data.frame) %>% # Hacer cada objeto un dataframe
+  .[["means"]] %>% # Seleccionar solo las medias
+  pivot_longer(cols = S:ACE, # Cambiar a formato largo
+               names_to = "Estimador",
+               values_to = "S") %>% 
+  mutate_if(is.numeric, round, 2)
+  
+
+
+ggplot(incidence, aes(x=N, y=S, col= Estimador))+
+  geom_line(size=1)+
+  scale_y_continuous(sec.axis = 
+                       sec_axis(~ ., breaks = incidence %>% filter(N==31) %>%  pull(S)))+ # Crear un segundo eje con los últimos valores
+  labs(title = "Estimadores basados en incidencia",
+       y= "Riqueza acumulada",
+       x= "Unidades de muestreo")+
+  theme_bw()
+
+ggplot(abundance, aes(x=N, y=S, col= Estimador))+
+  geom_line(size=1)+
+  scale_y_continuous(sec.axis = 
+                       sec_axis(~ ., 
+                                breaks = abundance %>% filter(N==31) %>%  pull(S)))+
+  labs(title = "Estimadores basados en abundancia",
+       y= "Riqueza acumulada",
+       x= "Unidades de muestreo")+
+  theme_bw()
+
+```
+
+### SpadeR
+
+Ahora vamos a usar el paquete SpadeR creado por Anne Chao [@SpadeR]. Este paquete tiene una serie de funciones para estimar varios indices de diversidad y de riqueza, incluyendo algunos más recientes como iChao [@chiu2014a]. iChao básicamente incluye los **tripletons** y **quadrupletons** para mejorar la estimación de la riqueza.
+
+Primero vamos a tener que ajustar nuestra base de datos al formato que requiere SpadeR: cada fila es una especie y una sola columna (por comunidad) donde van nuestras abundancias.
+
+```{r}
+#| message: false
+Spader_df <- ac_data %>% # Datos
+  t() %>% # Transponer los datos
+  as.data.frame() %>% # De nuevo a data.frame
+  rowSums() %>% #Sumar las abundancias
+  as.data.frame() %>% # De nuevo a data frame
+  rename(abun= ".") %>% # Nombre de la columna
+  arrange(desc(abun)) %>% # ordenar los valores
+  as.matrix() # Requiere formato de matriz
+
+knitr::kable(Spader_df)
+```
+
+Ahora si usamos la función de `ChaoSpecies` . *NOTA: uso SpadeR:: para especificarle a R que llamo la función de dicho paquete. Ésto debido a que cuando cargas iNEXT en el mismo script la función puede generar conflictos*
+
+```{r}
+
+Spad_est <- SpadeR::ChaoSpecies(Spader_df,
+                        datatype = "abundance")
+```
+
+Vamos a inspeccionar que hay dentro de el objeto que generamos.
+
+Primero tenemos la tabla de información básica con el tamaño de la muestra, número de especies, cobertura de la muestra ( lo veremos en detalle en la sección de diversidad), el coeficiente de variación (CV). El CV te da una medida de la heterogeneidad de la abundancia de especies, donde 0 quiere decir que todas las especies tienen la mismas abundancias o la misma probabilidad de ser descubiertas. Toda la información detallada se puede encontrar en la guía del paquete en la [página web de Anne Chao](http://chao.stat.nthu.edu.tw/wordpress/software_download/softwarespader_online/)
+
+```{r}
+knitr::kable(Spad_est[["Basic_data_information"]])
+```
+
+Ahora veremos el otro objeto que contiene las estimaciones de varios índices y sus correspondientes intervalos de confianza.
+
+```{r}
+Spd_rest <- Spad_est[["Species_table"]] %>% 
+  as.data.frame() %>% # transformar a dataframe
+  rownames_to_column(var= "Indice") %>% # hacer columna
+  drop_na() # Quitar NAS del modelo heterogeneo
+knitr::kable(Spd_rest, digits = 2)
+```
+
+Ahora veamoslo de manera gráfica
+
+```{r}
+
+ggplot(Spd_rest, aes(x=Indice, y= Estimate,
+                     ymin= `95%Lower`, ymax=`95%Upper`))+
+  geom_pointrange(aes(col=Indice), size= 1)+
+  geom_hline(yintercept = 14)+
+  labs(x= NULL,
+       y= "Riqueza de especies")+
+  coord_flip()+
+  theme_bw()+
+  theme(legend.position = "none")
+
+```
+
+¿Con cuál indice deberíamos quedarnos? A través de simulaciones y pruebas se han dado cuenta que no hay un indice que funcione mejor que otros constantemente, pues su desempeño depende de los datos [@gwinn2015]. Por ejemplo, los Jacknifes tienden a sobrestimar con tamaños de muestra grandes, pero a subestimar en datos con bajos esfuerzos de muestreo. Lo que parece pasar en nuestro data set [@chiu2014a]. @chao2016 también menciona que los estimadores Chao tienden a representar el intervalo menor de la riqueza "verdadera", salvo cuando hay muy pocas especies raras. Cuando hay demasiadas especies raras los iChao tienden a tener mejores resultados dado que incluyen tripletons y quadrupletons[@chao2017; @pineda-lópez2019].
+
+### Completitud de la muestra
+
+Otra medida derivada de los estimadores no paramétricos es la de la completitud de la muestra. La completitud de la muestra nos da una medida de que tan completo es tu muestreo, basado en que a mayor esfuerzo menor número de singletons o doubletos. Al menos cuando yo aprendí de los estimadores de riqueza era una medida obligatoría de reportar y se calculaba así:
+
+$$
+Completitud= \frac{Sobs}{R_estimada} *100
+$$
+
+```{r}
+comple <- Spd_rest %>% 
+  mutate(Completitud= (14/Estimate)*100) %>% 
+  select(Indice, Estimate,Completitud)
+knitr::kable(comple, digits = 2)
+```
+
+Algunos autores sugieren que un porcentaje de completitud mayor al 80% indica un muestreo representativo [@lobo2008a]. Es importante no confundir la completitud del muestreo con la cobertura de la muestra. Esta última representa la proporción de la abundancia, mientras que como vimos la completitud se basa solo en el número de especies estimado vs el observado.
+
+## Curvas rango abundancia
+
+En un principio hablamos que la diversidad tenia que ver con tres elementos: la riqueza, la abundancia y la composición (esta última no la veremos en detalle). Hasta ahora nos enfocamos en la riqueza y aunque evaluamos la influencia del número de individuos sobre ella, no hemos entrado en detalle sobre la estructura de la abundancia de cada entidad.
+
+![fuente: https://www.unpri.org/biodiversity/investor-action-on-biodiversity-discussion-paper/6335.article](img/biodiv.jpg)
+
+En una comunidad no todas las especies tienen el mismo "aporte", es decir hay algunas que son muy "abundantes" y otras bastante "raras". La estructura de la abundancia de las especies y su determinada pueden sugerir procesos ecológicos como disturbios, interacciones o capacidad de carga. Una de las maneras más sencillas de explorar el comportamiento de la estructura de la abundancia es mediante curvas rango-rango abundancia. En esta gráfica lo que hacemos es reankear las especies por su abundancia (o log de abundancia). Esto es relativamente sencillo de construir con la función rankabundance de BiodiversityR [@BiodiversityR]
+
+```{r}
+RA<-rankabundance(ac_data) %>% # Función de rango abundancia
+  as.data.frame() %>% 
+  rownames_to_column(var= "Especies")
+
+```
+
+```{r}
+ggplot(RA, aes(x=rank, y=logabun))+
+  geom_line(size= 1)+
+  geom_point(aes(col= Especies),size = 3)+
+  geom_text_repel(aes(label=Especies),
+                  box.padding = 1,
+                  colour= "black", angle=25,size= 3)+
+  theme_bw()+
+  labs(x = "rank", y = "log abundance", size= 14)+
+  theme(legend.position = "none")
+  
+```
+
+La pendiente de la curva nos dará una idea de que tan equitativa puede ser una comunidad: Una curva más aplanada nos dice que las especies tienden a tener abundancias similares (mayor equitatividad), mientras que una curva pronunciada probablemente se deba a unas cuantas especies muy dominantes.
+
+## Estimadores de diversidad
+
+El índice de Shannon o Simpson [@simpson1949a; @sherwin2017], seguramente te suenen. Son quizás los indices más usados de diversidad (o entropía), incluso hasta una medida obligatoria en estudios de impacto ambiental de algunos países. A pesar de ser tan famosos y tan ampliamente usados estos indices tienen ciertos problemas (para los ecólogos) al momento de medir la diversidad.
+
+1.  Las unidades de medida, ¿en qué unidades se presentan los indices? Cuando Shannon es igual a 1.3, es 1.3 diversidades? especies?. Pues resulta que los indices de entropía están dados en bits o nats (según el algoritmo [@cultid-medina2019])
+2.  El otro problema es el comportamiento de los índices de entropía no es conveniente para una medida de diversidad. Resulta que no responden proporcionalmente al aumento en la diversidad de una comunidad. Es decir: que una comunidad doblemente diversa, no tendrá el doble del valor del índice de Shannon o Simpson. Este punto es complejo porque invalida las comparaciones de comunidades por medio de éstos indices [@roswell2021].
+
+![Tomado de Roswell 2021](img/Shannons(1).png)
+
+Éstas características fueron identificadas por @macarthur1965 quien sugirió el exponencial de los índices como una medida del número efectivo de especies. Sugerencia que históricamente hemos olvidado y que fue señalado posteriormente por @jost2006a , quien propuso como tal el cálculo de la diversidad por medio del número efectivo de especies según la serie de Hill. Para detalles de las formulas y conceptos de la serie de Hill remítanse a la biografía citada.
+
+### Perfiles de diversidad y la cobertura de la muestra
+
+Como ya lo vimos, la riqueza de especies es sensible a la abundancia e incluso el esfuerzo de muestreo. Pues tenemos la misma dificultad con los indices de diversidad. ¿De qué forma podemos comparar la diversidad de dos comunidades con diferente proporción de individuos muestreados? Para ello necesitamos del concepto de cobertura de la muestra (*Sample coverage* en inglés). La cobertura de la muestra nos da una medida de la proporción de abundancia de individuos que está representada en nuestro muestreo. Así, somos capaces de igualar el esfuerzo de muestreo lo valida las estimaciones y comparaciones con sentido ecológico [@cultid-medina2019].
+
+Para ver un ejemplo (mal ejemplo) de como usar la cobertura de la muestra vamos a usar el paquete iNEXT [@iNEXT] desarrollado por Anne Chao. Para tener una comunidad con la que pueda comparar voy a generar una que sea simplemente una "sub-comunidad" de la que tenemos.
+
+Vamos a calcular tres perfiles de diversidad siguiendo la notación de @jost2006
+
+$$
+^qD =(\sum_{i=1}^S p_i^q)^{1/(1-q)}
+$$
+
+Donde $p_i$ es la abundancia proporcional de la i-ésima especie, $S$ el número de especies y $q$ el orden de diversidad [@cultid-medina2019].
+
+-   q0= da peso a las especies raras o simplemente es la riqueza
+
+-   q1= es el inverso de Shannon y corresponde a las especies igualmente abundantes. Es decir no hay mayor peso por raras o dominantes
+
+-   q2= Equivale al inverso de Simpson y corresponde al número efectivo de especies más abundantes. Es decir que, pondera más por especies dominantes
+
+```{r}
+
+# Valores aleatorios del uno a 31 para luego quitarlos de la base de datos
+numbers <- sample(1:31, 16, replace= FALSE)
+
+community2 <- ac_data %>% 
+  slice(numbers) %>% 
+  t() %>% # Transponer los datos
+  as.data.frame() %>% # De nuevo a data.frame
+  rowSums() %>% #Sumar las abundancias
+  as.data.frame() %>% # De nuevo a data frame
+  rename(abun= ".") %>% # Nombre de la columna
+  arrange(desc(abun)) %>% # ordenar los valores
+  as.matrix() # Requiere formato de matriz
+
+# Ahora jutamos en un mismo dataframe
+inext_DF <- data.frame(Spader_df, community2) %>% 
+  rename(real= abun,
+         mitad= abun.1)
+
+# Ahora corremos la función de iNEXT
+inext_ob <- iNEXT(inext_DF,
+                  q= c(0,1,2), # perfiles de diversidad
+                  datatype = "abundance",
+                  size = NULL, # Esfuerzo o unidades de estimación
+                  endpoint = 1846,# espefificar el size final
+                  knots = 100, #saltos donde estimará diversidad
+                  se=TRUE, # Error estandar del boot
+                  conf = 0.95, # Intervalos de confianza a
+                  nboot = 50) # número de remuestreos.
+```
+
+Tenemos un objeto lista con distinta información:
+
+1.  La primera data base contiene información general con el número de individuos (n), las especies observadas (S.obs), la cobertura de la muestra (SC) y las frecuencias de especies (f1-f10). Nota en caso de usar datos de incidencia, este objeto tendrá la frecuencia de incidencia (Q1-Q10).
+
+```{r}
+knitr::kable(inext_ob$DataInfo)
+```
+
+2.  El segundo objeto tiene dos data bases: Uno basado en los individuos y otro en la cobertura de la muestra. El primero contiene el nombre de los ensamblajes, el corte donde se estima la diversidad con m número de individuos (m; el número de ms depende de los knots), método de rarefacción (inferior al observado), observado, extrapolación (mayor al observado): el perfil de diversidad 0,1,2 (order.q); el valor estimado de diversidad (qD); los intervalos de confianza de la estimación de diversidad (qD.LCL, qD.UCL ); la cobertura de la muestra estimada y sus intervalos de confianza (SC, SC.LCL, SC.UCL).
+
+```{r}
+knitr::kable(head(inext_ob$iNextEst$size_based), digits = 2)
+```
+
+La segunda base es muy similar pero es usada para graficar la curva de cobertura de la muestra
+
+```{r}
+knitr::kable(head(inext_ob$iNextEst$coverage_based), digits = 2)
+```
+
+3.  El último objeto muestra la diversidad observada y estimada mediante estimadores asintóticos. Recordemos que q=0 es la riqueza, q=1 es Inverso de Shanon y q=2 el inverso de Simpson [@chao2014].
+
+    ```{r}
+    knitr::kable(inext_ob$AsyEst, digits = 2)
+    ```
+
+iNext tiene funciones para graficar los perfiles muy poderosas y que usan ggplot como base. Esto último permite usar funciones de ggplot para modificar las imágenes.
+
+El gráfico de tipo 1 corresponde a la curva basada en individuos. Muy similar a lo que ya vimos con la curva de rarefacción basada en individuos. Como ven, la linea punteada corresponde a los valores extrapolados de la comunidad que inventamos. A pesar que parece una gráfica sencilla, tiene mucho por decir: Por ejemplo, la mágnitud en que difiere cada uno de los indices nos habla de la equitatividad de la comunidad. Así, un q0 muy cercano a q1 nos habla de una comunidad poco equitativa.
+
+```{r}
+ggiNEXT(inext_ob, # objeto iNEXT
+        type = 1, # tipo de gráfica
+        se= T, # incluir intervalos
+        facet.var = "Assemblage", # Cuadros por comunidad
+        color.var = "None", # definir color
+        grey = FALSE)+ # En grises
+  theme_bw() # Tema de ggplot
+```
+
+Dependiendo de lo que nos interese mostrar podemos variar la especificación de la curva. Por ejemplo, queremos comparar los perfiles de diversidad de las dos comunidades
+
+```{r}
+ggiNEXT(inext_ob, # objeto iNEXT
+        type = 1, # tipo de gráfica
+        se= T, # incluir intervalos
+        facet.var = "Order.q", # Cuadros por perfil
+        color.var = "Assemblage", # definir color
+        grey = FALSE)+ # En grises
+  theme_bw() # Tema de ggplot
+```
+
+Podemos observar el comportamiento de cobertura de la muestra con el gráfico tipo dos. Este punto es importante, porque la comparación de las comunidades solo tiene sentido cuando ambas tienen una cobertura de la muestra equivalente. En este caso ambas comunidades tienen coberturas muy similares por lo que se valida su comparación. En caso de tener una comunidad con menor cobertura es necesario extrapolar o interpolar con base en la cobertura. Un protocolo detallado para la comparación válida puede encontrarse en @cultid-medina2019.
+
+```{r}
+ggiNEXT(inext_ob, 
+        type=2, 
+        facet.var="None", 
+        color.var="Assemblage")
+```
+
+```{r}
+ggiNEXT(inext_ob, 
+        type=3, 
+        facet.var="Assemblage")
+```
+
+```{r}
+ggiNEXT(inext_ob, 
+        type=3, 
+        facet.var="Order.q", 
+        color.var="Assemblage")
+```
+
+### Modelando la variación de la diversidad
+
+En ocasiones nos interesa más conocer que factores influyen sobre la diversidad. En este caso lo que importa la variación observada en cada unidad de muestreo. En nuestro caso, la unidad de muestreo son las cámaras trampa.
+
+En este caso vamos a usar el paquete HillR [@hillR], la cual tiene funciones mucho más sencillas para estimar los perfiles de diversidad. También cabe resaltar que tiene muchas otras funciones para calcular diversidad funcional y filogenética, pero en este caso solo nos interesa la diversidad taxonómica.
+
+Para usar la función de `hill_taxa` requerimos la base de datos donde las filas son los sitios y las columnas las especies. Afortunadamente, ya tenemos una base así guardada en el objeto `ac_data`
+
+```{r}
+# Cálculo de cada perfil de diversidad
+q0 <- hill_taxa(ac_data,q= 0)
+q1 <- hill_taxa(ac_data, q=1)
+q2 <- hill_taxa(ac_data, q=2)
+
+# Unimos todo en una sola data.frame
+div <- data.frame(q0=q0, q1=q1, q2=q2)
+
+knitr::kable(head(div), digits = 2)
+```
+
+Ahora cargamos unas covariables y las unimos a nuestra base para modelar
+
+```{r}
+scale_this <- function(x){result <- as.vector(scale(x))}
+
+covs <- read_delim("Data/selectedcov_nostd190821.csv", 
+    delim = ";") %>% 
+ mutate_if(is.numeric, scale_this) 
+
+div_covs <- cbind(div, covs)
+
+knitr::kable(head(div_covs), digits = 2)
+```
+
+Vamos a realizar una selección de modelos de manera rápida usando la función dredge del paquete MuMIn [@MuMIn].
+
+Primero para q0
+
+```{r}
+
+global_q0 <- glm(q0~ Dcrops+ MSAVI+ Slope+ Dpop_G+ Habitat,
+                 family = "poisson",
+                 data = div_covs,
+                 na.action = "na.fail") 
+
+AIC_q0 <- dredge(global_q0,
+                 m.lim = c(NA, 1),
+                 rank = "AIC")
+
+knitr::kable(AIC_q0, digits = 2)
+```
+
+El AIC nos muestra que el mejor modelo es aquel donde la distancia a cultivos es la variable que mejor explica la riqueza de especies, con un coeficiente negativo. Es decir que a mayor distancia a cultivos, menor cantidad de especies. Es importante darse cuenta que según los valores del AIC el modelo sin ninguna covariable es igualmente plausible. Esto nos empieza a dar señales de que posiblemente las covariables no sea muy importantes para explicar la riqueza de especies.
+
+```{r}
+q0_pred <- ggeffect(get.models(AIC_q0, 
+                               subset = 1)[[1]],
+                    terms = "Dcrops")
+plot(q0_pred, add.data = TRUE)
+```
+
+```{r}
+
+testDispersion(get.models(AIC_q0, 
+                               subset = 1)[[1]],
+                alternative = "greater") # para sobredispersión
+```
+
+Parece un buen modelo, pero como recordaran me inventé las covariables así que es una coincidencia o un ejemplo de porque hay que tener cuidado incluso con las pruebas de bondad de ajuste.
+
+Ahora para q1
+
+```{r}
+global_q1 <- lm(q1~ Dcrops+ MSAVI+ Slope+ Dpop_G+ Habitat,
+                 data = div_covs,
+                 na.action = "na.fail") 
+
+AIC_q1 <- dredge(global_q1,
+                 m.lim = c(NA, 1),
+                 rank = "AIC")
+
+knitr::kable(AIC_q0, digits = 1)
+```
+
+En este caso el modelo sin covariables es el mejor
+
+```{r}
+check_model(get.models(AIC_q1, 
+                               subset = 1)[[1]],
+            check = c("qq", "normality"))
+```
+
+Parece ser un buen modelo.
+
+Ya tienen las habilidades necesarias para intentar modelar q2
+
+# Final
+
+Lo lograste, llegaste hasta el final. Hoy vimos muchos conceptos de diversidad y funciones de R de manera muy rápida, así que es normal que te sientas abrumado. El objetivo de este tutorial es solo el de darte las herramientas para que cuando te enfrentes a R y a tus datos, tengas una idea de como sobrevivir. Recuerda que esta es una introducción rápida, por lo que hay aspectos conceptuales de la diversidad vimos de manera muy somera. Depende de ti el seguir investigando y afilar tus conocimientos. Hoy en día tenemos la fortuna de tener libros muy buenos escritos en español sobre diferentes aspectos de la diversidad [@moreno2019]. Por supuesto, los clásicos también son muy importantes para seguir iluminándote [@magurran2013]. Finalmente, artículos cómo el de @roswell2021 sintetizan en forma de guía los conceptos clave para estimar diversidad son de mucha ayuda.
+
+[![Be who you need by Pine.Bones](img/bwyneed.png)](https://www.instagram.com/p/CfCKRZlAz4i/)

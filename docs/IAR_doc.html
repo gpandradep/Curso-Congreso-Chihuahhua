@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.515">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gabriel Andrade-Ponce">
+<meta name="dcterms.date" content="2022-10-12">
+<meta name="description" content="Introducción al uso y limitaciones del índice de abundancia relativa en estudios de fototrampeo.">
+
+<title>Curso Precongreso - Indice de ¿abundancia? relativa (RAI)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Curso Precongreso</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Inicio</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./IAR_doc.html" aria-current="page">Script IAR</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Diversidad Congreso.html">Script Diversidad</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#la-abundancia-y-las-cámaras-trampa" id="toc-la-abundancia-y-las-cámaras-trampa" class="nav-link active" data-scroll-target="#la-abundancia-y-las-cámaras-trampa">La abundancia y las cámaras trampa</a>
+  <ul class="collapse">
+  <li><a href="#especies-marcadas-y-no-marcadas" id="toc-especies-marcadas-y-no-marcadas" class="nav-link" data-scroll-target="#especies-marcadas-y-no-marcadas">Especies marcadas y no marcadas</a></li>
+  </ul></li>
+  <li><a href="#índice-de-abundancia-relativa" id="toc-índice-de-abundancia-relativa" class="nav-link" data-scroll-target="#índice-de-abundancia-relativa">Índice de ¿abundancia? relativa</a>
+  <ul class="collapse">
+  <li><a href="#del-rai-a-la-abundancia" id="toc-del-rai-a-la-abundancia" class="nav-link" data-scroll-target="#del-rai-a-la-abundancia">Del RAI a la abundancia</a>
+  <ul class="collapse">
+  <li><a href="#registros-independientes" id="toc-registros-independientes" class="nav-link" data-scroll-target="#registros-independientes">Registros independientes ⏲️</a></li>
+  <li><a href="#población-cerrada" id="toc-población-cerrada" class="nav-link" data-scroll-target="#población-cerrada">Población cerrada</a></li>
+  <li><a href="#detectamos-todo-los-que-existe" id="toc-detectamos-todo-los-que-existe" class="nav-link" data-scroll-target="#detectamos-todo-los-que-existe">¿ Detectamos todo los que existe ?</a></li>
+  <li><a href="#el-uso-del-espacio-afecta-la-interpretación" id="toc-el-uso-del-espacio-afecta-la-interpretación" class="nav-link" data-scroll-target="#el-uso-del-espacio-afecta-la-interpretación">El uso del espacio afecta la interpretación</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">Script</a>
+  <ul class="collapse">
+  <li><a href="#librerías" id="toc-librerías" class="nav-link" data-scroll-target="#librerías">Librerías</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#cálculo-del-rai" id="toc-cálculo-del-rai" class="nav-link" data-scroll-target="#cálculo-del-rai">Cálculo del RAI</a></li>
+  <li><a href="#modelando-el-rai" id="toc-modelando-el-rai" class="nav-link" data-scroll-target="#modelando-el-rai">Modelando el RAI 🦌</a></li>
+  </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Indice de ¿abundancia? relativa (RAI)</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Introducción al uso y limitaciones del índice de abundancia relativa en estudios de fototrampeo.</p>
+  </div>
+</div>
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <a href="https://gpandradep.github.io/gpandradep/">Gabriel Andrade-Ponce</a> 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Instituto de Ecología A.C.
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 12, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="la-abundancia-y-las-cámaras-trampa" class="level1">
+<h1>La abundancia y las cámaras trampa</h1>
+<p>La estimación de la abundancia de poblaciones es de vital importancia para la conservación de la vida silvestre. En el caso de los mamíferos, las cámaras trampa son una de las métodos de muestreo más usados <span class="citation" data-cites="burton2015">(<a href="#ref-burton2015" role="doc-biblioref">Burton et al. 2015</a>)</span>.</p>
+<p><img src="img/burton.png" class="img-fluid"></p>
+<section id="especies-marcadas-y-no-marcadas" class="level2">
+<h2 class="anchored" data-anchor-id="especies-marcadas-y-no-marcadas">Especies marcadas y no marcadas</h2>
+<p>En especies marcadas o con marcas naturales es posible usar modelos de captura recaptura para estimar la abundancia <span class="citation" data-cites="wearn2017">(<a href="#ref-wearn2017" role="doc-biblioref">Wearn and Glover-Kapfer 2017</a>)</span>.</p>
+<p><img src="img/scr.png" class="img-fluid"></p>
+<p>Pero en especies que no tienen marcas es difícil o imposible reconocer individuos a partir de fotografías, lo que no permite usar modelos de captura recaptura.</p>
+<p><img src="img/noind.png" class="img-fluid"></p>
+<p>En estos casos muchas veces se usan <strong><em>índices</em></strong> para realizar inferencias sobre la <strong>abundancia</strong> de especies <span class="citation" data-cites="oconnell2010 obrien2003">(<a href="#ref-oconnell2010" role="doc-biblioref">O’Connell, Nichols, and Karanth 2010</a>; <a href="#ref-obrien2003" role="doc-biblioref">Timothy G. O’Brien, Kinnaird, and Wibisono 2003</a>)</span>.</p>
+</section>
+</section>
+<section id="índice-de-abundancia-relativa" class="level1">
+<h1>Índice de ¿abundancia? relativa</h1>
+<p>El índice más usado en fototrampeo es el número de fotos de especies por día de cámara trampa (<em>la verdad no conozco otro</em>), también conocido como índice de abundancia relativo (<em>Relative abundance index</em> ; RAI), es nombrado como RAI2 por <span class="citation" data-cites="obrien2003">Timothy G. O’Brien, Kinnaird, and Wibisono (<a href="#ref-obrien2003" role="doc-biblioref">2003</a>)</span> .</p>
+<p><span class="math display">\[
+RAI= \frac{Número-de-registros}{días-cámara}* 100
+\]</span></p>
+<p>la multiplicación por 100 es simplemente para estandarizar el cálculo y hacer más sencilla cualquier comparación que se desee.</p>
+<section id="del-rai-a-la-abundancia" class="level2">
+<h2 class="anchored" data-anchor-id="del-rai-a-la-abundancia">Del RAI a la abundancia</h2>
+<p>Cómo cualquier otro índice, la utilidad del RAI para realizar inferencias sobre la abundancia de especies depende de que cumpla con ciertos supuestos generales.</p>
+<ol type="1">
+<li><p>Los registros fotográficos deben ser independientes en el tiempo</p></li>
+<li><p>Población cerrada, el RAI no cambia durante el muestreo</p></li>
+<li><p>Todos los animales/individuos son detectados si están presentes</p></li>
+</ol>
+<p>Sí todo esto es cierto para el RAI, entonces se espera que teóricamente tenga una correlación con la abundancia poblacional “real” <span class="citation" data-cites="oconnell2010 obrien2003">(<a href="#ref-oconnell2010" role="doc-biblioref">O’Connell, Nichols, and Karanth 2010</a>; <a href="#ref-obrien2003" role="doc-biblioref">Timothy G. O’Brien, Kinnaird, and Wibisono 2003</a>)</span>.</p>
+<section id="registros-independientes" class="level3">
+<h3 class="anchored" data-anchor-id="registros-independientes">Registros independientes ⏲️</h3>
+<p>Seguramente en tus proyectos o tesis te han dicho que debes considerar solamente los registros independientes para calcular el RAI. Pero, ¿qué es un registro independiente?</p>
+<p><img src="img/pecas.JPG" class="img-fluid"></p>
+<p>Muchas personas intuyen que un registro independiente es aquel donde se tiene cierta certeza de que el mismo individuo no es fotografiado de manera consecutiva. Entonces, muy inocentemente definen en su tesis o artículo 30/60/1440 minutos como el umbral mágico, en el cual dos registros no pertenecen al mismo individuo. Citando seguramente a otra persona que también ha hecho lo mismo <span class="citation" data-cites="sollmann2018">(<a href="#ref-sollmann2018" role="doc-biblioref">R. Sollmann 2018</a>)</span>.</p>
+<p>Estamos olvidando algo crucial y es que usamos el RAI porque no podemos reconocer individuos y por lo tanto no tenemos la certeza de que un individuo diferente pasa en la cámara después de xx cantidad de tiempo.</p>
+<p>Realmente definimos los registros “independientes” para evitar las pseudo-replicas temporales. Es decir, registros que nos dan la misma información debido a que están muy cercanos entre sí. Pero, elegir un intervalo no es una tarea trivial, ya que: un intervalo muy pequeño puede hacer que tengamos registros dependientes, lo que resulta en que sobre-estimemos el índice o que se invaliden muchas pruebas estadísticas <span class="citation" data-cites="carroll2000">(<a href="#ref-carroll2000" role="doc-biblioref">Carroll and Pearson 2000</a>)</span>. Pero escoger un intervalo muy grande puede hacer que perdamos información, lo cual no es algo deseable para especies poco comunes.</p>
+<p><img src="img/independet.png" class="img-fluid"></p>
+<p>¿ Cómo escoger un intervalo adecuado? sigue siendo una pregunta difícil. Lo mejor que podemos hacer es definir ese intervalo con base en el conocimiento ecológico y del movimiento de la especie objetivo <span class="citation" data-cites="sollmann2018">(<a href="#ref-sollmann2018" role="doc-biblioref">R. Sollmann 2018</a>)</span>. Existe también la posibilidad de definir el umbral de independencia de manera más formal explorando la autocorrelación temporal de los registros <span class="citation" data-cites="kays2014 iannarilli2019">(<a href="#ref-kays2014" role="doc-biblioref">Kays and Parsons 2014</a>; <a href="#ref-iannarilli2019" role="doc-biblioref">F. Iannarilli et al. 2019</a>)</span> o la inspección de los intervalos de registros subsecuentes <span class="citation" data-cites="yasuda2004">(<a href="#ref-yasuda2004" role="doc-biblioref">Yasuda 2004</a>)</span>.</p>
+<p><img src="img/IAR%20deltas.png" class="img-fluid"></p>
+<p>Por lo general las técnicas estadísticas formales para definir independencia temporal son poco usadas por la falta de información y herramientas que sean relativamente difíciles de aplicar. Aunque en este campo el paquete <code>lorelogram</code> <span class="citation" data-cites="iannarilli2019">(<a href="#ref-iannarilli2019" role="doc-biblioref">F. Iannarilli et al. 2019</a>)</span> parece ser muy promisorio. En todo caso las primeras aplicaciones del paquete muestran que para la mayoría de los casos la dependencia espacial se pierde con tan solo 3 minutos y en casos extremos 15 min (con atrayentes) <span class="citation" data-cites="iannarilli2021">(<a href="#ref-iannarilli2021" role="doc-biblioref">Fabiola Iannarilli et al. 2021</a>)</span>.</p>
+</section>
+<section id="población-cerrada" class="level3">
+<h3 class="anchored" data-anchor-id="población-cerrada">Población cerrada</h3>
+<p>Seguramente la mayoría también ha escuchado hablar del supuesto de población cerrada. De manera general una población cerrada se da idealmente en determinado periodo de tiempo donde no sucedan muertes, nacimientos, migración o emigración de individuos <span class="citation" data-cites="schoen1991">(<a href="#ref-schoen1991" role="doc-biblioref">Schoen and Kim 1991</a>)</span>. Esto es particularmente importante cuando intentamos hacer inferencias sobre el parámetros poblacionales de una especie, en este caso abundancia.</p>
+<p>Vamos a verlo con un ejemplo exagerado, pero espero que ilustre lo importante que puede ser el supuesto. Imaginemos que tenemos tres años de conteos de una población de un cánido en un área determinada. Por algún motivo esta población esta disminuyendo cada año. Sin embargo, sí yo defino mi temporada de muestreo como los 3 años, no será posible evidenciar la disminución de la población. Al realizar cada conteo por año si sera posible. Esto mismo puede suceder a escala de meses o de temporadas climáticas, pero claro todo va a depender del sistema de estudio y el conocimiento que tengamos del mismo.</p>
+<p><img src="img/pob_close.png" class="img-fluid"></p>
+</section>
+<section id="detectamos-todo-los-que-existe" class="level3">
+<h3 class="anchored" data-anchor-id="detectamos-todo-los-que-existe">¿ Detectamos todo los que existe ?</h3>
+<p>El RAI supone que todos los individuos que se encuentren en el área serán fotografiados, es decir que la probabilidad de detección es perfecta. En otras palabras, si tenemos la total seguridad de registrar todos los individuos que pasen en frente de la cámara trampa, tendremos la certeza de que los cambios en la tasa fotográfica se deban a los cambios en la abundancia de la especie. Básicamente que la relación de la abundancia real y el RAI sea monotónica <span class="citation" data-cites="obrien2011">(<a href="#ref-obrien2011" role="doc-biblioref">Timothy G. O’Brien 2011</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Rai_abun.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Palmer et al 2018 Relación del RAI con estimaciones de densidad con vuelos</figcaption><p></p>
+</figure>
+</div>
+<p>Autores cómo <span class="citation" data-cites="palmer2018">Palmer et al. (<a href="#ref-palmer2018" role="doc-biblioref">2018</a>)</span> han demostrado que bajo ciertas circunstancias el RAI puede ser un buen reflejo de la abundancia. No obstante, en la mayoría de los casos la probabilidad de detección de las especies no es perfecta <span class="citation" data-cites="kéry2009 burton2015">(<a href="#ref-kéry2009" role="doc-biblioref">Kéry et al. 2009</a>; <a href="#ref-burton2015" role="doc-biblioref">Burton et al. 2015</a>)</span>. Esto quiere decir que es bastante probable que pese a que no detectemos a una especie en una unidad y día determinado, es difícil llegar a concluir que en efecto esta ausente. Lo cual termina por generar que subestimemos el parámetro de interés <span class="citation" data-cites="martin-garcia2022">(<a href="#ref-martin-garcia2022" role="doc-biblioref">Martin-Garcia et al. 2022</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="https://www.researchgate.net/publication/344655192_Guia_Monitoreo_Escolar_Fauna_Silvestre_Fototrampeo_2019"><img src="img/cams.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Modificado de Gálvez, N., González, M. J., Vuskovic, T., Bañales- Seguel, C., Opazo, A., Martínez, D., Zurita, R., Ortega, F., &amp; Schuttler, S. (2020). Monitoreo escolar de fauna silvestre: Guía docente para realizar un proyecto centífico escolar mediante foto trampeo (First ed.) Proyecto EXPLORA de Divulgación y Valoración de la Cienciay Tecnología 2018-2019 de CONICYT ED220040.</figcaption><p></p>
+</figure>
+</div>
+<p>En cámaras trampa la detección imperfecta es un fenómeno muy común. Recordemos que como herramientas de monitoreo pasivo las cámaras tienen un área efectiva de muestreo bastante pequeña <span class="citation" data-cites="andrade-ponce2021 moeller2022">(<a href="#ref-andrade-ponce2021" role="doc-biblioref">Andrade-Ponce et al. 2021</a>; <a href="#ref-moeller2022" role="doc-biblioref">Moeller et al. 2022</a>)</span>. En otras palabras, la probabilidad de que una especie pase frente al área donde el sensor de la cámara se active y sea registrada, realmente es baja <span class="citation" data-cites="moeller2022">(<a href="#ref-moeller2022" role="doc-biblioref">Moeller et al. 2022</a>)</span>.</p>
+<p><img src="img/anglecams.png" class="img-fluid"></p>
+<p>Existen diversos factores que pueden llegar a afectar la detección de las especies, desde su abundancia natural, el tamaño del ámbito hogareño, el tipo de hábitat, el lugar en que ubiquemos la cámara, entre otras <span class="citation" data-cites="burton2015 andrade-ponce2021 guillera-arroita2016">(<a href="#ref-burton2015" role="doc-biblioref">Burton et al. 2015</a>; <a href="#ref-andrade-ponce2021" role="doc-biblioref">Andrade-Ponce et al. 2021</a>; <a href="#ref-guillera-arroita2016" role="doc-biblioref">Guillera-Arroita 2016</a>)</span>. Lo cierto es que se ha demostrado que llegar a ignorar la detección imperfecta de las especies puede hacernos llegar a conclusiones totalmente contrarias sobre la abundancia de las mismas <span class="citation" data-cites="sollmann2013">(<a href="#ref-sollmann2013" role="doc-biblioref">Rahel Sollmann et al. 2013</a>)</span>.</p>
+</section>
+<section id="el-uso-del-espacio-afecta-la-interpretación" class="level3">
+<h3 class="anchored" data-anchor-id="el-uso-del-espacio-afecta-la-interpretación">El uso del espacio afecta la interpretación</h3>
+<p>Si en algún mundo idílico cumplimos con los supuestos que ya mencionamos, podríamos llegar a pensar que los cambios en el RAI son un buen reflejo de los cambios en la abundancia de poblacional. No obstante, el uso del hábitat o del espacio también puede afectar la tasa de registro <span class="citation" data-cites="stewart2018">(<a href="#ref-stewart2018" role="doc-biblioref">Stewart et al. 2018</a>)</span>. Por ejemplo, especies que se mueven rápido a lo largo de su territorio pueden ser detectadas mayor número de veces, mientras que una especie de movimiento “lento” no. De manera, similar especies con ámbitos hogareños más amplios, pueden ser detectadas en distintas estaciones, aumentando el número de detecciones totales <span class="citation" data-cites="broadley2019">(<a href="#ref-broadley2019" role="doc-biblioref">Broadley et al. 2019</a>)</span>.</p>
+<p><img src="img/boradley%202019.png" class="img-fluid" width="640"></p>
+<p>Creo que una manera sensata de usar el RAI es como una medida de actividad o intensidad de uso <span class="citation" data-cites="obrien2011">(<a href="#ref-obrien2011" role="doc-biblioref">Timothy G. O’Brien 2011</a>)</span>. Por supuesto seguimos teniendo el problema de la detección imperfecta, pero al menos no hacemos inferencia sobre una abundancia, sino sobre la relación entre la tasa de detección y alguna covariable como el hábitat o un disturbio. Precisamente, en este ejemplo vamos a usar el RAI para explicar la relación de la especie con algunas covariables y para ello usaremos modelos lineales. Manos a la obra:</p>
+</section>
+</section>
+</section>
+<section id="script" class="level1">
+<h1>Script</h1>
+<section id="librerías" class="level2">
+<h2 class="anchored" data-anchor-id="librerías">Librerías</h2>
+<p>Usaremos las siguientes librerías en R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(camtrapR) <span class="co"># Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Easily Install and Load the 'Tidyverse'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet) <span class="co"># Create Interactive Web Maps with the JavaScript 'Leaflet' Library</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp) <span class="co"># Classes and Methods for Spatial Data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext) <span class="co"># Improved Text Rendering Support for 'ggplot2'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AICcmodavg) <span class="co"># Model Selection and Multimodel Inference Based on (Q)AIC(c)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom) <span class="co"># Convert Statistical Objects into Tidy Tibbles</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects) <span class="co"># Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance) <span class="co"># Assessment of Regression Models Performance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="datos" class="level2">
+<h2 class="anchored" data-anchor-id="datos">Datos</h2>
+<p>Vamos a cargar unos datos de cámaras trampa del año 2020. Seguiremos el flujo de trabajo que emplea camtrapR, por lo cual cargaremos las tablas que generamos a partir del paquete: la tabla de funcionamiento de cámaras y la de registros.</p>
+<p>Vamos a cargar la tabla de operación de cámaras</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usaré la función read.delim debido a que mi tabla esta en formato txt, pero generalmente camtrapR genera csv. En ese caso se usa read.csv</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>CT_table <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"Data/CT_cams.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Station</th>
+<th style="text-align: right;">utm_y</th>
+<th style="text-align: right;">utm_x</th>
+<th style="text-align: left;">Setup_date</th>
+<th style="text-align: left;">Retrieval_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: right;">2007508</td>
+<td style="text-align: right;">696396</td>
+<td style="text-align: left;">22/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG02</td>
+<td style="text-align: right;">2008327</td>
+<td style="text-align: right;">695788</td>
+<td style="text-align: left;">22/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG03</td>
+<td style="text-align: right;">2009568</td>
+<td style="text-align: right;">695414</td>
+<td style="text-align: left;">21/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG04</td>
+<td style="text-align: right;">2010475</td>
+<td style="text-align: right;">695052</td>
+<td style="text-align: left;">21/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG05</td>
+<td style="text-align: right;">2011016</td>
+<td style="text-align: right;">694286</td>
+<td style="text-align: left;">21/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG06</td>
+<td style="text-align: right;">2007026</td>
+<td style="text-align: right;">695603</td>
+<td style="text-align: left;">22/02/2020</td>
+<td style="text-align: left;">22/04/2020</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Un paso muy importante es verificar que las coordenadas sean las correctas, y la manera más sencilla de saberlo es mediante gráficos. Nosotros haremos un mapa interactivo para verificar que todo esté en orden</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar objeto espacial para el mapa</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>CT_points <span class="ot">&lt;-</span> <span class="fu">SpatialPoints</span>(<span class="fu">cbind</span>(CT_table<span class="sc">$</span>utm_x, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                                 CT_table<span class="sc">$</span>utm_y),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">proj4string =</span> <span class="fu">CRS</span>(<span class="st">'+proj=utm +datum=WGS84 +zone=14 +towgs84=0,0,0'</span>)) </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Proyectar a WGS solo para este paso</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>CT_points <span class="ot">&lt;-</span> <span class="fu">spTransform</span>(CT_points, <span class="st">"+proj=longlat +datum=WGS84"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar el mapa</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Esri.WorldImagery, <span class="at">group=</span><span class="st">"Satellite"</span>) <span class="sc">%&gt;%</span>  <span class="co"># Imagen satelital</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Esri.WorldTopoMap, <span class="at">group=</span><span class="st">"Base"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng=</span>sp<span class="sc">::</span><span class="fu">coordinates</span>(CT_points)[,<span class="dv">1</span>], <span class="at">lat=</span>sp<span class="sc">::</span><span class="fu">coordinates</span>(CT_points)[,<span class="dv">2</span>], </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">popup=</span> <span class="fu">paste</span>(CT_table<span class="sc">$</span>Station)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Layers control</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLayersControl</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">baseGroups =</span> <span class="fu">c</span>(<span class="st">"Satellite"</span>, <span class="st">"Base"</span>),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">layersControlOptions</span>(<span class="at">collapsed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-37c80fc53c388c369a8e" style="width:100%;height:464px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-37c80fc53c388c369a8e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"Satellite",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Base",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[18.1476106339429,18.1550646458067,18.1663095356832,18.1745360242004,18.1794926683955,18.1433285327586,18.1489706647282,18.1611710975448,18.169666301405,18.1764755830342,18.1475299976999,18.1560683138803,18.1643066467751,18.1721476356545,18.1384973508139,18.1471022266922,18.1541869781815,18.1635903521971,18.1698949004831,18.1402444279416,18.1515431561348,18.1608869025484,18.1318791887523,18.1411785804651,18.148048669194,18.1574601526836,18.1320386881244,18.1378476530348,18.1288418964153,18.1375565150117,18.1286827410809],[-97.1435158236642,-97.1491829886928,-97.1525992286461,-97.155934134284,-97.163122179002,-97.1510547758329,-97.1552858284362,-97.1603746289999,-97.1663156011697,-97.1716981259653,-97.1652424965725,-97.1690848281092,-97.1746412704733,-97.1802306848468,-97.1673589671758,-97.1763131045405,-97.1812389558524,-97.1877384852773,-97.191387851454,-97.1800885563757,-97.1902159082409,-97.1952043103791,-97.1801939883332,-97.1890846500927,-97.2019891872507,-97.2055503878386,-97.1894433158836,-97.1970945428552,-97.1963458286036,-97.206547310005,-97.205418789618],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,["CBG01","CBG02","CBG03","CBG04","CBG05","CBG06","CBG07","CBG08","CBG09","CBG10","CBG11","CBG12","CBG13","CBG14","CBG15","CBG16","CBG17","CBG18","CBG19","CBG20","CBG21","CBG22","CBG24","CBG25","CBG26","CBG27","CBG28","CBG29","CBG30","CBG31","CBG32"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Satellite","Base"],[],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[18.1286827410809,18.1794926683955],"lng":[-97.206547310005,-97.1435158236642]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Ahora vamos a cargar los registros de las especies. Usaremos la base de datos que genera la función <code>surveReport</code> de CamtrapR, específicamente la del conteo de detección de las especies y la del esfuerzo de muestreo de las cámaras</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Registros sin delta de independencia</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>registrosD0 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/events_by_station_d0.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Registros con independencia de 15 min</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>registrosD15 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/events_by_station_d15.csv"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Registros con independencia de 30 min</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>registrosD30 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/events_by_station_d30.csv"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Registros con independencia de 60 min</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>registrosD60 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/events_by_station_d60.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Cada tabla de registros se ve así:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Station</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">n_events</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Bird</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Bug</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Canis lupus familiaris</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Capra aegagrus hircus</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Para calcular el RAI ahora necesitamos el dato de funcionamiento de cámaras, el cual también podemos obtener de las salidas del <code>surveReport</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Cam_esf <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"Data/survey_dates.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Station, n_nights_active) <span class="co"># Selecciono las columnas que voy a usar</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># NOTA: uso read.csv2 porque mi compu guarda los csv usando el ; como separador</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Station</th>
+<th style="text-align: right;">n_nights_active</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG02</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG03</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG04</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG05</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG06</td>
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="cálculo-del-rai" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-del-rai">Cálculo del RAI</h2>
+<p>Ya cargué toda la información que necesito para calcular el RAI, ahora solo tengo que unirla en una base y hacer las operaciones.</p>
+<p>Para ello vamos a aprovecharnos de la capacidad de dplyr para el manejo de bases de datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>IAR_D0 <span class="ot">&lt;-</span> registrosD0 <span class="sc">%&gt;%</span>  <span class="co">#Base de datos de registros</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Cam_esf) <span class="sc">%&gt;%</span>  <span class="co">#Unimos con la base de esfuerzo </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Station, Species) <span class="sc">%&gt;%</span>  <span class="co"># Agrupamos por cada estación y especie</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">IAR=</span> (n_events<span class="sc">*</span>n_events<span class="sc">*</span>n_nights_active)<span class="sc">/</span><span class="dv">100</span>) <span class="co"># Aplicamos la formula para cálcular el RAI y listo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining, by = "Station"
+`summarise()` has grouped output by 'Station'. You can override using the `.groups` argument.</code></pre>
+</div>
+</div>
+<p>De esta manera relativamente sencilla podemos obtener el valor de RAI, para cada especie y cada estación de muestreo. Tenemos que repetir este procedimiento para cada base de datos de distinto umbral de “independencia”. Para hacer todo más eficiente voy a crear una pequeña función que me ahorre algo de código</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Función para RAI rápido</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Rai_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(registros, esfuerzo, delta){</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> df_RAI <span class="ot">&lt;-</span> registros <span class="sc">%&gt;%</span> <span class="co"># registros</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(esfuerzo) <span class="sc">%&gt;%</span> <span class="co"># unir con esfuerzo</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Station, Species) <span class="sc">%&gt;%</span> <span class="co">#agrupar por estacion y sp</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">IAR =</span> (n_events<span class="sc">*</span>n_nights_active)<span class="sc">/</span><span class="dv">100</span>) <span class="sc">%&gt;%</span>  <span class="co">#Calcular IAR</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename_at</span>(., <span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">"IAR"</span>)),<span class="fu">list</span>(<span class="sc">~</span><span class="fu">paste</span>(<span class="st">"IAR_D"</span>, delta, <span class="at">sep =</span> <span class="st">""</span>) )) <span class="co"># renombrar la columna con el delta adecuado</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(df_RAI)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Usemos la pequeña función</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>IAR_D15 <span class="ot">&lt;-</span> <span class="fu">Rai_fun</span>(<span class="at">registros =</span> registrosD15,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">esfuerzo =</span> Cam_esf,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">delta =</span> <span class="st">"15"</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>IAR_D30 <span class="ot">&lt;-</span> <span class="fu">Rai_fun</span>(<span class="at">registros =</span> registrosD30,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>                   <span class="at">esfuerzo =</span> Cam_esf,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">delta =</span> <span class="st">"30"</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>IAR_D60 <span class="ot">&lt;-</span> <span class="fu">Rai_fun</span>(<span class="at">registros =</span> registrosD60,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>                   <span class="at">esfuerzo =</span> Cam_esf,</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>                   <span class="at">delta =</span> <span class="st">"60"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora juntemos todo en una sola base de datos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como todos comparten la columna de especies y de Estacion podemos usar un left_join</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>IAR_delta <span class="ot">&lt;-</span> IAR_D0 <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(IAR_D15) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(IAR_D30) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(IAR_D60) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Bassariscus astutus"</span>, <span class="co">#filtro de especies</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Canis latrans"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Conepatus leuconotus"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Dicotyles angulatus"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Herpailurus yagouaroundi"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Lynx rufus"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Mephitis macroura"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Nasua narica"</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Odocoileus virginianus"</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Procyon lotor"</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Puma concolor"</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Spilogale angustifrons"</span>,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Sylvilagus floridanus"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Urocyon cinereoargenteus"</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining, by = c("Station", "Species")
+Joining, by = c("Station", "Species")
+Joining, by = c("Station", "Species")</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Station</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">IAR</th>
+<th style="text-align: right;">IAR_D15</th>
+<th style="text-align: right;">IAR_D30</th>
+<th style="text-align: right;">IAR_D60</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CBG01</td>
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Tenemos el RAI por estación, pero para evaluarlo gráficamente quiero tener un RAI promedio de especie para todas las cámaras en cada delta. De nuevo usaremos el poder de dplyr</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>IAR_mean <span class="ot">&lt;-</span> IAR_delta <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> IAR<span class="sc">:</span>IAR_D60, <span class="co">#Pasaran a una columna</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_to =</span> <span class="st">"Delta"</span>, <span class="co"># Esa columna se llamara Delta</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_to =</span> <span class="st">"IAR"</span>) <span class="sc">%&gt;%</span> <span class="co"># los valores pasaran a columna llamada IAR</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species, Delta) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_IAR=</span> <span class="fu">mean</span>(IAR), <span class="at">sd_IAR=</span> <span class="fu">sd</span>(IAR)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Delta=</span> <span class="fu">str_remove</span>(Delta, <span class="st">"IAR_"</span>)) <span class="co"># Solo para quitar ese pedazo de la columna</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Species'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(IAR_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: left;">Delta</th>
+<th style="text-align: right;">mean_IAR</th>
+<th style="text-align: right;">sd_IAR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">5.026774e+00</td>
+<td style="text-align: right;">1.810406e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">3.183871e-01</td>
+<td style="text-align: right;">8.734380e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">3.183871e-01</td>
+<td style="text-align: right;">8.734380e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bassariscus astutus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">3.183871e-01</td>
+<td style="text-align: right;">8.734380e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">8.565903e+01</td>
+<td style="text-align: right;">3.729843e+02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">8.845161e-01</td>
+<td style="text-align: right;">1.361873e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">8.845161e-01</td>
+<td style="text-align: right;">1.361873e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">8.845161e-01</td>
+<td style="text-align: right;">1.361873e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">8.259581e+01</td>
+<td style="text-align: right;">1.758284e+02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">1.519032e+00</td>
+<td style="text-align: right;">2.324736e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">1.519032e+00</td>
+<td style="text-align: right;">2.324736e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conepatus leuconotus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">1.519032e+00</td>
+<td style="text-align: right;">2.324736e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">1.158646e+04</td>
+<td style="text-align: right;">5.513660e+04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">3.083226e+00</td>
+<td style="text-align: right;">7.880741e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">3.023226e+00</td>
+<td style="text-align: right;">7.728507e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dicotyles angulatus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">2.903226e+00</td>
+<td style="text-align: right;">7.195641e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">1.935480e-02</td>
+<td style="text-align: right;">1.077632e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">1.935480e-02</td>
+<td style="text-align: right;">1.077632e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">1.935480e-02</td>
+<td style="text-align: right;">1.077632e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Herpailurus yagouaroundi</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">1.935480e-02</td>
+<td style="text-align: right;">1.077632e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">4.813516e+01</td>
+<td style="text-align: right;">8.505259e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">1.341935e+00</td>
+<td style="text-align: right;">1.557711e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">1.341935e+00</td>
+<td style="text-align: right;">1.557711e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lynx rufus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">1.341935e+00</td>
+<td style="text-align: right;">1.557711e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mephitis macroura</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">3.024968e+01</td>
+<td style="text-align: right;">1.039956e+02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mephitis macroura</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">6.532258e-01</td>
+<td style="text-align: right;">1.812369e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mephitis macroura</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">6.532258e-01</td>
+<td style="text-align: right;">1.812369e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mephitis macroura</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">6.532258e-01</td>
+<td style="text-align: right;">1.812369e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nasua narica</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">1.598290e+01</td>
+<td style="text-align: right;">6.918818e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nasua narica</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">2.364516e-01</td>
+<td style="text-align: right;">5.610380e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nasua narica</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">2.364516e-01</td>
+<td style="text-align: right;">5.610380e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nasua narica</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">2.167742e-01</td>
+<td style="text-align: right;">4.869866e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Odocoileus virginianus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">9.049558e+03</td>
+<td style="text-align: right;">2.396276e+04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odocoileus virginianus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">9.293226e+00</td>
+<td style="text-align: right;">1.111770e+01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Odocoileus virginianus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">9.233548e+00</td>
+<td style="text-align: right;">1.101366e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odocoileus virginianus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">9.034516e+00</td>
+<td style="text-align: right;">1.071171e+01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Procyon lotor</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">1.359355e+01</td>
+<td style="text-align: right;">4.141367e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Procyon lotor</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">4.751613e-01</td>
+<td style="text-align: right;">9.455541e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Procyon lotor</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">4.751613e-01</td>
+<td style="text-align: right;">9.455541e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Procyon lotor</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">4.751613e-01</td>
+<td style="text-align: right;">9.455541e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Puma concolor</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">8.000000e-02</td>
+<td style="text-align: right;">4.454211e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Puma concolor</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">2.000000e-02</td>
+<td style="text-align: right;">1.113553e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Puma concolor</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">2.000000e-02</td>
+<td style="text-align: right;">1.113553e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Puma concolor</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">2.000000e-02</td>
+<td style="text-align: right;">1.113553e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spilogale angustifrons</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">2.216129e+00</td>
+<td style="text-align: right;">8.767499e+00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spilogale angustifrons</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">2.541935e-01</td>
+<td style="text-align: right;">6.359862e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spilogale angustifrons</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">2.541935e-01</td>
+<td style="text-align: right;">6.359862e-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spilogale angustifrons</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">2.541935e-01</td>
+<td style="text-align: right;">6.359862e-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sylvilagus floridanus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">4.825027e+03</td>
+<td style="text-align: right;">1.421554e+04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sylvilagus floridanus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">9.537419e+00</td>
+<td style="text-align: right;">1.380820e+01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sylvilagus floridanus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">9.204194e+00</td>
+<td style="text-align: right;">1.332017e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sylvilagus floridanus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">8.812903e+00</td>
+<td style="text-align: right;">1.257965e+01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urocyon cinereoargenteus</td>
+<td style="text-align: left;">IAR</td>
+<td style="text-align: right;">2.770174e+03</td>
+<td style="text-align: right;">8.731199e+03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Urocyon cinereoargenteus</td>
+<td style="text-align: left;">D15</td>
+<td style="text-align: right;">8.730323e+00</td>
+<td style="text-align: right;">1.379761e+01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urocyon cinereoargenteus</td>
+<td style="text-align: left;">D30</td>
+<td style="text-align: right;">8.671290e+00</td>
+<td style="text-align: right;">1.372938e+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Urocyon cinereoargenteus</td>
+<td style="text-align: left;">D60</td>
+<td style="text-align: right;">8.554516e+00</td>
+<td style="text-align: right;">1.332033e+01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ahora vamos a verlo de manera gráfica</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(IARmean_plot <span class="ot">&lt;-</span> IAR_mean <span class="sc">%&gt;%</span> <span class="co"># base de datos</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Delta <span class="sc">!=</span> <span class="st">"IAR"</span>) <span class="sc">%&gt;%</span> <span class="co"># Quitar delta 0 para gráfica</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> <span class="fu">reorder</span>(Delta, <span class="sc">-</span>mean_IAR) , <span class="at">y=</span> mean_IAR,  <span class="at">group=</span><span class="dv">1</span>))<span class="sc">+</span> <span class="co"># Datos de los ejes</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span> <span class="co"># Linea</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span> Delta), </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">size=</span> <span class="dv">3</span>)<span class="sc">+</span> <span class="co"># Puntos</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>)<span class="sc">+</span> <span class="co"># Hacerlo por especie</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span> <span class="st">"Media de IAR"</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">"Delta de de tiempo de registros"</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caps=</span> <span class="st">"Sin D0"</span>)<span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()) <span class="co"># Tema</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IAR_doc_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Como ven no a todas las especies las afecta igual el umbral de independencia. Hay algunas especies cuyos registros son tan dispersos en el muestreo, que el RAI no cambia con ningún umbral de independencia.</p>
+<p>Claro, esta gráfica te ayudará a guiarte, pero debe ir acompañada de una observación de los registros o el cálculo de la autocorrelación temporal para definir el “delta” de tiempo que usaras. Ya estamos trabajando en este último punto y espero en algún futuro cercano poner en linea un tutorial para estimar el umbral de independencia temporal. Por ahora me quedaré con los registros con un delta de 15 minutos.</p>
+<p>Ahora veamos los valores de RAI por especie</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plot_IAR <span class="ot">&lt;-</span> IAR_mean <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Delta <span class="sc">==</span> <span class="st">"D15"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sp_n=</span> <span class="fu">paste</span>(<span class="st">"*"</span>,Species,<span class="st">"*"</span>, <span class="st">" (IAR= "</span>,<span class="fu">round</span>(mean_IAR, <span class="dv">3</span>) , <span class="st">" ) "</span>, <span class="at">sep =</span> <span class="st">""</span>) ) <span class="sc">%&gt;%</span> <span class="co"># Truco para italica de especies</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> <span class="fu">reorder</span>(Sp_n,mean_IAR), <span class="co">#Ordenar sp </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">y=</span> mean_IAR))<span class="sc">+</span> <span class="co"># No. eventos</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_bar</span>(<span class="at">stat=</span> <span class="st">"identity"</span>)<span class="sc">+</span>  <span class="co"># Geometria</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coord_flip</span>()<span class="sc">+</span> <span class="co"># Girar ejes</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IAR de especies"</span>, <span class="co"># Título</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span> <span class="st">"IAR calculado"</span>, </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="cn">NULL</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Registros  independencia temporal de 15 minutos año 2020"</span>)<span class="sc">+</span> <span class="co"># Sin eje x</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>()<span class="sc">+</span> <span class="co"># Tema</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">axis.text.y=</span> <span class="fu">element_markdown</span>()) <span class="co"># Itálica nombre de especies</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a> plot_IAR </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IAR_doc_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Recordemos que este gráfico es informativo y que no es recomendable comparar el RAI de diferentes especies. Por ejemplo, no sabemos si hay más venados que zorras grises (probablemente no), solo sabemos que los venados son más frecuentemente fotografiados. Hablando de venados, aprovechemos que es una especie con bastantes datos y evaluemos por medio de modelos la relación de su RAI con algunas variables.</p>
+</section>
+<section id="modelando-el-rai" class="level2">
+<h2 class="anchored" data-anchor-id="modelando-el-rai">Modelando el RAI 🦌</h2>
+<p>En este caso lo que nos interesa conocer es cómo la variación del RAI es explicada por distintas condiciones del sitio, vamos a usar nuestra base cruda de delta 15, no la del promedio.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>venado <span class="ot">&lt;-</span> IAR_D15 <span class="sc">%&gt;%</span> <span class="co"># Llamamos la base de datos</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"Odocoileus virginianus"</span>) <span class="co"># Filtramos la especie que nos interesa </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora vamos a cargar las variables, escalarlas y finalmente unirlas a la base de IAR</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>covs.data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"Data/selectedcov_nostd190821.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>i Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 31 Columns: 12
+-- Column specification --------------------------------------------------------
+Delimiter: ";"
+chr (5): Station, Cam, MSAVI, Slope, Habitat
+dbl (4): utm_y, utm_x, Cluster, Effort
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UPS hay dos variables numericas que R las lee como caracteres</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>covs.data<span class="sc">$</span>MSAVI <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(covs.data<span class="sc">$</span>MSAVI)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>covs.data<span class="sc">$</span>Slope <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(covs.data<span class="sc">$</span>Slope)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">### Separar las variables numéricas y categóricas</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>cov.num <span class="ot">&lt;-</span> covs.data <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="co"># Seleccionar columnas numéricas</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale</span>() <span class="sc">%&gt;%</span>  <span class="co"># estandarizar</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>cov.fac <span class="ot">&lt;-</span> covs.data <span class="sc">%&gt;%</span> </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">where</span>(is.character)) <span class="co"># Seleccionar variables de caracter</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>sp_lmdata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cov.fac, cov.num) <span class="sc">%&gt;%</span> <span class="co"># Unir covariables</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(venado, <span class="at">by=</span> <span class="st">"Station"</span>)<span class="co"># Unir con la base de registros</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Al tomar el IAR valores continuos suponemos que seguirá un error tipo <em>gaussiano</em>, por lo cual usaremos modelos lineales simples para modelarlo. NOTA: Al no tomar valores negativos quizás pueda ser error tipo gamma pero depende de cada quien probarlo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelos lineales </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sin variables</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> sp_lmdata)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># la IAR afectada por la distancia a cultivo</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> Dcrops, <span class="at">data =</span> sp_lmdata)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># la IAR afectada por el verdor de la vegetación</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> MSAVI, <span class="at">data =</span> sp_lmdata)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># la IAR afectada por la pendiente</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> Slope, <span class="at">data =</span> sp_lmdata) </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># la IAR afectada por la distancia a poblados</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> Dpop_G, <span class="at">data =</span> sp_lmdata)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co"># la IAR afectada por el tipo de habitat</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(IAR_D15<span class="sc">~</span> Habitat, <span class="at">data =</span> sp_lmdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Usaremos el criterio de información de Akaike (AIC) para seleccionar el “mejor” modelo. Consiedaremos modelos con un delta AIC menor a dos como igualmente plausibles <span class="citation" data-cites="burnham2002">(<a href="#ref-burnham2002" role="doc-biblioref">Burnham and Anderson 2002</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lista_mods <span class="ot">&lt;-</span> <span class="fu">list</span>(m0, m1, m2, m3, m4, m5)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>mod_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"IAR~ 1"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">"IAR~ D_cultivos"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"IAR~ MSAVI"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"IAR~ Slope"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"IAR~ D_poblado"</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"IAR~ Habitat"</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>AIC <span class="ot">&lt;-</span> <span class="fu">aictab</span>(lista_mods, </span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">modnames =</span> mod_names, </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">second.ord =</span> F, <span class="at">sort =</span> T)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(AIC, <span class="st">'html'</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Modnames </th>
+   <th style="text-align:right;"> K </th>
+   <th style="text-align:right;"> AIC </th>
+   <th style="text-align:right;"> Delta_AIC </th>
+   <th style="text-align:right;"> ModelLik </th>
+   <th style="text-align:right;"> AICWt </th>
+   <th style="text-align:right;"> LL </th>
+   <th style="text-align:right;"> Cum.Wt </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> IAR~ Slope </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 230.608 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 1.000 </td>
+   <td style="text-align:right;"> 0.949 </td>
+   <td style="text-align:right;"> -112.304 </td>
+   <td style="text-align:right;"> 0.949 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:left;"> IAR~ Habitat </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 237.783 </td>
+   <td style="text-align:right;"> 7.175 </td>
+   <td style="text-align:right;"> 0.028 </td>
+   <td style="text-align:right;"> 0.026 </td>
+   <td style="text-align:right;"> -115.892 </td>
+   <td style="text-align:right;"> 0.976 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:left;"> IAR~ D_cultivos </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 239.582 </td>
+   <td style="text-align:right;"> 8.974 </td>
+   <td style="text-align:right;"> 0.011 </td>
+   <td style="text-align:right;"> 0.011 </td>
+   <td style="text-align:right;"> -116.791 </td>
+   <td style="text-align:right;"> 0.986 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:left;"> IAR~ 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 240.287 </td>
+   <td style="text-align:right;"> 9.679 </td>
+   <td style="text-align:right;"> 0.008 </td>
+   <td style="text-align:right;"> 0.008 </td>
+   <td style="text-align:right;"> -118.144 </td>
+   <td style="text-align:right;"> 0.994 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:left;"> IAR~ MSAVI </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 241.791 </td>
+   <td style="text-align:right;"> 11.183 </td>
+   <td style="text-align:right;"> 0.004 </td>
+   <td style="text-align:right;"> 0.004 </td>
+   <td style="text-align:right;"> -117.896 </td>
+   <td style="text-align:right;"> 0.997 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> IAR~ D_poblado </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 242.287 </td>
+   <td style="text-align:right;"> 11.678 </td>
+   <td style="text-align:right;"> 0.003 </td>
+   <td style="text-align:right;"> 0.003 </td>
+   <td style="text-align:right;"> -118.143 </td>
+   <td style="text-align:right;"> 1.000 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Según el AIC la pendiente es la variable que mejor explica los cambios en RAI del venado en nuestra área de estudio. Veamos los coeficientes del modelo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> m3 <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modelo, <span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">9.293</td>
+<td style="text-align: right;">1.682</td>
+<td style="text-align: right;">5.524</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slope</td>
+<td style="text-align: right;">6.229</td>
+<td style="text-align: right;">1.710</td>
+<td style="text-align: right;">3.643</td>
+<td style="text-align: right;">0.001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">ggeffect</span>(m3, <span class="at">terms=</span> <span class="st">"Slope"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IAR_doc_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Alto ahí vaquero. El AIC no te indica que tu modelo se adecuado, así que es deber de nosotros verificar que cumple con todos los supuestos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_model</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IAR_doc_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Parece que nuestro modelito no cumple del todo con el supuesto de normalidad en los residuales, tiene heterogeneidad en su varianza y también una posible outlier. Por ahora no nos preocuparemos mucho por esto; primero porque es un ejemplo y segundo porque para serles sincero yo inventé las covariables 😝🤪. Lo que quiero que vean es que a pesar de todo el RAI te puede dar una idea de la relación del hábitat con las especies. Claro, estamos subestimando la relación por el hecho de no considerar la detección imperfecta, pero mientras seamos conscientes de ello y lo discutamos, personalmente creo que sigue siendo valioso.</p>
+</section>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>El RAI es uno de los indices más usados y probablemente se siga usando mucho en estudios de cámaras trampa. Principalmente porque es sencillo de entender y fácil de calcular. El problema, como vimos, es que para realizar inferencias sobre la abundancia poblacional de las especies es una métrica muy susceptible al sesgo <span class="citation" data-cites="gilbert2020">(<a href="#ref-gilbert2020" role="doc-biblioref">Gilbert et al. 2020</a>)</span>. Esto quiere decir que, la mayoría de las veces el RAI no será un buen reflejo de la abundancia “real” de las especies, por lo cual es peligroso basarnos en él para tomar decisiones sobre el manejo poblacional de las especies, o al menos hay que ser muy muy cuidadosos con lo que podemos concluir. En ese mismo sentido, el RAI tampoco es muy útil para hacer comparaciones entre localidades, temporadas o entre especies, porque como ya vimos, la tasa fotográfica de cada especie puede variar conforme su detección <span class="citation" data-cites="anile2015 iannarilli2021 sollmann2013">(<a href="#ref-anile2015" role="doc-biblioref">Anile and Devillard 2015</a>; <a href="#ref-iannarilli2021" role="doc-biblioref">Fabiola Iannarilli et al. 2021</a>; <a href="#ref-sollmann2013" role="doc-biblioref">Rahel Sollmann et al. 2013</a>)</span>.</p>
+<p>Yo sé, justo ahora parece que estimar la abundancia de especies sin marcas naturales con cámaras trampa es una tarea Quijotesca. Pero no desfallezcan, en éste momento ustedes acaban de salir de la matrix y van a empezar a ser mucho más críticos con sus conclusiones. Además, la estimación de la abundancia de especies es un campo en constante evolución y probablemente sean ustedes quienes empiecen a hacer uso de otras herramientas analíticas mas fuertes que permitan generar estimaciones confiables para responder preguntas ecológicas o determinar la pertinencia de una acción de conservación. Como primer consejo yo les recomiendo tomarse un buen tiempo leyendo a <span class="citation" data-cites="gilbert2020">Gilbert et al. (<a href="#ref-gilbert2020" role="doc-biblioref">2020</a>)</span> para una introducción general a éste tipo de aproximaciones.</p>
+<p><img src="img/road.png" class="img-fluid"></p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-andrade-ponce2021" class="csl-entry" role="doc-biblioentry">
+Andrade-Ponce, Gabriel, Juan C. Cepeda-Duque, Salvador Mandujano, Karen L. Velásquez-C, Diego J. Lizcano, and Bibiana Gómez-Valencia. 2021. <span>“Modelos de Ocupación Para Datos de Cámaras Trampa.”</span> <em>Mammalogy Notes</em> 7 (1): 200. <a href="https://doi.org/10.47603/mano.v7n1.200">https://doi.org/10.47603/mano.v7n1.200</a>.
+</div>
+<div id="ref-anile2015" class="csl-entry" role="doc-biblioentry">
+Anile, S., and S. Devillard. 2015. <span>“Study Design and Body Mass Influence RAIs from Camera Trap Studies: Evidence from the Felidae.”</span> <em>Animal Conservation</em> 19 (1): 35–45. <a href="https://doi.org/10.1111/acv.12214">https://doi.org/10.1111/acv.12214</a>.
+</div>
+<div id="ref-broadley2019" class="csl-entry" role="doc-biblioentry">
+Broadley, Kate, A. Cole Burton, Tal Avgar, and Stan Boutin. 2019. <span>“Density<span>-</span>Dependent Space Use Affects Interpretation of Camera Trap Detection Rates.”</span> <em>Ecology and Evolution</em> 9 (24): 14031–41. <a href="https://doi.org/10.1002/ece3.5840">https://doi.org/10.1002/ece3.5840</a>.
+</div>
+<div id="ref-burnham2002" class="csl-entry" role="doc-biblioentry">
+Burnham, Kenneth P., and David R. Anderson. 2002. <em>Model Selection and Multimodel Inference: A Practical Information-Theoretic Approach</em>. 2nd ed. New York: Springer-Verlag. <a href="https:////www.springer.com/us/book/9780387953649">//www.springer.com/us/book/9780387953649</a>.
+</div>
+<div id="ref-burton2015" class="csl-entry" role="doc-biblioentry">
+Burton, A. Cole, Eric Neilson, Dario Moreira, Andrew Ladle, Robin Steenweg, Jason T. Fisher, Erin Bayne, and Stan Boutin. 2015. <span>“Wildlife Camera Trapping: A Review and Recommendations for Linking Surveys to Ecological Processes.”</span> <em>Journal of Applied Ecology</em> 52 (3): 675–85. <a href="https://doi.org/10.1111/1365-2664.12432">https://doi.org/10.1111/1365-2664.12432</a>.
+</div>
+<div id="ref-carroll2000" class="csl-entry" role="doc-biblioentry">
+Carroll, Steven S., and David L. Pearson. 2000. <span>“Detecting and Modeling Spatial and Temporal Dependence in Conservation Biology.”</span> <em>Conservation Biology</em> 14 (6): 1893–97. <a href="https://doi.org/10.1046/j.1523-1739.2000.99432.x">https://doi.org/10.1046/j.1523-1739.2000.99432.x</a>.
+</div>
+<div id="ref-gilbert2020" class="csl-entry" role="doc-biblioentry">
+Gilbert, Neil A., John D. J. Clare, Jennifer L. Stenglein, and Benjamin Zuckerberg. 2020. <span>“Abundance Estimation of Unmarked Animals Based on Camera-Trap Data.”</span> <em>Conservation Biology</em> 00 (0): 1–12. <a href="https://doi.org/10.1111/cobi.13517">https://doi.org/10.1111/cobi.13517</a>.
+</div>
+<div id="ref-guillera-arroita2016" class="csl-entry" role="doc-biblioentry">
+Guillera-Arroita, Gurutzeta. 2016. <span>“Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.”</span> <em>Ecography</em> 40 (2): 281–95. <a href="https://doi.org/10.1111/ecog.02445">https://doi.org/10.1111/ecog.02445</a>.
+</div>
+<div id="ref-iannarilli2021" class="csl-entry" role="doc-biblioentry">
+Iannarilli, Fabiola, John Erb, Todd W. Arnold, and John R. Fieberg. 2021. <span>“Evaluating Species-Specific Responses to Camera-Trap Survey Designs.”</span> <em>Wildlife Biology</em> 2021 (1). <a href="https://doi.org/10.2981/wlb.00726">https://doi.org/10.2981/wlb.00726</a>.
+</div>
+<div id="ref-iannarilli2019" class="csl-entry" role="doc-biblioentry">
+Iannarilli, F., T. W. Arnold, J. Erb, and J. R. Fieberg. 2019. <span>“Using Lorelograms to Measure and Model Correlation in Binary Data: Applications to Ecological Studies.”</span> <em>Methods in Ecology and Evolution</em> 10 (12): 2153–62. <a href="https://doi.org/10.1111/2041-210X.13308">https://doi.org/10.1111/2041-210X.13308</a>.
+</div>
+<div id="ref-kays2014" class="csl-entry" role="doc-biblioentry">
+Kays, Roland, and Arielle Waldstein Parsons. 2014. <span>“Mammals in and Around Suburban Yards, and the Attraction of Chicken Coops.”</span> <em>Urban Ecosystems</em> 17 (3): 691–705. <a href="https://doi.org/10.1007/s11252-014-0347-2">https://doi.org/10.1007/s11252-014-0347-2</a>.
+</div>
+<div id="ref-kéry2009" class="csl-entry" role="doc-biblioentry">
+Kéry, Marc, Robert M. Dorazio, Leo Soldaat, Arco Van Strien, Annie Zuiderwijk, and J. Andrew Royle. 2009. <span>“Trend Estimation in Populations with Imperfect Detection.”</span> <em>Journal of Applied Ecology</em> 46 (6): 1163–72. <a href="https://doi.org/10.1111/j.1365-2664.2009.01724.x">https://doi.org/10.1111/j.1365-2664.2009.01724.x</a>.
+</div>
+<div id="ref-martin-garcia2022" class="csl-entry" role="doc-biblioentry">
+Martin-Garcia, Sara, Mariano Rodríguez-Recio, Iván Peragón, Itzcóatl Bueno, and Emilio Virgós. 2022. <span>“Comparing Relative Abundance Models from Different Indices, a Study Case on the Red Fox.”</span> <em>Ecological Indicators</em> 137 (April): 108778. <a href="https://doi.org/10.1016/j.ecolind.2022.108778">https://doi.org/10.1016/j.ecolind.2022.108778</a>.
+</div>
+<div id="ref-moeller2022" class="csl-entry" role="doc-biblioentry">
+Moeller, Anna K., Scott J. Waller, Nicholas J. DeCesare, M. Colter Chitwood, and Paul M. Lukacs. 2022. <span>“Best Practices to Account for Capture Probability and Viewable Area in Camera<span>-</span>Based Abundance Estimation.”</span> <em>Remote Sensing in Ecology and Conservation</em>, August. <a href="https://doi.org/10.1002/rse2.300">https://doi.org/10.1002/rse2.300</a>.
+</div>
+<div id="ref-obrien2011" class="csl-entry" role="doc-biblioentry">
+O’Brien, Timothy G. 2011. <span>“Abundance, Density and Relative Abundance: A Conceptual Framework.”</span> In, 71–96. Springer.
+</div>
+<div id="ref-obrien2003" class="csl-entry" role="doc-biblioentry">
+O’Brien, Timothy G., Margaret F. Kinnaird, and Hariyo T. Wibisono. 2003. <span>“Crouching Tigers, Hidden Prey: Sumatran Tiger and Prey Populations in a Tropical Forest Landscape.”</span> <em>Animal Conservation</em> 6 (2): 131–39. <a href="https://doi.org/10.1017/S1367943003003172">https://doi.org/10.1017/S1367943003003172</a>.
+</div>
+<div id="ref-oconnell2010" class="csl-entry" role="doc-biblioentry">
+O’Connell, Allan F., James D. Nichols, and K. Ullas Karanth. 2010. <em>Camera Traps in Animal Ecology: Methods and Analyses</em>. Springer Science &amp; Business Media.
+</div>
+<div id="ref-palmer2018" class="csl-entry" role="doc-biblioentry">
+Palmer, Meredith S., Alexandra Swanson, Margaret Kosmala, Todd Arnold, and Craig Packer. 2018. <span>“Evaluating Relative Abundance Indices for Terrestrial Herbivores from Large-Scale Camera Trap Surveys.”</span> <em>African Journal of Ecology</em> 56 (4): 791–803. <a href="https://doi.org/10.1111/aje.12566">https://doi.org/10.1111/aje.12566</a>.
+</div>
+<div id="ref-schoen1991" class="csl-entry" role="doc-biblioentry">
+Schoen, Robert, and Young J. Kim. 1991. <span>“Movement Toward Stability as a Fundamental Principle of Population Dynamics.”</span> <em>Demography</em> 28 (3): 455–66. <a href="https://doi.org/10.2307/2061467">https://doi.org/10.2307/2061467</a>.
+</div>
+<div id="ref-sollmann2018" class="csl-entry" role="doc-biblioentry">
+Sollmann, R. 2018. <span>“A Gentle Introduction to Camera-Trap Data Analysis.”</span> <em>African Journal of Ecology</em> 56 (4): 740–49. <a href="https://doi.org/10.1111/aje.12557">https://doi.org/10.1111/aje.12557</a>.
+</div>
+<div id="ref-sollmann2013" class="csl-entry" role="doc-biblioentry">
+Sollmann, Rahel, Azlan Mohamed, Hiromitsu Samejima, and Andreas Wilting. 2013. <span>“Risky Business or Simple Solution <span></span> Relative Abundance Indices from Camera-Trapping.”</span> <em>Biological Conservation</em> 159 (March): 405–12. <a href="https://doi.org/10.1016/j.biocon.2012.12.025">https://doi.org/10.1016/j.biocon.2012.12.025</a>.
+</div>
+<div id="ref-stewart2018" class="csl-entry" role="doc-biblioentry">
+Stewart, Frances E. C., Jason T. Fisher, A. Cole Burton, and John P. Volpe. 2018. <span>“Species Occurrence Data Reflect the Magnitude of Animal Movements Better Than the Proximity of Animal Space Use.”</span> <em>Ecosphere</em> 9 (2): e02112. <a href="https://doi.org/10.1002/ecs2.2112">https://doi.org/10.1002/ecs2.2112</a>.
+</div>
+<div id="ref-wearn2017" class="csl-entry" role="doc-biblioentry">
+Wearn, Oliver R., and Paul Glover-Kapfer. 2017. <em>Camera- Trapping for Conservation: A Guide to Best Practices</em>. 1st ed. Woking, United Kingdom: WWF conservation technology series.
+</div>
+<div id="ref-yasuda2004" class="csl-entry" role="doc-biblioentry">
+Yasuda, Masatoshi. 2004. <span>“Monitoring Diversity and Abundance of Mammals with Camera Traps: A Case Study on Mount Tsukuba, Central Japan.”</span> <em>Mammal Study</em> 29 (1): 37–46. <a href="https://doi.org/10.3106/mammalstudy.29.37">https://doi.org/10.3106/mammalstudy.29.37</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

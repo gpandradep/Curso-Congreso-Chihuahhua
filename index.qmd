@@ -1,5 +1,5 @@
 ---
-title: "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa"
+title: "FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa"
 subtitle: "XV Congreso Nacional de Mastozoología, Chihuahua 2022"
 author: 
  - name: Gabriel Andrade-Ponce

@@ -8,6 +8,11 @@ website:
     left:
       - href: index.qmd
         text: Inicio
+      - href: IAR_doc.qmd
+        text: Script IAR
+      - href: Diversidad Congreso.qmd
+        text: Script Diversidad
+        
 
 format:
   html:
