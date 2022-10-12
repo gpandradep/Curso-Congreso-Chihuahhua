@@ -1,0 +1,78 @@
+---
+title: "FototrampeoR: Organización y aáalisis de datos de mamíferos medianos y grandes con datos de cámaras trampa"
+subtitle: "XV Congreso Nacional de Mastozoología, Chihuahua 2022"
+author: 
+ - name: Gabriel Andrade-Ponce
+   url: https://gpandradep.github.io/gpandradep/ 
+   affiliation: Posgrado, Instituto de Ecología A.C.
+   orcid_id: 0000-0003-2416-1792
+ - name: Eva López-Tello
+   url: https://www.researchgate.net/profile/Lopez-Tello-Eva 
+   affiliation: Red de Biología y Conservación de Vertebrados, Instituto de Ecología A.C.
+
+date: last-modified
+
+---
+
+# Bienvenidos
+
+Hola a todos bienvenidos al curso pre-congreso de **FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa**. En esta página encontrarán todas las instrucciones para llevar a cabo el curso.
+
+<aside>
+![](https://mamiferosmexico.org/Posters_cursos/AMMAC_Eva_Gabriel.jpg){width="200"}
+</aside>
+
+# Instrucciones
+
+## Instalar R y Rstudio
+Todos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio
+
+## Instalar paqueterías
+
+Se espera que previo al curso instales las siguientes paqueterías
+
+```{r}
+#| eval: false
+
+install.packages(c("tidyverse", # Easily Install and Load the 'Tidyverse'
+"vegan", # Community Ecology Package
+"ggrepel", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'
+"SpadeR", # Species-Richness Prediction and Diversity Estimation with R
+"BiodiversityR", # Package for Community Ecology and Suitability Analysis
+"iNEXT", # Interpolation and Extrapolation for Species Diversity
+"hillR", # Diversity Through Hill Numbers
+"MuMIn", # Multi-Model Inference
+"DHARMa", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed", Regression Models
+"camtrapR", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses
+"leaflet", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library
+"sp", # Classes and Methods for Spatial Data
+"ggtext", # Improved Text Rendering Support for 'ggplot2'
+"AICcmodavg", # Model Selection and Multimodel Inference Based on (Q",AIC(c",
+"broom", # Convert Statistical Objects into Tidy Tibbles
+"ggeffects", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs
+"performance" # Assessment of Regression Models Performance
+))
+
+```
+
+# Descargar proyectos y archivos
+
+## Día 1
+
+1. Introducción al diseño de muestreo en estudios de cámaras trampa
+
+2. Introducción a R
+
+3. DigiKam para el etiquetado de fotos
+
+4. CamtrapR: organización y manejo de datos de cámaras trampa
+
+## Día 2
+
+5. Introducción al índice de abundancia relativa
+
+6. Introducción al análisis de diversidad
+
+7. Gráfica de radar para datos de actividad
+
+8. Análisis de actividad diaria
