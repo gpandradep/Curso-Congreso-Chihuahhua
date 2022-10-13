@@ -58,7 +58,7 @@ install.packages(c("overlap",
 
 # Descargar proyectos y archivos
 
-Aquí encontrarás los archivos comprimidos necesarios para cada uno de los temas que vamos a ver. Por favor dar clik en el botón y descomprimir cada proyecto en su respectiva carpeta de trabajo.
+Aquí encontrarás los archivos comprimidos necesarios para cada uno de los temas que vamos a ver. Por favor dar click en el botón y descomprimir cada proyecto en su respectiva carpeta de trabajo.
 
 ## Día 1
 
