@@ -89,3 +89,5 @@ Aquí encontrarás los archivos comprimidos necesarios para cada uno de los tema
 -   [Script disponible en linea \[`r icons::fontawesome("signal")`\]](https://gpandradep.github.io/Grafico_roseta/)
 
 8.  [Análisis de actividad diaria \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1OhYQO45_R4_hhLep3_CIZS36fmWO9jVM/view?usp=sharing)
+
+![](img/banner.jpg)

@@ -6,16 +6,32 @@ website:
   title: "Curso Precongreso"
   toc-title: "Contenido"
   link-external-newwindow: true
+  site-url: "https://gpandradep.github.io/Curso-Congreso-Chihuahhua/"
+  favicon: img/congreso.png
+  
+  repo-url: https://github.com/gpandradep/Curso-Congreso-Chihuahhua
+  
+  page-footer:
+    right: "Página construida con [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2022, Gabriel Andrade-Ponce"
+    background: "#D9E3E4"
 
 
   navbar:
+    logo: img/congreso.png 
     left:
       - href: index.qmd
         text: Inicio
-      - href: IAR_doc.qmd
-        text: Script IAR
-      - href: Diversidad Congreso.qmd
-        text: Script Diversidad
+        
+    right: 
+    - href: IAR_doc.qmd
+      text: Script IAR
+    - href: Diversidad Congreso.qmd
+      text: Script Diversidad
+    tools:
+      - icon: github
+        href: https://github.com/gpandradep/Curso-Congreso-Chihuahhua
+        text: "GitHub"
         
 
 format:
