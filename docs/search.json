@@ -11,28 +11,28 @@
     "href": "index.html#instalar-r-y-rstudio",
     "title": "FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
     "section": "Instalar R y Rstudio",
-    "text": "Instalar R y Rstudio\nTodos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio"
+    "text": "Instalar R y Rstudio\nTodos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio. Para varios paquetes es necesario tener instalado Rtools. Por último, también vamos a usar el programa DigiKam.\nPara todos los detalles de como instalar el software por favor seguir la siguiente guía"
   },
   {
     "objectID": "index.html#instalar-paqueterías",
     "href": "index.html#instalar-paqueterías",
     "title": "FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
     "section": "Instalar paqueterías",
-    "text": "Instalar paqueterías\nSe espera que previo al curso instales las siguientes paqueterías\n\ninstall.packages(c(\"tidyverse\", # Easily Install and Load the 'Tidyverse'\n\"vegan\", # Community Ecology Package\n\"ggrepel\", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'\n\"SpadeR\", # Species-Richness Prediction and Diversity Estimation with R\n\"BiodiversityR\", # Package for Community Ecology and Suitability Analysis\n\"iNEXT\", # Interpolation and Extrapolation for Species Diversity\n\"hillR\", # Diversity Through Hill Numbers\n\"MuMIn\", # Multi-Model Inference\n\"DHARMa\", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed\", Regression Models\n\"camtrapR\", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses\n\"leaflet\", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library\n\"sp\", # Classes and Methods for Spatial Data\n\"ggtext\", # Improved Text Rendering Support for 'ggplot2'\n\"AICcmodavg\", # Model Selection and Multimodel Inference Based on (Q\",AIC(c\",\n\"broom\", # Convert Statistical Objects into Tidy Tibbles\n\"ggeffects\", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs\n\"performance\" # Assessment of Regression Models Performance\n))"
+    "text": "Instalar paqueterías\nSe espera que previo al curso instales las siguientes paqueterías\n\ninstall.packages(c(\"overlap\",\n                   \"tidyverse\", # Easily Install and Load the 'Tidyverse'\n                   \"vegan\", # Community Ecology Package\n                   \"ggrepel\", # Automatically Position Non-Overlapping Text Labels with 'ggplot2'\n                   \"SpadeR\", # Species-Richness Prediction and Diversity Estimation with R\n                   \"BiodiversityR\", # Package for Community Ecology and Suitability Analysis\n                   \"iNEXT\", # Interpolation and Extrapolation for Species Diversity\n                   \"hillR\", # Diversity Through Hill Numbers\n                   \"MuMIn\", # Multi-Model Inference\n                   \"DHARMa\", # Residual Diagnostics for Hierarchical (Multi-Level / Mixed\", Regression Models\n                   \"camtrapR\", # Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses\n                   \"leaflet\", # Create Interactive Web Maps with the JavaScript 'Leaflet' Library\n                   \"sp\", # Classes and Methods for Spatial Data\n                   \"ggtext\", # Improved Text Rendering Support for 'ggplot2'\n                   \"AICcmodavg\", # Model Selection and Multimodel Inference Based on (Q\",AIC(c\",\n                   \"broom\", # Convert Statistical Objects into Tidy Tibbles\n                   \"ggeffects\", # Create Tidy Data Frames of Marginal Effects for 'ggplot' from Model Outputs\n                   \"performance\" # Assessment of Regression Models Performance\n))"
   },
   {
     "objectID": "index.html#día-1",
     "href": "index.html#día-1",
     "title": "FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
     "section": "Día 1",
-    "text": "Día 1\n\nIntroducción al diseño de muestreo en estudios de cámaras trampa\nIntroducción a R\nDigiKam para el etiquetado de fotos\nCamtrapR: organización y manejo de datos de cámaras trampa"
+    "text": "Día 1\n\nIntroducción al diseño de muestreo en estudios de cámaras trampa [ ]\nIntroducción a R (no requiere descargar proyecto)\nDigiKam para el etiquetado de fotos [ ]\n\nPDF del capítulo dos del libro disponible aquí [ ]\nDescargar fotos sin etiquetar aquí [ ]\n\nCamtrapR: organización y manejo de datos de cámaras trampa [ ]"
   },
   {
     "objectID": "index.html#día-2",
     "href": "index.html#día-2",
     "title": "FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa",
     "section": "Día 2",
-    "text": "Día 2\n\nIntroducción al índice de abundancia relativa\nIntroducción al análisis de diversidad\nGráfica de radar para datos de actividad\nAnálisis de actividad diaria"
+    "text": "Día 2\n\nIntroducción al índice de abundancia relativa [ ]\n\n\nScript disponible en linea [ ]\n\n\nIntroducción al análisis de diversidad [ ]\n\n\nScript disponible en linea [ ]\n\n\nGráfica de radar para datos de actividad [ ]\n\n\nScript disponible en linea [ ]\n\n\nAnálisis de actividad diaria [ ]"
   },
   {
     "objectID": "about.html",

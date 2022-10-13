@@ -11,23 +11,21 @@ author:
    affiliation: Red de Biología y Conservación de Vertebrados, Instituto de Ecología A.C.
 
 date: last-modified
-
 ---
 
 # Bienvenidos
 
 Hola a todos bienvenidos al curso pre-congreso de **FototrampeoR: Organización y análisis de datos de mamíferos medianos y grandes con datos de cámaras trampa**. En esta página encontrarán todas las instrucciones para llevar a cabo el curso.
 
-<aside>
-![](https://mamiferosmexico.org/Posters_cursos/AMMAC_Eva_Gabriel.jpg){width="200"}
-</aside>
+![](https://mamiferosmexico.org/Posters_cursos/AMMAC_Eva_Gabriel.jpg){fig-align="center" width="300"}
 
 # Instrucciones
 
 ## Instalar R y Rstudio
-Todos los ejercicios del curso se desarrollarán en el lenguaje de programación R y usando la interfaz de Rstudio. También es importante tener Rtools instalado. 
 
-Para todos los detalles por favor seguir la siguiente guía
+Todos los ejercicios del curso se desarrollarán en el lenguaje de programación **R** y usando la interfaz de **Rstudio**. Para varios paquetes es necesario tener instalado **Rtools.** Por último, también vamos a usar el programa **DigiKam.**
+
+Para todos los detalles de como instalar el software por favor seguir la siguiente guía [`r icons::fontawesome("file-pdf")`](https://github.com/gpandradep/Curso-Congreso-Chihuahhua/raw/main/Gu%C3%ADa%20de%20instalaci%C3%B3n%20de%20pogramas%20y%20paquetes%20R.pdf)
 
 ## Instalar paqueterías
 
@@ -60,22 +58,34 @@ install.packages(c("overlap",
 
 # Descargar proyectos y archivos
 
+Aquí encontrarás los archivos comprimidos necesarios para cada uno de los temas que vamos a ver. Por favor dar clik en el botón y descomprimir cada proyecto en su respectiva carpeta de trabajo.
+
 ## Día 1
 
-1. Introducción al diseño de muestreo en estudios de cámaras trampa
+1.  [Introducción al diseño de muestreo en estudios de cámaras trampa \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1Q-85mDLZzMikJ66JzAk7F17xoBwWRMBb/view?usp=sharing)
 
-2. Introducción a R
+2.  Introducción a R (no requiere descargar proyecto)
 
-3. DigiKam para el etiquetado de fotos
+3.  [DigiKam para el etiquetado de fotos \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1MtVb7d9aTTovu-pQANK0C8NjN01vRZ7N/view?usp=sharing)
 
-4. CamtrapR: organización y manejo de datos de cámaras trampa
+    -   [PDF del capítulo dos del libro disponible aquí \[`r icons::fontawesome("file-pdf")`\]](https://github.com/gpandradep/Curso-Congreso-Chihuahhua/raw/main/Cap%C3%ADtulo%202.pdf)
+
+    -   [Descargar fotos sin etiquetar aquí \[`r icons::fontawesome("images")`\]](https://drive.google.com/file/d/1l4DW-3L-zvZjE5saVFWBZNE32El1ojKY/view?usp=sharing)
+
+4.  [CamtrapR: organización y manejo de datos de cámaras trampa \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1MtVb7d9aTTovu-pQANK0C8NjN01vRZ7N/view?usp=sharing)
 
 ## Día 2
 
-5. Introducción al índice de abundancia relativa
+5.  [Introducción al índice de abundancia relativa \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1HwRYcltT1F04f7FESQmL4v7l2LaWyG6-/view?usp=sharing)
 
-6. Introducción al análisis de diversidad
+-   [Script disponible en linea \[`r icons::fontawesome("signal")`\]](https://gpandradep.github.io/Curso-Congreso-Chihuahhua/IAR_doc.html)
 
-7. Gráfica de radar para datos de actividad
+6.  [Introducción al análisis de diversidad \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1ybTBilPuMDjAOFfoSDjaJwkii5vdgUXA/view?usp=sharing)
 
-8. Análisis de actividad diaria
+-   [Script disponible en linea \[`r icons::fontawesome("signal")`\]](https://gpandradep.github.io/Curso-Congreso-Chihuahhua/Diversidad%20Congreso.html)
+
+7.  [Gráfica de radar para datos de actividad \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1PXog2nExESwMgJ31wKVFLbXw4tMaSBZ9/view?usp=sharing)
+
+-   [Script disponible en linea \[`r icons::fontawesome("signal")`\]](https://gpandradep.github.io/Grafico_roseta/)
+
+8.  [Análisis de actividad diaria \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1OhYQO45_R4_hhLep3_CIZS36fmWO9jVM/view?usp=sharing)

@@ -4,6 +4,10 @@ project:
 
 website:
   title: "Curso Precongreso"
+  toc-title: "Contenido"
+  link-external-newwindow: true
+
+
   navbar:
     left:
       - href: index.qmd
@@ -20,5 +24,5 @@ format:
     css: styles.css
     toc: true
 
-
+lang: es
 
