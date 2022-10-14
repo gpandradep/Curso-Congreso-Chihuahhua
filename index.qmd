@@ -66,7 +66,7 @@ Aquí encontrarás los archivos comprimidos necesarios para cada uno de los tema
 
 2.  Introducción a R (no requiere descargar proyecto)
 
-3.  [DigiKam para el etiquetado de fotos \[`r icons::fontawesome("download")`\]](https://drive.google.com/file/d/1MtVb7d9aTTovu-pQANK0C8NjN01vRZ7N/view?usp=sharing)
+3.  DigiKam para el etiquetado de fotos (no requiere descargar proyecto)
 
     -   [PDF del capítulo dos del libro disponible aquí \[`r icons::fontawesome("file-pdf")`\]](https://github.com/gpandradep/Curso-Congreso-Chihuahhua/raw/main/Cap%C3%ADtulo%202.pdf)
 
